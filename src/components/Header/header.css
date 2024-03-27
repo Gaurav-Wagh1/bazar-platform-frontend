@@ -57,10 +57,10 @@ input[type=search] {
     background-color: #2B2929;
 }
 
-.active {
+/* .active {
     border: 2px solid white;
     text-decoration: underline;
-}
+} */
 
 .dropdown-list {
     color: #212529;

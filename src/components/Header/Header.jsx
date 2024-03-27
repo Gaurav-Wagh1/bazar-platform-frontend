@@ -66,42 +66,6 @@ const Header = (prop) => {
                     </div>
                 )
             }
-            {/* <div className="container-fluid">
-                <div className="row">
-                    <div className="navbar col-12">
-                        <div className="col-md-2 col-12 text-white p-0 m-0 text-center">
-                            <h3 className='m-0 main-heading' onClick={() => navigate('/')}>BAZAR</h3>
-                        </div>
-                        <div className="col-md-6 col-12 p-0">
-                            <form className="d-flex justify-content-center search-box">
-                                <input className="p-2 text-white" id="search" type="search" placeholder="Search for whatever you want" aria-label="Search" />
-                                <button className="search px-4 mx-3" type="submit">Search</button>
-                            </form>
-                        </div>
-                        <div className="col-md-4 col-12 d-flex justify-content-around">
-
-                            <img src={cart} id="cart-logo" alt="img" className="" onClick={() => navigate('/cart')} />
-
-                            <Dropdown className='float-right'>
-                                <Dropdown.Toggle variant="secondary" id="dropdown-basic" className="mt-1 ml-3 w-45">
-                                    Hello User
-                                </Dropdown.Toggle>
-
-                                <Dropdown.Menu>
-                                    <Dropdown.Item onClick={() => navigate('/signin')} className="dropdown-list">
-                                        Sign In
-                                    </Dropdown.Item>
-                                    <Dropdown.Item onClick={() => navigate('/signup')} className="dropdown-list">
-                                        Sign Up
-                                    </Dropdown.Item>
-                                </Dropdown.Menu>
-                            </Dropdown>
-                        </div>
-
-                    </div>
-                </div>
-            </div> */}
-
             <header>
                 {/* <!-- section 1     nav-top--> */}
                 <div className="top-navbar">
@@ -121,8 +85,8 @@ const Header = (prop) => {
                                 ? <button id="btn-login" className="mx-2" onClick={handleLogout}>Log Out</button>
                                 : <button id="btn-login" className="mx-2" onClick={() => { navigate("/signup") }}>Sign up</button>
                         }
-                        <i className="fa-solid fa-user" onClick={handleUser}></i>
-                        <i className="fa-solid fa-cart-shopping" onClick={handleCart}></i>
+                        <i className="fa-solid fa-user" id="user-controls" onClick={handleUser}></i>
+                        <i className="fa-solid fa-cart-shopping" id="user-controls" onClick={handleCart}></i>
                     </div>
                 </div>
 
@@ -138,24 +102,12 @@ const Header = (prop) => {
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li className="nav-item">
-                                    <a className="nav-link active" aria-current="page" href="index.html">Home</a>
+                                    {/* <a className="nav-link active" aria-current="page" href="">Home</a> */}
+                                    <NavLink to="/" className="nav-link">Home</NavLink>
                                 </li>
                                 <li className="nav-item">
                                     <a className="nav-link" href="Women.html">Women</a>
                                 </li>
-                                {/* <!-- <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Category
-                                </a>
-                                <ul className="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #1c1c50;">
-                                    <li><a className="dropdown-item" href="#">T-Shirt</a></li>
-                                    <li><a className="dropdown-item" href="#">Hoodies</a></li>
-                                    <li><a className="dropdown-item" href="#">Pants</a></li>
-                                    <li><a className="dropdown-item" href="#">Soprts Shoes</a></li>
-                                    <li><a className="dropdown-item" href="#">Smart Watch</a></li>
-                                    <li><a className="dropdown-item" href="#">Glasess</a></li>
-                                </ul>
-                            </li> --> */}
                                 <li className="nav-item">
                                     <a className="nav-link" href="men.html">Men</a>
                                 </li>
