@@ -3,7 +3,6 @@ import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import Loader from "../components/loader/loader.jsx";
 
-import intro from "../assets/intro.gif"
 const Layout = ({isLoading, toggleLoading, user, updateUserInfo}) => {
     return (
         <>

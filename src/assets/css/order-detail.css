@@ -1,0 +1,23 @@
+#product-image{
+    width: 80%;
+}
+
+.order-container{
+    border: 2px solid transparent;
+    border-left: 0;
+    border-right: 0;
+    transition: all;
+    transition-duration: 1s;
+}
+
+.order-container:hover{
+    border: 2px solid rgba(27, 33, 65,0.5);
+    cursor: pointer;
+    border-left: 0;
+    border-right: 0;
+    background-color: rgb(240, 240, 240);
+}
+
+#hr{
+    height: 5px;
+}

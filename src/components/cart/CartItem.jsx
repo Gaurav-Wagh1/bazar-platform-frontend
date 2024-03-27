@@ -1,5 +1,5 @@
 import './cart.css';
-import cross from '../../assets/cross.png'
+import cross from '../../assets/images/cross.png'
 
 
 const CartItem = ({ quantity, price, imageURL, variety, name, cartItemId, removeCartItem }) => {

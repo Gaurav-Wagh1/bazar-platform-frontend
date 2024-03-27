@@ -1,13 +1,12 @@
-import "../../assets/style.css"
+import "../../assets/css/style.css"
 import { Link, NavLink } from "react-router-dom";
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import cart from '../../assets/cart.png'
 import axios from "axios";
 
 // images
 
-import brandLogo from "../../assets/bazaar-high-resolution-logo-transparent (2).png"
+import brandLogo from "../../assets/images/bazaar-high-resolution-logo-transparent (2).png"
 
 
 const Header = (prop) => {

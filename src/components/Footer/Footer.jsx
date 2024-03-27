@@ -1,6 +1,6 @@
-import "../../assets/style.css"
+import "../../assets/css/style.css"
 
-import logo from "../../assets/bazaar-high-resolution-logo-transparent (2).png";
+import logo from "../../assets/images/bazaar-high-resolution-logo-transparent (2).png";
 
 const Footer = () => {
     return (

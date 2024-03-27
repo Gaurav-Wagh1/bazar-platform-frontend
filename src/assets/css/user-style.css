@@ -1,0 +1,23 @@
+.user-info {
+    border-radius: 7px;
+    padding: 10px;
+    /* height: 100px; */
+    background-color: rgb(229, 228, 228);
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-div hr {
+    margin: 4px !important;
+}
+
+#edit{
+    transition: all;
+    transition-duration: 1s;
+}
+
+#edit:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+}

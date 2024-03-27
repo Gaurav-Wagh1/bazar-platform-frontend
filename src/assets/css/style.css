@@ -1,23 +1,423 @@
-.user-info {
-    border-radius: 7px;
-    padding: 10px;
-    height: 89px;
-    background-color: rgb(229, 228, 228);
-    border: 1px solid black;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+* {
+    padding: 0;
+    margin: 0;
+    border: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: black;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+p {
+    line-height: 0.5rem;
+    font-size: 11px;
+}
+
+
+/* navbar */
+.top-navbar{
+    width: 100%;
+    height: 7vh;
+    background: #E9E2DA;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
 }
-
-.user-div hr {
-    margin: 4px !important;
+.top-icons{
+    margin-left: 45px;
 }
-
-#edit{
-    transition: all;
-    transition-duration: 1s;
-}
-
-#edit:hover{
+.top-icons i{
+    font-size: 20px;
+    color: #1B2141;
+    margin-left: 10px;
     cursor: pointer;
-    transform: scale(1.2);
+}
+.other-links{
+    margin-right: 33px;
+}
+.other-links i{
+    color: #1B2141;
+    font-size: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+#btn-login{
+    width: 100px;
+    border: 2px solid #1B2141;
+    color: #E9E2DA;
+    font-weight: bold;
+    border-radius: 5px;
+    height: 5vh;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+#btn-login {
+    text-decoration: none;
+    color: #1B2141;
+    transition: 0.5s ease;
+}
+#btn-login:hover{
+    background-color: #E9E2DA;
+    color: black;
+}
+#btn-signup{
+    width: 100px;
+    border: 2px solid #1B2141;
+    color: #E9E2DA;
+    font-weight: bold;
+    border-radius: 5px;
+    height: 5vh;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+#btn-signup{
+    text-decoration: none;
+    color: #1B2141;
+    transition: 0.5s ease;
+}
+#btn-signup:hover{
+    background-color: #E9E2DA;
+    color: black;
+}
+@media screen and (max-width:500px){
+    .top-icons{
+        margin-left: 30px;
+    }
+    .top-icons i{
+        font-size: 15px;
+    }
+    .other-links i{
+        font-size: 15px;
+    }
+    #btn-login{
+        width: 60px;
+        height: 5vh;
+    }
+    #btn-signup{
+        width: 70px;
+        height: 5vh;
+    }
+}
+@media screen and (max-width:350px){
+    .top-icons{
+        margin-left: 10px;
+    }
+    .top-icons i{
+        font-size: 10px;
+    }
+    .other-links{
+        margin-right: 10px;
+    }
+    .other-links i{
+        font-size: 10px;
+    }
+    #btn-login{
+        width: 50px;
+        height: 5vh;
+        font-size: 13px;
+    }
+    #btn-signup{
+        width: 60px;
+        height: 5vh;
+        font-size: 13px;
+    }
+}
+@media screen and (max-width:350px){
+    .top-icons{
+        margin-left: 5px;
+    }
+    .top-icons i{
+        font-size: 12px;
+    }
+    .other-links{
+        margin-right: 10px;
+    }
+    .other-links i{
+        font-size: 12px;
+    }
+    #btn-login{
+        width: 40px;
+        height: 5vh;
+        font-size: 10px;
+    }
+    #btn-signup{
+        width: 50px;
+        height: 5vh;
+        font-size: 10px;
+    }
+}
+
+/* logo */
+.logo img{
+    height: 3.5rem;
+    width: 8.5rem;
+}
+
+/* nav-lower */
+/* navbar */
+#navbar{
+    background: #1B2141;
+    font-size: 19px;
+    font-family: 'Roboto Slab', serif;
+}
+#navbar .nav-link{
+    color: #E9E2DA;
+    font-weight: bold;
+    margin-left: 5px;
+    transition: 0.5s ease;
+}
+#navbar .nav-link:hover{
+    /* color: #2118ce; */
+    color: rgb(183, 162, 162);
+    /* text-decoration: underline white; */
+    border-radius: 5px;
+}
+.dropdown li a{
+    color: white;
+}
+#search-btn{
+    color: #E9E2DA;
+    border:  1px solid #E9E2DA;
+}
+#search-btn:hover{
+    background-color: #1B2141;
+}
+
+
+
+/* section 4- Service-info */
+.service-col{
+    background: rgb(244,243,243);
+    background: radial-gradient(circle, rgba(244,243,243,1) 26%, rgba(208,203,203,1) 76%);
+    border: 1px solid #1B2141;
+}
+
+.service-col i{
+    font-size: 3rem;
+    padding-left: 3rem;
+}
+
+
+/* section  5- Trending */
+.card-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.view-btn{
+    background-color: #39ea16;
+    border: 2px solid #39ea16;
+}
+
+.trending , .new-products{
+    margin: 15px 10px;
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+}
+
+.heading{
+    padding-top: 6px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid rgb(163, 161, 161);
+    margin: 10px;
+    text-align: center;
+}
+
+.card_border{
+    border: 2px solid blue;
+}
+
+/* Section 8 advertise */
+.advertise {
+    margin-top: 20px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+.advertise img {
+    width: 100%;
+    height: 380px;
+}
+
+
+/* section 9 footer */
+.site-footer {
+    background: #1B2141;
+/* background: linear-gradient(180deg, rgba(243,243,243,1) 0%, rgba(72,204,7,1) 56%); */
+    padding: 45px 0 20px;
+    font-size: 15px;
+    line-height: 24px;
+    color: #E9E2DA;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    margin-top: 30px;
+}
+
+footer p{
+    font-size: medium;
+    line-height: 20px;
+    color: 1B2141;
+}
+.f-img{
+    width: 20rem;
+}
+
+.site-footer hr {
+    border-top-color: #E9E2DA;
+    opacity: 0.5;
+}
+
+.site-footer hr.small {
+    margin: 20px 0;
+}
+
+.site-footer h6 {
+    color: #E9E2DA;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-top: 5px;
+    letter-spacing: 2px;
+}
+
+.site-footer a {
+    color: #E9E2DA;
+}
+
+.site-footer a:hover {
+    color: #E9E2DA;
+    text-decoration: none;
+}
+
+.footer-links {
+    padding-left: 0;
+    list-style: none;
+}
+
+.footer-links li {
+    display: block;
+}
+
+.footer-links a {
+    color: #E9E2DA;
+}
+
+.footer-links a:active,
+.footer-links a:focus,
+.footer-links a:hover {
+    color: #E9E2DA;
+    text-decoration: none;
+}
+
+.site-footer .social-icons {
+    text-align: right;
+}
+
+.site-footer .social-icons a {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 6px;
+    margin-right: 0;
+    border-radius: 100%;
+    background-color: #E9E2DA;
+}
+
+.copyright-text {
+    margin: 0;
+}
+
+@media (max-width: 991px) {
+    .site-footer [class^="col-"] {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 767px) {
+    .site-footer {
+        padding-bottom: 0;
+    }
+
+    .site-footer .copyright-text,
+    .site-footer .social-icons {
+        text-align: center;
+    }
+}
+
+.social-icons {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.social-icons li {
+    display: inline-block;
+    margin-bottom: 4px;
+}
+
+.social-icons a {
+    background-color: #eceeef;
+    color: #818a91;
+    font-size: 16px;
+    display: inline-block;
+    line-height: 44px;
+    width: 44px;
+    height: 44px;
+    text-align: center;
+    margin-right: 8px;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+
+.logo {
+    color: #E9E2DA;
+}
+
+.social-icons a:active,
+.social-icons a:focus,
+.social-icons a:hover {
+    color: #E9E2DA;
+    background-color: #29aafe;
+}
+
+.social-icons a.facebook:hover {
+    background-color: #3b5998;
+}
+
+.social-icons a.twitter:hover {
+    background-color: #00aced;
+}
+
+.social-icons a.linkedin:hover {
+    background-color: #007bb6;
+}
+
+.social-icons a.dribbble:hover {
+    background-color: #ea4c89;
+}
+
+.active{
+    text-decoration: 2px underline;
+}
+
+
+/* -------Electronics page ----------- */
+
+.top-card{
+      border: 4px solid black;
 }
