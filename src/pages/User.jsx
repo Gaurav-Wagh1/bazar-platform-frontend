@@ -74,31 +74,79 @@ const User = ({ user, updateUserInfo, toggleLoading }) => {
                                     <div className="accordion-body">
                                         {
                                             apiResponse.map((orderDetail) => {
-                                                const displayTags = orderDetail.OrderItems.map((orderItem) => {
-                                                    return <OrderDetail
-                                                        orderDetailData={
-                                                            {
-                                                                image: orderItem.ProductSKU.image,
-                                                                name: orderItem.ProductSKU.Product.name,
-                                                                variety: orderItem.ProductSKU.variety,
-                                                                status: orderDetail.status,
-                                                                deliveryTime: orderDetail.deliveryTime
-                                                            }
+                                                if (orderDetail.OrderItems.length > 1) {
+                                                    const allItems = orderDetail.OrderItems.map((item) => {
+                                                        return (
+                                                            <OrderDetail
+                                                                orderDetailData={
+                                                                    {
+                                                                        image: item.ProductSKU.image,
+                                                                        name: item.ProductSKU.Product.name,
+                                                                        variety: item.ProductSKU.variety,
+                                                                        status: orderDetail.status,
+                                                                        deliveryTime: orderDetail.deliveryTime
+                                                                    }
+                                                                }
+                                                                extraData={
+                                                                    {
+                                                                        total: orderDetail.total,
+                                                                        orderedDate: orderDetail.createdAt,
+                                                                        quantity: item.quantity,
+                                                                        price: item.ProductSKU.price,
+                                                                        productDescription: item.ProductSKU.Product.description
+                                                                    }
+                                                                }
+                                                                paymentData={
+                                                                    {
+                                                                        transactionId: orderDetail.PaymentDetail.transactionId,
+                                                                        paymentStatus: orderDetail.PaymentDetail.status,
+                                                                        amount: orderDetail.PaymentDetail.amount,
+                                                                        paymentInformation: orderDetail.PaymentDetail.paymentInfo,
+                                                                        paymentDate: orderDetail.PaymentDetail.createdAt,
+                                                                    }
+                                                                }
+                                                                cartOrder={true}
+                                                                key={item.id}
+                                                            />
+                                                        )
+                                                    });
+                                                    return (
+                                                        <div className="cartOrders border">
+                                                            {allItems}
+                                                        </div>
+                                                    )
+                                                }
+                                                return <OrderDetail
+                                                    orderDetailData={
+                                                        {
+                                                            image: orderDetail.OrderItems[0].ProductSKU.image,
+                                                            name: orderDetail.OrderItems[0].ProductSKU.Product.name,
+                                                            variety: orderDetail.OrderItems[0].ProductSKU.variety,
+                                                            status: orderDetail.status,
+                                                            deliveryTime: orderDetail.deliveryTime
                                                         }
-                                                        extraData={
-                                                            {
-                                                                transactionId: orderDetail.transactionId,
-                                                                total: orderDetail.total,
-                                                                createdAt: orderDetail.createdAt,
-                                                                quantity: orderItem.quantity,
-                                                                productSKUId: orderItem.ProductSKU.id,
-                                                                price: orderItem.ProductSKU.price
-                                                            }
+                                                    }
+                                                    extraData={
+                                                        {
+                                                            total: orderDetail.total,
+                                                            orderedDate: orderDetail.createdAt,
+                                                            quantity: orderDetail.OrderItems[0].quantity,
+                                                            price: orderDetail.OrderItems[0].ProductSKU.price,
+                                                            productDescription: orderDetail.OrderItems[0].ProductSKU.Product.description
                                                         }
-                                                        key={orderItem.id}
-                                                    />
-                                                });
-                                                return displayTags;
+                                                    }
+                                                    paymentData={
+                                                        {
+                                                            transactionId: orderDetail.PaymentDetail.transactionId,
+                                                            paymentStatus: orderDetail.PaymentDetail.status,
+                                                            amount: orderDetail.PaymentDetail.amount,
+                                                            paymentInformation: orderDetail.PaymentDetail.paymentInfo,
+                                                            paymentDate: orderDetail.PaymentDetail.createdAt,
+                                                        }
+                                                    }
+                                                    cartOrder={false}
+                                                    key={orderDetail.OrderItems[0].id}
+                                                />
                                             })
                                         }
                                     </div>

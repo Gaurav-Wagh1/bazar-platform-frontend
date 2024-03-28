@@ -11,7 +11,7 @@
 }
 
 .order-container:hover{
-    border: 2px solid rgba(27, 33, 65,0.5);
+    /* border: 2px solid rgba(27, 33, 65,0.5); */
     cursor: pointer;
     border-left: 0;
     border-right: 0;

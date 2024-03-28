@@ -461,3 +461,15 @@ footer p{
 #user-controls:hover{
     transform: scale(1.1);
 }
+
+.card{
+    transition: all;
+    transition-duration: 1s;
+}
+
+.card:hover{
+    /* border: 2px solid #E9E2DA; */
+    transform: scale(1.05);
+    border: 2px solid #1B2141;
+    cursor: pointer;
+}

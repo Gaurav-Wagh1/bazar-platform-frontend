@@ -100,7 +100,7 @@ const Home = () => {
                                     <img src={"src/assets/images/iphone15.jpg"} className="card-img-top" alt="..." />
                                         <div className="card-body">
                                             <h5 className="card-title">Apple iPhone 13 (128GB) - Pink</h5>
-                                            <p className="card-text" /> &#8377 <span>52,090</span>
+                                            <p className="card-text" /> &#x20B9; <span>52,090</span>
                                         </div>
                                 </div>
                                 <div className="card mx-1  card_border shadow mb-5 bg-body-tertiary rounded"
@@ -108,7 +108,7 @@ const Home = () => {
                                     <img src={"src/assets/images/fire-bolt-smartwatch.jpg"} className="card-img-top" alt="..." />
                                         <div className="card-body">
                                             <h5 className="card-title">boAt Xtend Smart Watch </h5>
-                                            <p className="card-text"/> &#8377 <span>999</span>
+                                            <p className="card-text"/> &#x20B9; <span>999</span>
                                         </div>
                                 </div>
                                 <div className="card mx-1  card_border shadow mb-5 bg-body-tertiary rounded"
@@ -116,7 +116,7 @@ const Home = () => {
                                     <img src={"src/assets/images/boult-audio-earbuds.jpg"} className="card-img-top" alt="..." />
                                         <div className="card-body">
                                             <h5 className="card-title">Boult Audio UFO </h5>
-                                            <p className="card-text"/> &#8377 <span>1,199</span>
+                                            <p className="card-text"/> &#x20B9; <span>1,199</span>
                                         </div>
                                 </div>
                                 <div className="card mx-1  card_border shadow mb-5 bg-body-tertiary rounded"
@@ -124,7 +124,7 @@ const Home = () => {
                                     <img src={"src/assets/images/headphone.jpg"} className="card-img-top" alt="..." />
                                         <div className="card-body">
                                             <h5 className="card-title">Oneplus Bullets Z2 Bluetooth </h5>
-                                            <p className="card-text"/> &#8377 <span>1,799</span>
+                                            <p className="card-text"/> &#x20B9; <span>1,799</span>
                                         </div>
                                 </div>
                                 <div className="card mx-1 card_border shadow mb-5 bg-body-tertiary rounded"
@@ -132,7 +132,7 @@ const Home = () => {
                                         <img src={"src/assets/images/headphone.jpg"} className="card-img-top" alt="..." />
                                         <div className="card-body">
                                             <h5 className="card-title">OnePlus 12R </h5>
-                                            <p className="card-text"> &#8377 <span>42,999</span></p>
+                                            <p className="card-text"> &#x20B9; <span>42,999</span></p>
                                         </div>
                                 </div>
                             </div>
@@ -144,7 +144,7 @@ const Home = () => {
                                     <img src={"src/assets/images/iphone15.jpg"} className="card-img-top" alt="..." />
                                         <div className="card-body">
                                             <h5 className="card-title">Apple iPhone 13 (128GB) - Pink</h5>
-                                            <p className="card-text"/> &#8377 <span>52,090</span>
+                                            <p className="card-text"/> &#x20B9; <span>52,090</span>
                                         </div>
                                 </div>
                                 <div className="card mx-1  card_border shadow mb-5 bg-body-tertiary rounded"
@@ -152,7 +152,7 @@ const Home = () => {
                                     <img src={"src/assets/images/fire-bolt-smartwatch.jpg"} className="card-img-top" alt="..." />
                                         <div className="card-body">
                                             <h5 className="card-title">boAt Xtend Smart Watch </h5>
-                                            <p className="card-text"/> &#8377 <span>999</span>
+                                            <p className="card-text"/> &#x20B9; <span>999</span>
                                         </div>
                                 </div>
                                 <div className="card mx-1  card_border shadow mb-5 bg-body-tertiary rounded"
@@ -160,7 +160,7 @@ const Home = () => {
                                     <img src={"src/assets/images/boult-audio-earbuds.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
                                             <h5 className="card-title">Boult Audio UFO </h5>
-                                            <p className="card-text"/> &#8377 <span>1,199</span>
+                                            <p className="card-text"/> &#x20B9; <span>1,199</span>
                                         </div>
                                 </div>
                                 <div className="card mx-1  card_border shadow mb-5 bg-body-tertiary rounded"
@@ -168,7 +168,7 @@ const Home = () => {
                                     <img src={"src/assets/images/headphone.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
                                             <h5 className="card-title">Oneplus Bullets Z2 Bluetooth </h5>
-                                            <p className="card-text"/> &#8377 <span>1,799</span>
+                                            <p className="card-text"/> &#x20B9; <span>1,799</span>
                                         </div>
                                 </div>
                                 <div className="card mx-1 card_border shadow mb-5 bg-body-tertiary rounded"
@@ -176,7 +176,7 @@ const Home = () => {
                                     <img src={"src/assets/images/oneplus12r.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
                                             <h5 className="card-title">OnePlus 12R </h5>
-                                            <p className="card-text"> &#8377 <span>42,999</span></p>
+                                            <p className="card-text"> &#x20B9; <span>42,999</span></p>
                                         </div>
                                 </div>
                             </div>
@@ -188,7 +188,7 @@ const Home = () => {
                                     <img src={"src/assets/images/iphone15.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
                                             <h5 className="card-title">Apple iPhone 13 (128GB) - Pink</h5>
-                                            <p className="card-text"/> &#8377 <span>52,090</span>
+                                            <p className="card-text"/> &#x20B9; <span>52,090</span>
                                         </div>
                                 </div>
                                 <div className="card mx-1  card_border shadow mb-5 bg-body-tertiary rounded"
@@ -196,7 +196,7 @@ const Home = () => {
                                     <img src={"src/assets/images/fire-bolt-smartwatch.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
                                             <h5 className="card-title">boAt Xtend Smart Watch </h5>
-                                            <p className="card-text"/> &#8377 <span>999</span>
+                                            <p className="card-text"/> &#x20B9; <span>999</span>
                                         </div>
                                 </div>
                                 <div className="card mx-1  card_border shadow mb-5 bg-body-tertiary rounded"
@@ -204,7 +204,7 @@ const Home = () => {
                                     <img src={"src/assets/images/boult-audio-earbuds.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
                                             <h5 className="card-title">Boult Audio UFO </h5>
-                                            <p className="card-text"/> &#8377 <span>1,199</span>
+                                            <p className="card-text"/> &#x20B9; <span>1,199</span>
                                         </div>
                                 </div>
                                 <div className="card mx-1  card_border shadow mb-5 bg-body-tertiary rounded"
@@ -212,7 +212,7 @@ const Home = () => {
                                     <img src={"src/assets/images/headphone.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
                                             <h5 className="card-title">Oneplus Bullets Z2 Bluetooth </h5>
-                                            <p className="card-text"/> &#8377 <span>1,799</span>
+                                            <p className="card-text"/> &#x20B9; <span>1,799</span>
                                         </div>
                                 </div>
                                 <div className="card mx-1 card_border shadow mb-5 bg-body-tertiary rounded"
@@ -220,7 +220,7 @@ const Home = () => {
                                     <img src={"src/assets/images/oneplus12r.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
                                             <h5 className="card-title">OnePlus 12R </h5>
-                                            <p className="card-text"> &#8377 <span>42,999</span></p>
+                                            <p className="card-text"> &#x20B9; <span>42,999</span></p>
                                         </div>
                                 </div>
                             </div>
@@ -258,7 +258,7 @@ const Home = () => {
                                     <img src={"src/assets/images/iphone15.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
                                             <h5 className="card-title">Apple iPhone 13 (128GB) - Pink</h5>
-                                            <p className="card-text"/> &#8377 <span>52,090</span>
+                                            <p className="card-text"/> &#x20B9; <span>52,090</span>
                                         </div>
                                 </div>
                                 <div className="card mx-1  card_border shadow mb-5 bg-body-tertiary rounded"
@@ -266,7 +266,7 @@ const Home = () => {
                                     <img src={"src/assets/images/fire-bolt-smartwatch.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
                                             <h5 className="card-title">boAt Xtend Smart Watch </h5>
-                                            <p className="card-text"/> &#8377 <span>999</span>
+                                            <p className="card-text"/> &#x20B9; <span>999</span>
                                         </div>
                                 </div>
                                 <div className="card mx-1  card_border shadow mb-5 bg-body-tertiary rounded"
@@ -274,7 +274,7 @@ const Home = () => {
                                     <img src={"src/assets/images/boult-audio-earbuds.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
                                             <h5 className="card-title">Boult Audio UFO </h5>
-                                            <p className="card-text"/> &#8377 <span>1,199</span>
+                                            <p className="card-text"/> &#x20B9; <span>1,199</span>
                                         </div>
                                 </div>
                                 <div className="card mx-1  card_border shadow mb-5 bg-body-tertiary rounded"
@@ -282,7 +282,7 @@ const Home = () => {
                                     <img src={"src/assets/images/headphone.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
                                             <h5 className="card-title">Oneplus Bullets Z2 Bluetooth </h5>
-                                            <p className="card-text"/> &#8377 <span>1,799</span>
+                                            <p className="card-text"/> &#x20B9; <span>1,799</span>
                                         </div>
                                 </div>
                                 <div className="card mx-1 card_border shadow mb-5 bg-body-tertiary rounded"
@@ -290,7 +290,7 @@ const Home = () => {
                                     <img src={"src/assets/images/oneplus12r.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
                                             <h5 className="card-title">OnePlus 12R </h5>
-                                            <p className="card-text"> &#8377 <span>42,999</span></p>
+                                            <p className="card-text"> &#x20B9; <span>42,999</span></p>
                                         </div>
                                 </div>
                             </div>
@@ -302,7 +302,7 @@ const Home = () => {
                                     <img src={"src/assets/images/iphone15.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
                                             <h5 className="card-title">Apple iPhone 13 (128GB) - Pink</h5>
-                                            <p className="card-text"/> &#8377 <span>52,090</span>
+                                            <p className="card-text"/> &#x20B9; <span>52,090</span>
                                         </div>
                                 </div>
                                 <div className="card mx-1  card_border shadow mb-5 bg-body-tertiary rounded"
@@ -310,7 +310,7 @@ const Home = () => {
                                     <img src={"src/assets/images/fire-bolt-smartwatch.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
                                             <h5 className="card-title">boAt Xtend Smart Watch </h5>
-                                            <p className="card-text"/> &#8377 <span>999</span>
+                                            <p className="card-text"/> &#x20B9; <span>999</span>
                                         </div>
                                 </div>
                                 <div className="card mx-1  card_border shadow mb-5 bg-body-tertiary rounded"
@@ -318,7 +318,7 @@ const Home = () => {
                                     <img src={"src/assets/images/boult-audio-earbuds.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
                                             <h5 className="card-title">Boult Audio UFO </h5>
-                                            <p className="card-text"/> &#8377 <span>1,199</span>
+                                            <p className="card-text"/> &#x20B9; <span>1,199</span>
                                         </div>
                                 </div>
                                 <div className="card mx-1  card_border shadow mb-5 bg-body-tertiary rounded"
@@ -326,7 +326,7 @@ const Home = () => {
                                     <img src={"src/assets/images/headphone.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
                                             <h5 className="card-title">Oneplus Bullets Z2 Bluetooth </h5>
-                                            <p className="card-text"/> &#8377 <span>1,799</span>
+                                            <p className="card-text"/> &#x20B9; <span>1,799</span>
                                         </div>
                                 </div>
                                 <div className="card mx-1 card_border shadow mb-5 bg-body-tertiary rounded"
@@ -334,7 +334,7 @@ const Home = () => {
                                     <img src={"src/assets/images/oneplus12r.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
                                             <h5 className="card-title">OnePlus 12R </h5>
-                                            <p className="card-text"> &#8377 <span>42,999</span></p>
+                                            <p className="card-text"> &#x20B9; <span>42,999</span></p>
                                         </div>
                                 </div>
                             </div>
@@ -346,7 +346,7 @@ const Home = () => {
                                     <img src={"src/assets/images/iphone15.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
                                             <h5 className="card-title">Apple iPhone 13 (128GB) - Pink</h5>
-                                            <p className="card-text"/> &#8377 <span>52,090</span>
+                                            <p className="card-text"/> &#x20B9; <span>52,090</span>
                                         </div>
                                 </div>
                                 <div className="card mx-1  card_border shadow mb-5 bg-body-tertiary rounded"
@@ -354,7 +354,7 @@ const Home = () => {
                                     <img src={"src/assets/images/fire-bolt-smartwatch.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
                                             <h5 className="card-title">boAt Xtend Smart Watch </h5>
-                                            <p className="card-text"/> &#8377 <span>999</span>
+                                            <p className="card-text"/> &#x20B9; <span>999</span>
                                         </div>
                                 </div>
                                 <div className="card mx-1  card_border shadow mb-5 bg-body-tertiary rounded"
@@ -362,7 +362,7 @@ const Home = () => {
                                     <img src={"src/assets/images/boult-audio-earbuds.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
                                             <h5 className="card-title">Boult Audio UFO </h5>
-                                            <p className="card-text"/> &#8377 <span>1,199</span>
+                                            <p className="card-text"/> &#x20B9; <span>1,199</span>
                                         </div>
                                 </div>
                                 <div className="card mx-1  card_border shadow mb-5 bg-body-tertiary rounded"
@@ -370,7 +370,7 @@ const Home = () => {
                                     <img src={"src/assets/images/headphone.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
                                             <h5 className="card-title">Oneplus Bullets Z2 Bluetooth </h5>
-                                            <p className="card-text"/> &#8377 <span>1,799</span>
+                                            <p className="card-text"/> &#x20B9; <span>1,799</span>
                                         </div>
                                 </div>
                                 <div className="card mx-1 card_border shadow mb-5 bg-body-tertiary rounded"
@@ -378,7 +378,7 @@ const Home = () => {
                                     <img src={"src/assets/images/oneplus12r.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
                                             <h5 className="card-title">OnePlus 12R </h5>
-                                            <p className="card-text"> &#8377 <span>42,999</span></p>
+                                            <p className="card-text"> &#x20B9; <span>42,999</span></p>
                                         </div>
                                 </div>
                             </div>
@@ -417,7 +417,7 @@ const Home = () => {
                                     <img src={"src/assets/images/iphone15.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
                                             <h5 className="card-title">Apple iPhone 13 (128GB) - Pink</h5>
-                                            <p className="card-text"/> &#8377 <span>52,090</span>
+                                            <p className="card-text"/> &#x20B9; <span>52,090</span>
                                         </div>
                                 </div>
                                 <div className="card mx-1  card_border shadow mb-5 bg-body-tertiary rounded"
@@ -425,7 +425,7 @@ const Home = () => {
                                     <img src={"src/assets/images/fire-bolt-smartwatch.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
                                             <h5 className="card-title">boAt Xtend Smart Watch </h5>
-                                            <p className="card-text"/> &#8377 <span>999</span>
+                                            <p className="card-text"/> &#x20B9; <span>999</span>
                                         </div>
                                 </div>
                                 <div className="card mx-1  card_border shadow mb-5 bg-body-tertiary rounded"
@@ -433,7 +433,7 @@ const Home = () => {
                                     <img src={"src/assets/images/boult-audio-earbuds.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
                                             <h5 className="card-title">Boult Audio UFO </h5>
-                                            <p className="card-text"/> &#8377 <span>1,199</span>
+                                            <p className="card-text"/> &#x20B9; <span>1,199</span>
                                         </div>
                                 </div>
                                 <div className="card mx-1  card_border shadow mb-5 bg-body-tertiary rounded"
@@ -441,7 +441,7 @@ const Home = () => {
                                     <img src={"src/assets/images/headphone.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
                                             <h5 className="card-title">Oneplus Bullets Z2 Bluetooth </h5>
-                                            <p className="card-text"/> &#8377 <span>1,799</span>
+                                            <p className="card-text"/> &#x20B9; <span>1,799</span>
                                         </div>
                                 </div>
                                 <div className="card mx-1 card_border shadow mb-5 bg-body-tertiary rounded"
@@ -449,7 +449,7 @@ const Home = () => {
                                     <img src={"src/assets/images/oneplus12r.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
                                             <h5 className="card-title">OnePlus 12R </h5>
-                                            <p className="card-text"> &#8377 <span>42,999</span></p>
+                                            <p className="card-text"> &#x20B9; <span>42,999</span></p>
                                         </div>
                                 </div>
                             </div>
@@ -461,7 +461,7 @@ const Home = () => {
                                     <img src={"src/assets/images/iphone15.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
                                             <h5 className="card-title">Apple iPhone 13 (128GB) - Pink</h5>
-                                            <p className="card-text"/> &#8377 <span>52,090</span>
+                                            <p className="card-text"/> &#x20B9; <span>52,090</span>
                                         </div>
                                 </div>
                                 <div className="card mx-1  card_border shadow mb-5 bg-body-tertiary rounded"
@@ -469,7 +469,7 @@ const Home = () => {
                                     <img src={"src/assets/images/fire-bolt-smartwatch.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
                                             <h5 className="card-title">boAt Xtend Smart Watch </h5>
-                                            <p className="card-text"/> &#8377 <span>999</span>
+                                            <p className="card-text"/> &#x20B9; <span>999</span>
                                         </div>
                                 </div>
                                 <div className="card mx-1  card_border shadow mb-5 bg-body-tertiary rounded"
@@ -477,7 +477,7 @@ const Home = () => {
                                     <img src={"src/assets/images/boult-audio-earbuds.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
                                             <h5 className="card-title">Boult Audio UFO </h5>
-                                            <p className="card-text"/> &#8377 <span>1,199</span>
+                                            <p className="card-text"/> &#x20B9; <span>1,199</span>
                                         </div>
                                 </div>
                                 <div className="card mx-1  card_border shadow mb-5 bg-body-tertiary rounded"
@@ -485,7 +485,7 @@ const Home = () => {
                                     <img src={"src/assets/images/headphone.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
                                             <h5 className="card-title">Oneplus Bullets Z2 Bluetooth </h5>
-                                            <p className="card-text"/> &#8377 <span>1,799</span>
+                                            <p className="card-text"/> &#x20B9; <span>1,799</span>
                                         </div>
                                 </div>
                                 <div className="card mx-1 card_border shadow mb-5 bg-body-tertiary rounded"
@@ -493,7 +493,7 @@ const Home = () => {
                                     <img src={"src/assets/images/oneplus12r.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
                                             <h5 className="card-title">OnePlus 12R </h5>
-                                            <p className="card-text"> &#8377 <span>42,999</span></p>
+                                            <p className="card-text"> &#x20B9; <span>42,999</span></p>
                                         </div>
                                 </div>
                             </div>
@@ -505,7 +505,7 @@ const Home = () => {
                                     <img src={"src/assets/images/iphone15.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
                                             <h5 className="card-title">Apple iPhone 13 (128GB) - Pink</h5>
-                                            <p className="card-text"/> &#8377 <span>52,090</span>
+                                            <p className="card-text"/> &#x20B9; <span>52,090</span>
                                         </div>
                                 </div>
                                 <div className="card mx-1  card_border shadow mb-5 bg-body-tertiary rounded"
@@ -513,7 +513,7 @@ const Home = () => {
                                     <img src={"src/assets/images/fire-bolt-smartwatch.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
                                             <h5 className="card-title">boAt Xtend Smart Watch </h5>
-                                            <p className="card-text"/> &#8377 <span>999</span>
+                                            <p className="card-text"/> &#x20B9; <span>999</span>
                                         </div>
                                 </div>
                                 <div className="card mx-1  card_border shadow mb-5 bg-body-tertiary rounded"
@@ -521,7 +521,7 @@ const Home = () => {
                                     <img src={"src/assets/images/boult-audio-earbuds.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
                                             <h5 className="card-title">Boult Audio UFO </h5>
-                                            <p className="card-text"/> &#8377 <span>1,199</span>
+                                            <p className="card-text"/> &#x20B9; <span>1,199</span>
                                         </div>
                                 </div>
                                 <div className="card mx-1  card_border shadow mb-5 bg-body-tertiary rounded"
@@ -529,7 +529,7 @@ const Home = () => {
                                     <img src={"src/assets/images/headphone.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
                                             <h5 className="card-title">Oneplus Bullets Z2 Bluetooth </h5>
-                                            <p className="card-text"/> &#8377 <span>1,799</span>
+                                            <p className="card-text"/> &#x20B9; <span>1,799</span>
                                         </div>
                                 </div>
                                 <div className="card mx-1 card_border shadow mb-5 bg-body-tertiary rounded"
@@ -537,7 +537,7 @@ const Home = () => {
                                     <img src={"src/assets/images/oneplus12r.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
                                             <h5 className="card-title">OnePlus 12R </h5>
-                                            <p className="card-text"> &#8377 <span>42,999</span></p>
+                                            <p className="card-text"> &#x20B9; <span>42,999</span></p>
                                         </div>
                                 </div>
                             </div>
