@@ -77,7 +77,7 @@ const Cart = ({ toggleLoading }) => {
                             {cartItems.length
                                 ?
                                 cartItems.map((apiCartItem) => {
-                                    return <CartItem quantity={apiCartItem.quantity} price={apiCartItem.ProductSKU.price} imageURL={apiCartItem.ProductSKU.image} variety={apiCartItem.ProductSKU.variety} name={apiCartItem.ProductSKU.Product.name} key={apiCartItem.id} removeCartItem={removeCartItem} cartItemId={apiCartItem.id} />
+                                    return <CartItem quantity={apiCartItem.quantity} price={apiCartItem.ProductSKU.price} imageURL={apiCartItem.ProductSKU.image} variety={apiCartItem.ProductSKU.variety} name={apiCartItem.ProductSKU.Product.name} key={apiCartItem.id} removeCartItem={removeCartItem} cartItemId={apiCartItem.id} productId={apiCartItem.ProductSKU.Product.id} />
                                 })
                                 :
                                 <>

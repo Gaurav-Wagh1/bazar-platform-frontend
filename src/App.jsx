@@ -13,6 +13,7 @@ import Loader from "./components/loader/loader.jsx";
 import User from "./pages/User.jsx";
 import Check from "./components/Check.jsx";
 import ExtraOrderDetails from "./components/order/ExtraOrderDetails.jsx";
+import SingleProduct from "./components/product/SingleProduct.jsx";
 
 function App() {
 
@@ -44,7 +45,8 @@ function App() {
             <Route path='cart' element={<Cart user={user} toggleLoading={toggleLoading} />} />
             <Route path='user' element={<User user={user} updateUserInfo={updateUserInfo} toggleLoading={toggleLoading} />} />
             <Route path="extraorderdetails" element={<ExtraOrderDetails user={user} toggleLoading={toggleLoading} />} />
-            <Route path='product' element={<ProductForm user={user} setUser={setUser} />} />
+            <Route path='products' element={<ProductForm user={user} setUser={setUser} />} />
+            <Route path='productdetail' element={<SingleProduct toggleLoading={toggleLoading} />} />
             <Route path='loader' element={<Loader />} />
             <Route path='check' element={<Check />} />
           </Route>

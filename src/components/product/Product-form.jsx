@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Loader from '../loader/loader';
 
 const ProductForm = (prop) => {
-    const [productInfo, setProductInfo] = useState({ name: "", category: "", subCategory: "", variety: "", price: "", quantity: "", description: "" });
+    const [productInfo, setProductInfo] = useState({ name: "", category: "", subCategory: "", variety: "", price: "", quantity: "", description: "",highlights:"" });
     const [productImage, setProductImage] = useState({});
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
@@ -26,6 +26,7 @@ const ProductForm = (prop) => {
         formData.append('price', productInfo.price);
         formData.append('quantity', productInfo.quantity);
         formData.append('description', productInfo.description);
+        formData.append('highlights', productInfo.highlights);
         formData.append('image', productImage);
 
         const config = {
@@ -56,6 +57,7 @@ const ProductForm = (prop) => {
                             <form className="mt-4  text-center" encType="multipart/form-data">
                                 <input type="text" className="p-2 d-block w-100 mt-2" name='name' value={productInfo.name} onChange={handleChange} placeholder="Name of Product" autoComplete='on' />
                                 <textarea className="p-2 d-block w-100 mt-4" cols="30" name='description' value={productInfo.description} onChange={handleChange} rows="4" placeholder="Description of product" autoComplete='on'></textarea>
+                                <textarea className="p-2 d-block w-100 mt-4" cols="30" name='highlights' value={productInfo.highlights} onChange={handleChange} rows="4" placeholder="highlights of product" autoComplete='on'></textarea>
                                 <input type='text' className="p-2 d-block w-100 mt-2" name='category' value={productInfo.category} onChange={handleChange} placeholder="Category" autoComplete='on' />
                                 <input type="text" className="p-2 d-block w-100 mt-2" name='subCategory' value={productInfo.subCategory} onChange={handleChange} placeholder="Subcategory" autoComplete='on' />
                                 <input type="text" className="p-2 d-block w-100 mt-2" name='variety' value={productInfo.variety} onChange={handleChange} placeholder="Variety" autoComplete='on' />

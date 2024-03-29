@@ -89,6 +89,7 @@ const User = ({ user, updateUserInfo, toggleLoading }) => {
                                                                 }
                                                                 extraData={
                                                                     {
+                                                                        productId: item.ProductSKU.Product.id,
                                                                         total: orderDetail.total,
                                                                         orderedDate: orderDetail.createdAt,
                                                                         quantity: item.quantity,
@@ -128,6 +129,7 @@ const User = ({ user, updateUserInfo, toggleLoading }) => {
                                                     }
                                                     extraData={
                                                         {
+                                                            productId: orderDetail.OrderItems[0].ProductSKU.Product.id,
                                                             total: orderDetail.total,
                                                             orderedDate: orderDetail.createdAt,
                                                             quantity: orderDetail.OrderItems[0].quantity,

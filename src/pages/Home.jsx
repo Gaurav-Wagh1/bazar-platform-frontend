@@ -129,10 +129,10 @@ const Home = () => {
                                 </div>
                                 <div className="card mx-1 card_border shadow mb-5 bg-body-tertiary rounded"
                                     style={{"width":"15rem"}}>
-                                        <img src={"src/assets/images/headphone.jpg"} className="card-img-top" alt="..." />
+                                    <img src={"src/assets/images/oneplus12r.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
-                                            <h5 className="card-title">OnePlus 12R </h5>
-                                            <p className="card-text"> &#x20B9; <span>42,999</span></p>
+                                            <h5 className="card-title">OnePlus 12</h5>
+                                            <p className="card-text mt-5"> &#x20B9; <span>64,099</span></p>
                                         </div>
                                 </div>
                             </div>
@@ -175,8 +175,8 @@ const Home = () => {
                                     style={{"width":"15rem"}}>
                                     <img src={"src/assets/images/oneplus12r.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
-                                            <h5 className="card-title">OnePlus 12R </h5>
-                                            <p className="card-text"> &#x20B9; <span>42,999</span></p>
+                                            <h5 className="card-title">OnePlus 12</h5>
+                                            <p className="card-text mt-5"> &#x20B9; <span>64,099</span></p>
                                         </div>
                                 </div>
                             </div>
@@ -219,8 +219,8 @@ const Home = () => {
                                     style={{"width":"15rem"}}>
                                     <img src={"src/assets/images/oneplus12r.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
-                                            <h5 className="card-title">OnePlus 12R </h5>
-                                            <p className="card-text"> &#x20B9; <span>42,999</span></p>
+                                            <h5 className="card-title">OnePlus 12</h5>
+                                            <p className="card-text mt-5"> &#x20B9; <span>64,099</span></p>
                                         </div>
                                 </div>
                             </div>
@@ -289,8 +289,8 @@ const Home = () => {
                                     style={{"width":"15rem"}}>
                                     <img src={"src/assets/images/oneplus12r.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
-                                            <h5 className="card-title">OnePlus 12R </h5>
-                                            <p className="card-text"> &#x20B9; <span>42,999</span></p>
+                                            <h5 className="card-title">OnePlus 12</h5>
+                                            <p className="card-text mt-5"> &#x20B9; <span>64,099</span></p>
                                         </div>
                                 </div>
                             </div>
@@ -333,8 +333,8 @@ const Home = () => {
                                     style={{"width":"15rem"}}>
                                     <img src={"src/assets/images/oneplus12r.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
-                                            <h5 className="card-title">OnePlus 12R </h5>
-                                            <p className="card-text"> &#x20B9; <span>42,999</span></p>
+                                            <h5 className="card-title">OnePlus 12</h5>
+                                            <p className="card-text mt-5"> &#x20B9; <span>64,099</span></p>
                                         </div>
                                 </div>
                             </div>
@@ -377,8 +377,8 @@ const Home = () => {
                                     style={{"width":"15rem"}}>
                                     <img src={"src/assets/images/oneplus12r.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
-                                            <h5 className="card-title">OnePlus 12R </h5>
-                                            <p className="card-text"> &#x20B9; <span>42,999</span></p>
+                                            <h5 className="card-title">OnePlus 12</h5>
+                                            <p className="card-text mt-5"> &#x20B9; <span>64,099</span></p>
                                         </div>
                                 </div>
                             </div>
@@ -448,8 +448,8 @@ const Home = () => {
                                     style={{"width":"15rem"}}>
                                     <img src={"src/assets/images/oneplus12r.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
-                                            <h5 className="card-title">OnePlus 12R </h5>
-                                            <p className="card-text"> &#x20B9; <span>42,999</span></p>
+                                            <h5 className="card-title">OnePlus 12</h5>
+                                            <p className="card-text mt-5"> &#x20B9; <span>64,099</span></p>
                                         </div>
                                 </div>
                             </div>
@@ -492,8 +492,8 @@ const Home = () => {
                                     style={{"width":"15rem"}}>
                                     <img src={"src/assets/images/oneplus12r.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
-                                            <h5 className="card-title">OnePlus 12R </h5>
-                                            <p className="card-text"> &#x20B9; <span>42,999</span></p>
+                                            <h5 className="card-title">OnePlus 12</h5>
+                                            <p className="card-text mt-5"> &#x20B9; <span>64,099</span></p>
                                         </div>
                                 </div>
                             </div>
@@ -536,8 +536,8 @@ const Home = () => {
                                     style={{"width":"15rem"}}>
                                     <img src={"src/assets/images/oneplus12r.jpg"} className="card-img-top" alt="..."/>
                                         <div className="card-body">
-                                            <h5 className="card-title">OnePlus 12R </h5>
-                                            <p className="card-text"> &#x20B9; <span>42,999</span></p>
+                                            <h5 className="card-title">OnePlus 12</h5>
+                                            <p className="card-text mt-5"> &#x20B9; <span>64,099</span></p>
                                         </div>
                                 </div>
                             </div>

@@ -434,6 +434,20 @@ footer p{
 
 /* -------Electronics page ----------- */
 
+
+/* categoriy */
+@media (max-width: 576px) {
+    .card {
+        width: 100% !important;
+        margin: 0.5rem 0;
+    }
+}
+
+.tc img {
+    width: 10rem;
+}
+
+
 .top-card{
       border: 4px solid black;
 }
@@ -473,3 +487,171 @@ footer p{
     border: 2px solid #1B2141;
     cursor: pointer;
 }
+
+/* description */
+.description p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #1B2141;
+    line-height: 1.6
+}
+
+/* cart */
+.cart button {
+    background-color: #E9E2DA;
+    color: #1B2141;
+    padding: 15px 30px;
+    text-align: center;
+    display: inline-block;
+    font-family: 'Signika Negative', 'Poppins';
+    font-weight: 700;
+    font-size: 19px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 2px solid #1B2141;
+    box-shadow: 4px 8px 13px 0 rgba(0, 0, 0, 0.2), 4px 10px 25px 4px rgba(0, 0, 0, 0.19);
+    transition: all;
+    transition-duration: 1s;
+}
+
+.cart button:hover {
+    background-color: #1B2141;
+    color: #E9E2DA;
+    padding:15px 80px;
+}
+
+span {
+    font-size: 18px;
+}
+
+.my-color {
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+
+label.radio {
+    cursor: pointer
+}
+
+label.radio input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    pointer-events: none
+}
+
+label.radio span {
+    border: 2px solid #8f37aa;
+    display: inline-block;
+    color: #8f37aa;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    text-transform: uppercase;
+    transition: 0.5s all
+}
+
+label.radio .red {
+    background-color: rgb(67, 124, 216);
+    border-color: rgb(67, 124, 216)
+}
+
+label.radio .blue {
+    background-color: black;
+    border-color: black
+}
+
+label.radio .green {
+    background-color: pink;
+    border-color: pink
+}
+
+
+label.radio input:checked+span {
+    color: #fff;
+    position: relative
+}
+
+label.radio input:checked+span::before {
+    opacity: 1;
+    content: '\2713';
+    position: absolute;
+    font-size: 13px;
+    font-weight: bold;
+    left: 4px
+}
+/* storage - radio  */
+label.storage-radio {
+    cursor: pointer
+}
+
+label.storage-radio input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    pointer-events: none
+}
+
+label.storage-radio span {
+    padding: 2px 9px;
+    border: 2px solid #1B2141;
+    display: inline-block;
+    color: #1B2141;
+    border-radius: 3px;
+    text-transform: uppercase
+}
+
+label.storage-radio input:checked+span {
+    border-color: #1B2141;
+    background-color: #1B2141;
+    color: #fff
+}
+
+.sku-storage{
+    padding: 2px 9px;
+    border: 2px solid #1B2141;
+    display: inline-block;
+    color: #1B2141;
+    border-radius: 3px;
+    text-transform: uppercase;
+    background-color: transparent;
+    width: 30%;
+}
+
+.sku-storage:hover{
+    background-color: #1B2141;
+    color: white;
+}
+
+/* single */
+.single,
+.single h2,
+.single h3,
+.single p,
+.single li {
+    font-family: 'Signika Negative', 'Poppins';
+    color: #1B2141;
+}
+
+.single h2,
+.single h3 {
+    font-weight: 700;
+}
+
+.single p,
+.single li {
+    font-weight: 300;
+}
+
+.single img {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.single,
+.small-img {
+    background-color: #E9E2DA;
+}
+
