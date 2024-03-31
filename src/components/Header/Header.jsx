@@ -8,7 +8,6 @@ import axios from "axios";
 
 import brandLogo from "../../assets/images/bazaar-high-resolution-logo-transparent (2).png"
 
-
 const Header = (prop) => {
     const [isLoggedOut, setIsLoggedOut] = useState({ status: false, info: "" });
 
@@ -16,10 +15,7 @@ const Header = (prop) => {
 
     const handleCart = async () => {
         if(!(prop.user.email && prop.user.id)){
-            setIsLoggedOut({ status: true, info: "You are logged out, Log In to see the cart" });
-            setTimeout(() => {
-                setIsLoggedOut({ status: false, info: "" });
-            }, 3000);
+            navigate("/signin");
             return;
         }
         navigate("/cart");
@@ -45,10 +41,7 @@ const Header = (prop) => {
 
     const handleUser = async() => {
         if(!(prop.user.email && prop.user.id)){
-            setIsLoggedOut({ status: true, info: "You are logged out, Log In to see the profile" });
-            setTimeout(() => {
-                setIsLoggedOut({ status: false, info: "" });
-            }, 3000);
+            navigate("/signin")
             return;
         }
         navigate("/user");
@@ -106,16 +99,16 @@ const Header = (prop) => {
                                     <NavLink to="/" className="nav-link">Home</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="Women.html">Women</a>
+                                    <a className="nav-link" href="">Women</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="men.html">Men</a>
+                                    <a className="nav-link" href="">Men</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="kids.html">Kids</a>
+                                    <a className="nav-link" href="">Kids</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="electronics.html">Electronics</a>
+                                    <a className="nav-link" href="">Electronics</a>
                                 </li>
                             </ul>
 

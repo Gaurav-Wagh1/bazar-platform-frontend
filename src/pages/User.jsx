@@ -28,7 +28,9 @@ const User = ({ user, updateUserInfo, toggleLoading }) => {
             toggleLoading(true);
             const apiURL = "api/v1/orders";
             const response = await axios.get(apiURL);
-            setApiResponse(response.data.data);
+            const responseFromServer = response.data.data;
+            responseFromServer.reverse();
+            setApiResponse(responseFromServer);
             toggleLoading(false);
         } catch (error) {
             console.log(error);
@@ -106,6 +108,7 @@ const User = ({ user, updateUserInfo, toggleLoading }) => {
                                                                         paymentDate: orderDetail.PaymentDetail.createdAt,
                                                                     }
                                                                 }
+                                                                orderItems={orderDetail.OrderItems}
                                                                 cartOrder={true}
                                                                 key={item.id}
                                                             />
@@ -146,6 +149,7 @@ const User = ({ user, updateUserInfo, toggleLoading }) => {
                                                             paymentDate: orderDetail.PaymentDetail.createdAt,
                                                         }
                                                     }
+                                                    orderItems={{}}
                                                     cartOrder={false}
                                                     key={orderDetail.OrderItems[0].id}
                                                 />

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "../../assets/css/style.css";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const SingleProduct = ({ toggleLoading }) => {
@@ -11,21 +11,9 @@ const SingleProduct = ({ toggleLoading }) => {
     const [success, setSuccess] = useState({ status: false, message: "" });
 
     const location = useLocation();
+    const navigate = useNavigate();
 
     useEffect(() => {
-        const loadData = async () => {
-            try {
-                toggleLoading(true);
-                const data = location.state;
-                const apiURL = `/api/v1/products/${data.productId}`;
-                const response = await axios.get(apiURL);
-                setProduct(response.data.data);
-                setProductSKU(response.data.data.ProductSKUs[0]);
-                // toggleLoading(false);
-            } catch (error) {
-                console.log(error);
-            }
-        };
         loadData();
     }, []);
 
@@ -49,6 +37,20 @@ const SingleProduct = ({ toggleLoading }) => {
         }
         setCartStatus();
     }, [productSKU]);
+
+    const loadData = async (prodId = undefined) => {
+        try {
+            toggleLoading(true);
+            const data = location.state;
+            const apiURL = `/api/v1/products/${prodId ? prodId : data.productId}`;
+            const response = await axios.get(apiURL);
+            setProduct(response.data.data);
+            setProductSKU(response.data.data.ProductSKUs[0]);
+            toggleLoading(false);
+        } catch (error) {
+            console.log(error);
+        }
+    };
 
     const toggleVariety = (e) => {
         toggleLoading(true);
@@ -91,7 +93,9 @@ const SingleProduct = ({ toggleLoading }) => {
             toggleLoading(false);
         }
     }
-
+    const displayProduct = (prodId) => {
+        loadData(prodId);
+    }
     return (
         <>
             {(success.status) &&
@@ -122,7 +126,7 @@ const SingleProduct = ({ toggleLoading }) => {
                                 <div className="product-details mt-3">
                                     <h3>Product Highlights</h3>
                                     <ul style={{ "listStyleType": "circle" }}>
-                                        <li>{productSKU.highlights && productSKU.highlights}</li>
+                                        {productSKU.highlights && <li>{productSKU.highlights}</li>}
                                         {product.highlights.split(",").map((highlight, index) => {
                                             return <li key={index}>{highlight.trim()}</li>
                                         })}
@@ -146,7 +150,7 @@ const SingleProduct = ({ toggleLoading }) => {
                                 </div>
                                 <div className="cart mb-3 mt-3 d-flex flex-row justify-content-around">
                                     {isCartItem ?
-                                        <button type="button" style={{ "background-color": "#1B2141", "color": "#E9E2DA", "padding": "15px 80px" }} id="addToCart" onClick={toggleCart}> Added to Cart </button> :
+                                        <button type="button" style={{ "backgroundColor": "#1B2141", "color": "#E9E2DA", "padding": "15px 80px" }} id="addToCart" onClick={toggleCart}> Added to Cart </button> :
                                         <button type="button" id="addToCart" onClick={toggleCart}> Add to Cart </button>}
                                 </div>
                                 <div className="description">
@@ -164,45 +168,45 @@ const SingleProduct = ({ toggleLoading }) => {
                         <div id="carouselExampleControls" className="carousel slide" >
                             <div className="carousel-inner">
                                 <div className="carousel-item active">
-                                    <div className="card-wrapper ">
-                                        <div className="card mx-1 card_border shadow mb-5 bg-body-tertiary rounded"
-                                            style={{ "width": " 15rem" }}>
-                                            <img src="pics/iphone15.jpg" className="card-img-top" alt="..." />
+                                    <div className="card-wrapper">
+                                        <div onClick={() => { displayProduct(29) }} className="hover card mx-1 card_border shadow mb-5 bg-body-tertiary rounded"
+                                            style={{ "width": "15rem" }}>
+                                            <img src={"src/assets/images/iphone15.jpg"} className="card-img-top" alt="..." />
                                             <div className="card-body">
                                                 <h5 className="card-title">Apple iPhone 13 (128GB) - Pink</h5>
                                                 <p className="card-text" /> &#x20B9; <span>52,090</span>
                                             </div>
                                         </div>
-                                        <div className="card mx-1  card_border shadow mb-5 bg-body-tertiary rounded"
-                                            style={{ "width": " 15rem" }}>
-                                            <img src="pics/fire-bolt-smartwatch.jpg" className="card-img-top" alt="..." />
+                                        <div onClick={() => { displayProduct(30) }} className="hover card mx-1 card_border shadow mb-5 bg-body-tertiary rounded"
+                                            style={{ "width": "15rem" }}>
+                                            <img src={"src/assets/images/fire-bolt-smartwatch.jpg"} className="card-img-top" alt="..." />
                                             <div className="card-body">
                                                 <h5 className="card-title">boAt Xtend Smart Watch </h5>
                                                 <p className="card-text" /> &#x20B9; <span>999</span>
                                             </div>
                                         </div>
-                                        <div className="card mx-1  card_border shadow mb-5 bg-body-tertiary rounded"
-                                            style={{ "width": " 15rem" }}>
-                                            <img src="pics/boult-audio-earbuds.jpg" className="card-img-top" alt="..." />
+                                        <div onClick={() => { displayProduct(31) }} className="card mx-1  card_border shadow mb-5 bg-body-tertiary rounded"
+                                            style={{ "width": "15rem" }}>
+                                            <img src={"src/assets/images/boult-audio-earbuds.jpg"} className="card-img-top" alt="..." />
                                             <div className="card-body">
                                                 <h5 className="card-title">Boult Audio UFO </h5>
                                                 <p className="card-text" /> &#x20B9; <span>1,199</span>
                                             </div>
                                         </div>
-                                        <div className="card mx-1  card_border shadow mb-5 bg-body-tertiary rounded"
-                                            style={{ "width": " 15rem" }}>
-                                            <img src="pics/headphone.jpg" className="card-img-top" alt="..." />
+                                        <div onClick={() => { displayProduct(32) }} className="card mx-1  card_border shadow mb-5 bg-body-tertiary rounded"
+                                            style={{ "width": "15rem" }}>
+                                            <img src={"src/assets/images/headphone.jpg"} className="card-img-top" alt="..." />
                                             <div className="card-body">
                                                 <h5 className="card-title">Oneplus Bullets Z2 Bluetooth </h5>
                                                 <p className="card-text" /> &#x20B9; <span>1,799</span>
                                             </div>
                                         </div>
-                                        <div className="card mx-1 card_border shadow mb-5 bg-body-tertiary rounded"
-                                            style={{ "width": " 15rem" }}>
-                                            <img src="pics/oneplus12r.jpg" className="card-img-top" alt="..." />
+                                        <div onClick={() => { displayProduct(26) }} className="card mx-1 card_border shadow mb-5 bg-body-tertiary rounded"
+                                            style={{ "width": "15rem" }}>
+                                            <img src={"src/assets/images/oneplus12r.jpg"} className="card-img-top" alt="..." />
                                             <div className="card-body">
-                                                <h5 className="card-title">OnePlus 12R </h5>
-                                                <p className="card-text"> &#x20B9; <span>42,999</span></p>
+                                                <h5 className="card-title">OnePlus 12</h5>
+                                                <p className="card-text mt-5"> &#x20B9; <span>64,099</span></p>
                                             </div>
                                         </div>
                                     </div>

@@ -16,8 +16,7 @@ const Information = (prop) => {
         const { fullName, phoneNumber, address, city, state, country, postalCode } = userData;
         if (fullName && phoneNumber && address && city && state && country && postalCode) {
             try {
-                const userId = prop.user.id;
-                const apiURL = `/api/v1/users/${userId}`;
+                const apiURL = `/api/v1/users`;
                 await axios.patch(apiURL, userData);
                 prop.setUser({ ...prop.user, fullName, phoneNumber, address, city, state, country, postalCode });
                 setInfoError({ flag: false, name: "Success" });

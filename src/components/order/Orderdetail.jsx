@@ -1,20 +1,21 @@
 import { useNavigate } from "react-router-dom";
 import "../../assets/css/order-detail.css"
-const OrderDetail = ({ orderDetailData, extraData, paymentData, cartOrder }) => {
+const OrderDetail = ({ orderDetailData, extraData, paymentData, cartOrder, orderItems }) => {
 
     const navigate = useNavigate();
 
     const displayMoreDetails = () => {
-        if(cartOrder){
+        if (cartOrder) {
             displayMoreCartOrderDetails();
             return;
         }
-        const data = { orderDetailData, extraData, paymentData };
+        const data = { cartOrder, orderDetailData, extraData, paymentData };
         navigate("/extraorderdetails", { state: data });
     }
 
     const displayMoreCartOrderDetails = () => {
-        alert("cart order")
+        const data = { cartOrder, orderDetailData, extraData, paymentData, orderItems };
+        navigate("/extraorderdetails", { state: data });
     }
 
     return (
@@ -30,6 +31,7 @@ const OrderDetail = ({ orderDetailData, extraData, paymentData, cartOrder }) => 
                         <h5 className="fs-6 justify-content-end">Status - {orderDetailData.status === "Booked" ? <b className="text-success">{orderDetailData.status}</b> : <b className="text-warning">{orderDetailData.status}</b>}</h5>
                     </div>
                     <div className="col-md-4 d-flex flex-row justify-content-center align-items-center">
+                        <h5 className="fs-6">Ordered Placed - {new Date(extraData.orderedDate).toLocaleDateString()} </h5>
                         <h5 className="fs-6">Delivery Date - {new Date(orderDetailData.deliveryTime).toLocaleDateString()} </h5>
                     </div>
                 </div>

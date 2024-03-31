@@ -1,12 +1,24 @@
 import { useNavigate } from "react-router-dom";
-import Check from "../Check";
 import "./cart.css"
+import axios from "axios";
 
-const PlaceOrder = ({ total }) => {
+const PlaceOrder = ({ total, toggleLoading }) => {
     const navigate = useNavigate();      
 
-    const handlePlaceOrder = () => {
-        navigate("/check");
+    const handlePlaceOrder = async() => {
+        toggleLoading(true);
+        try {
+            const apiURL = "/api/v1/bookings/cart"
+            await axios.post(apiURL);
+            setTimeout(() => {
+                
+            }, 5000);
+            toggleLoading(false);
+            navigate("/check");
+        } catch (error) {
+            toggleLoading(false);
+            console.log(error);
+        }
     }
 
     return (

@@ -87,7 +87,7 @@ const Cart = ({ toggleLoading }) => {
                             }
                             <Final total={finalData.total} quantity={finalData.quantity} />
                             {cartItems.length &&
-                                <PlaceOrder total={finalData.total} />
+                                <PlaceOrder total={finalData.total} toggleLoading={toggleLoading} />
                             }
                         </div>
                     </div>
