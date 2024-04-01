@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import "../assets/css/style.css"
-
 const Home = () => {
 
     const navigate = useNavigate();
@@ -8,7 +7,6 @@ const Home = () => {
         const data = { productId: prodId };
         navigate("/productdetail", { state: data });
     }
-
     return (
         <>
             {/* <!-- section 3 slider --> */}

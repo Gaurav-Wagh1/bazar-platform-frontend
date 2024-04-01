@@ -115,7 +115,7 @@ const User = ({ user, updateUserInfo, toggleLoading }) => {
                                                         )
                                                     });
                                                     return (
-                                                        <div className="cartOrders border">
+                                                        <div className="cartOrders border" key={orderDetail.id}>
                                                             {allItems}
                                                         </div>
                                                     )

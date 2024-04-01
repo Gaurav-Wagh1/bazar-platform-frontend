@@ -10,7 +10,6 @@ const Layout = ({isLoading, toggleLoading, user, updateUserInfo}) => {
             <Header toggleLoading={toggleLoading} user={user} updateUserInfo={updateUserInfo}/>
             <Outlet />
             <Footer />
-            {/* <img src={intro} alt="" /> */}
         </>
     );
 }

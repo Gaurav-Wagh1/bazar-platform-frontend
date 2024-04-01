@@ -59,7 +59,6 @@ const SingleProduct = ({ toggleLoading }) => {
             return item.variety === currentVarietyText;
         });
         setProductSKU(nextVariety[0]);
-        console.log(productSKU);
         toggleLoading(false)
     }
 

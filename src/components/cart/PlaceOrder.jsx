@@ -3,18 +3,36 @@ import "./cart.css"
 import axios from "axios";
 
 const PlaceOrder = ({ total, toggleLoading }) => {
-    const navigate = useNavigate();      
+    const navigate = useNavigate();
 
-    const handlePlaceOrder = async() => {
+    const handlePlaceOrder = async () => {
         toggleLoading(true);
         try {
             const apiURL = "/api/v1/bookings/cart"
-            await axios.post(apiURL);
+            const axiosResponse = await axios.post(apiURL);
             setTimeout(() => {
-                
+
             }, 5000);
             toggleLoading(false);
-            navigate("/check");
+            const response = axiosResponse.data.data;
+            const data = {
+                orderDetailData: {
+                    deliveryTime: response.orderDetail.deliveryTime
+                },
+                extraData: {
+                    orderedDate: response.orderDetail.createdAt,
+                },
+                paymentData: {
+                    transactionId: response.paymentResponse.transactionId,
+                    paymentStatus: response.paymentResponse.status,
+                    amount: response.paymentResponse.amount,
+                    paymentInformation: response.paymentResponse.paymentInfo,
+                    paymentDate: response.paymentResponse.createdAt,
+                },
+                orderItems: response.orderItems,
+                cartOrder: true
+            };
+            navigate("/check", { state: data });
         } catch (error) {
             toggleLoading(false);
             console.log(error);

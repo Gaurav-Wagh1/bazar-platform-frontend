@@ -25,8 +25,8 @@ const ExtraOrderDetails = ({ user, toggleLoading }) => {
         toggleLoading(false);
     }, []);
 
-    const displayProduct = () => {
-        const data = { productId: orderData.extraData.productId };
+    const displayProduct = (prodId = orderData.extraData.productId) => {
+        const data = { productId: prodId };
         navigate("/productdetail", { state: data });
     }
 
@@ -36,27 +36,31 @@ const ExtraOrderDetails = ({ user, toggleLoading }) => {
             {orderItems.length > 0
                 ?
                 <div className="container">
-                    <div className="row mt-3 bg-white rounded" onClick={displayProduct}>
+                    <div className="row mt-3 bg-white rounded">
                         <div className="row px-4 py-3" >
                             <h4>Product Details</h4>
                             <hr />
                             {orderItems.map((item) => {
-                                return <>
-                                    <div className="hover col-md-3 d-flex flex-row justify-content-center align-items-center" key={item.id}>
-                                        <img id="product-image" src={item.ProductSKU.image} alt={`${item.ProductSKU.Product.name}${item.ProductSKU.variety}`} />
+                                return (
+                                    <div key={item.id}>
+                                        <div onClick={() => { displayProduct(item.ProductSKU.Product.id) }} className="d-flex flex-row" >
+                                            <div className="hover col-md-3 d-flex flex-row justify-content-center align-items-center" >
+                                                <img id="product-image" src={item.ProductSKU.image} alt={`${item.ProductSKU.Product.name}${item.ProductSKU.variety}`} />
+                                            </div>
+                                            <div className="hover col-md-5 d-flex flex-column justify-content-center align-items-center">
+                                                <h5 className="justify-content-start mt-4 mt-lg-0">{item.ProductSKU.Product.name}</h5>
+                                                <h5 className="justify-content-center">{item.ProductSKU.variety}</h5><br />
+                                                <h5 className="fs-6 justify-content-end">Quantity - <strong>{item.quantity}</strong></h5>
+                                            </div>
+                                            <div className="hover col-md-4 d-flex flex-column align-items-center">
+                                                <h5 className="fs-6 mt-2">Price - <strong>{item.ProductSKU.price}</strong>/-</h5>
+                                                <h5 className="fs-6 my-4"><strong>Order Placed</strong> -<br /> {new Date(orderData.extraData.orderedDate).toUTCString()} </h5>
+                                                <h5 className="fs-6 "><strong>Delivery Date</strong> -<br /> {new Date(orderData.orderDetailData.deliveryTime).toUTCString()} </h5>
+                                            </div>
+                                        </div>
+                                        <hr />
                                     </div>
-                                    <div className="hover col-md-5 d-flex flex-column justify-content-center align-items-center">
-                                        <h5 className="justify-content-start mt-4 mt-lg-0">{item.ProductSKU.Product.name}</h5>
-                                        <h5 className="justify-content-center">{item.ProductSKU.variety}</h5><br />
-                                        <h5 className="fs-6 justify-content-end">Quantity - <strong>{item.quantity}</strong></h5>
-                                    </div>
-                                    <div className="hover col-md-4 d-flex flex-column align-items-center">
-                                        <h5 className="fs-6 mt-2">Price - <strong>{item.ProductSKU.price}</strong>/-</h5>
-                                        <h5 className="fs-6 my-4"><strong>Order Placed</strong> -<br /> {new Date(orderData.extraData.orderedDate).toUTCString()} </h5>
-                                        <h5 className="fs-6 "><strong>Delivery Date</strong> -<br /> {new Date(orderData.orderDetailData.deliveryTime).toUTCString()} </h5>
-                                    </div>
-                                    <hr />
-                                </>
+                                )
                             })}
                         </div>
                     </div>
