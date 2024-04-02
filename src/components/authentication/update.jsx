@@ -25,9 +25,14 @@ const Update = (prop) => {
             setInfoError({ flag: false, name: "Success" });
             setTimeout(() => {
                 setInfoError({ name: "", flag: false });
-                navigate("/user");
+                if (prop.message) {
+                    navigate("/cart")
+                }
+                else {
+                    navigate("/user");
+                }
             }, 1000);
-            prop.setUpdate(false);
+            prop.setUpdate({ status: false, message: "" });
         } catch (error) {
             prop.toggleLoading(false);
             console.log(error);
@@ -76,7 +81,7 @@ const Update = (prop) => {
                     <div className="main-container col-md-6 p-0">
                         <div className="upper p-4">
                             <h1 className=".display-4">Update information</h1>
-                            <h6 className='text-danger'>Update those details only which you want to update</h6>
+                            <h6 className='text-danger'>{prop.message ? prop.message : "Update those details only which you want to update"}</h6>
                             <form className="mt-4  text-center">
                                 <input type="text" className="p-2 d-block w-100 mt-2" name='fullName' defaultValue={prop.user.fullName} value={userData.fullName} onChange={handleChange} placeholder="Full Name (First-name Last-Name format)" autoComplete='on' />
                                 <input type="email" className=" .form-control-plaintext p-2 d-block w-100 mt-2 float-left" id='em' placeholder="Email" defaultValue={prop.user.email} readOnly />
@@ -88,7 +93,7 @@ const Update = (prop) => {
                                 <input type="text" className="p-2 d-block w-100 mt-2" name='postalCode' defaultValue={prop.user.postalCode} value={userData.postalCode} onChange={handleChange} placeholder="Postal Code" autoComplete='on' />
                             </form>
                         </div>
-                        <button className="btn btn-outline-secondary p-3 font-weight-bolder w-50 text-left" id="sign-in" onClick={()=>{prop.setUpdate(false)}}>Cancel</button>
+                        <button className="btn btn-outline-secondary p-3 font-weight-bolder w-50 text-left" id="sign-in" onClick={() => { prop.setUpdate(false) }}>Cancel</button>
                         <button className="btn btn-outline-secondary p-3 font-weight-bolder w-50 text-right float-right" id="confirm" onClick={handleSubmit}>Confirm</button>
                     </div>
                     <div className="col-md-3"></div>

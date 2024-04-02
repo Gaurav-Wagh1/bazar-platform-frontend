@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import "./cart.css"
 import axios from "axios";
 
-const PlaceOrder = ({ total, toggleLoading }) => {
+const PlaceOrder = ({ total, toggleLoading, setUpdate }) => {
     const navigate = useNavigate();
 
     const handlePlaceOrder = async () => {
@@ -17,10 +17,12 @@ const PlaceOrder = ({ total, toggleLoading }) => {
             const response = axiosResponse.data.data;
             const data = {
                 orderDetailData: {
-                    deliveryTime: response.orderDetail.deliveryTime
+                    deliveryTime: response.orderDetail.deliveryTime,
+                    status: response.orderDetail.status
                 },
                 extraData: {
                     orderedDate: response.orderDetail.createdAt,
+                    address: response.orderDetail.address,
                 },
                 paymentData: {
                     transactionId: response.paymentResponse.transactionId,
@@ -35,6 +37,10 @@ const PlaceOrder = ({ total, toggleLoading }) => {
             navigate("/check", { state: data });
         } catch (error) {
             toggleLoading(false);
+            if(error.response.data.error === "Invalid contact field"){
+                console.log(error.response.data.message);
+                setUpdate({status:true, message:"Each contact information need to be filled"});
+            }
             console.log(error);
         }
     }

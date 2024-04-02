@@ -8,10 +8,8 @@ import OrderDetail from "../components/order/Orderdetail";
 import axios from "axios";
 
 const User = ({ user, updateUserInfo, toggleLoading }) => {
-    const [update, setUpdate] = useState(false);
+    const [update, setUpdate] = useState({status:false, message:""});
     const [apiResponse, setApiResponse] = useState([]);
-
-    const navigate = useNavigate();
 
     const Link = ({ id, children, title }) => (
         <OverlayTrigger overlay={<Tooltip id={id}>{title}</Tooltip>}>
@@ -20,7 +18,7 @@ const User = ({ user, updateUserInfo, toggleLoading }) => {
     );
 
     const handleUpdate = () => {
-        setUpdate(true);
+        setUpdate({status:true});
     }
 
     const displayOrders = async () => {
@@ -39,8 +37,8 @@ const User = ({ user, updateUserInfo, toggleLoading }) => {
 
     return (
         <>
-            {update && <Update user={user} setUpdate={setUpdate} updateUserInfo={updateUserInfo} toggleLoading={toggleLoading} />}
-            {!update &&
+            {update.status && <Update user={user} setUpdate={setUpdate} updateUserInfo={updateUserInfo} toggleLoading={toggleLoading} />}
+            {!update.status &&
                 <div className="container p-5">
                     <div className="bg-white  user-div rounded">
                         <div className="user-name px-5 py-4">
@@ -96,7 +94,8 @@ const User = ({ user, updateUserInfo, toggleLoading }) => {
                                                                         orderedDate: orderDetail.createdAt,
                                                                         quantity: item.quantity,
                                                                         price: item.ProductSKU.price,
-                                                                        productDescription: item.ProductSKU.Product.description
+                                                                        productDescription: item.ProductSKU.Product.description,
+                                                                        address: orderDetail.address
                                                                     }
                                                                 }
                                                                 paymentData={
@@ -137,7 +136,8 @@ const User = ({ user, updateUserInfo, toggleLoading }) => {
                                                             orderedDate: orderDetail.createdAt,
                                                             quantity: orderDetail.OrderItems[0].quantity,
                                                             price: orderDetail.OrderItems[0].ProductSKU.price,
-                                                            productDescription: orderDetail.OrderItems[0].ProductSKU.Product.description
+                                                            productDescription: orderDetail.OrderItems[0].ProductSKU.Product.description,
+                                                            address: orderDetail.address
                                                         }
                                                     }
                                                     paymentData={
