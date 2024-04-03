@@ -59,7 +59,7 @@ const Header = (prop) => {
                     </div>
                 )
             }
-            <header>
+            <header className="sticky-navbar">
                 {/* <!-- section 1     nav-top--> */}
                 <div className="top-navbar">
                     <div className="top-icons">

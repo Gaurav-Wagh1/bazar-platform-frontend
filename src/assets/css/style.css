@@ -5,7 +5,7 @@
     padding: 0;
     margin: 0;
     border: border-box;
-    font-family:'Signika+Negative','Poppins';
+    font-family:'Signika Negative','Poppins';
     color: black;
 }
 
@@ -14,7 +14,7 @@ body {
 }
 
 header{
-    font-family: 'Signika+Negative';
+    font-family: 'Signika Negative';
     font-weight: 700;
 }
 
@@ -39,6 +39,12 @@ h5{
 }
 
 /* navbar */
+.sticky-navbar{
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+}
+
 .top-navbar{
     width: 100%;
     height: 7vh;
@@ -483,7 +489,7 @@ footer p{
 
 .card:hover{
     /* border: 2px solid #E9E2DA; */
-    transform: scale(1.05);
+    transform: scale(1.02);
     border: 2px solid #1B2141;
     cursor: pointer;
 }
@@ -655,3 +661,78 @@ label.storage-radio input:checked+span {
     background-color: #E9E2DA;
 }
 
+
+
+/* for filter of search */
+
+
+/* ---------- Filter ---------- */
+.mobile-product {
+    font-family: 'Signika Negative', 'Poppins';
+    color: #1B2141;
+    background-color: #E9E2DA;
+    padding-top: 1rem;
+}
+.filter, .fil{
+    text-align: start;  
+    background-color: #E9E2DA; 
+}
+
+.filter-icon {
+    display: none; /* Initially hide the filter icon */
+    cursor: pointer;
+}
+
+.filter span{
+    text-decoration: none;
+}
+
+.filter .card-img-top{
+    width: 10rem;
+    height: 15rem;
+}
+
+.colum2{
+    justify-content: space-evenly;
+}
+
+.custom-btn {
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #1B2141;
+    color: #E9E2DA;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+
+}
+
+.custom-btn:hover {
+    background-color: #E9E2DA;
+    color: #1B2141;
+}
+
+.filter-list:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.sticky-container{
+    position: sticky;
+    top: 0;
+}
+
+.filter-icon-fw{
+    position: sticky;
+    top: 25vh;
+    z-index: 10000;
+}
+
+.filter-medium{
+    background-color: rgba(255, 255, 255, 0.8);
+    position: fixed;
+    z-index: 10000;
+    height: 100vh;
+}

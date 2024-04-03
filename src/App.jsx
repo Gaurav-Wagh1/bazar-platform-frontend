@@ -1,3 +1,4 @@
+import axios from "axios";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 
@@ -14,12 +15,13 @@ import User from "./pages/User.jsx";
 import Check from "./components/Check.jsx";
 import ExtraOrderDetails from "./components/order/ExtraOrderDetails.jsx";
 import SingleProduct from "./components/product/SingleProduct.jsx";
-import axios from "axios";
+import Products from "./pages/Products.jsx";
+import Filter from "./components/filter/Filter.jsx";
 
 const App = () => {
 
-  useEffect(()=>{
-    const fetchUserData = async() => {
+  useEffect(() => {
+    const fetchUserData = async () => {
       const apiURL = "/api/v1/users";
       try {
         const axiosResponse = await axios.get(apiURL);
@@ -55,13 +57,15 @@ const App = () => {
             <Route path='info' element={<Information user={user} setUser={setUser} toggleLoading={toggleLoading} title={"Tell something more about you"} description={""} />} />
             <Route path='signin' element={<Signin user={user} updateUserInfo={updateUserInfo} toggleLoading={toggleLoading} />} />
             <Route path='forgot' element={<ForgotPassword user={user} setUser={setUser} />} />
-            <Route path='cart' element={<Cart user={user} toggleLoading={toggleLoading} updateUserInfo={updateUserInfo}/>} />
+            <Route path='cart' element={<Cart user={user} toggleLoading={toggleLoading} updateUserInfo={updateUserInfo} />} />
             <Route path='user' element={<User user={user} updateUserInfo={updateUserInfo} toggleLoading={toggleLoading} />} />
             <Route path="extraorderdetails" element={<ExtraOrderDetails user={user} toggleLoading={toggleLoading} />} />
             <Route path='products' element={<ProductForm user={user} setUser={setUser} />} />
+            <Route path='search-for-products' element={< Products />} />
             <Route path='productdetail' element={<SingleProduct toggleLoading={toggleLoading} />} />
             <Route path='loader' element={<Loader />} />
             <Route path='check' element={<Check />} />
+            <Route path='filter' element={<Filter />} />
           </Route>
         </Routes>
       </BrowserRouter>
