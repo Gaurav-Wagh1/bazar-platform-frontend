@@ -688,8 +688,7 @@ label.storage-radio input:checked+span {
 }
 
 .filter .card-img-top{
-    width: 10rem;
-    height: 15rem;
+    max-height: 50%;
 }
 
 .colum2{
@@ -735,4 +734,8 @@ label.storage-radio input:checked+span {
     position: fixed;
     z-index: 10000;
     height: 100vh;
+}
+
+.fixed-height-card{
+    height: auto;
 }

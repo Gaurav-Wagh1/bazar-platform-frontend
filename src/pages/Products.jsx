@@ -1,15 +1,39 @@
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "../assets/css/style.css"
 import image from "../assets/images/laptop1.jpg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
-const Product = () => {
+const Product = ({ toggleLoading }) => {
     const [active, setActive] = useState("brand");
     const [filterMedium, setFilterMedium] = useState(false);
-    const [cartIcon, setCartIcon] = useState(false);
+    const [cartIcon, setCartIcon] = useState(undefined);
+    const [productsDetails, setProductsDetails] = useState([]);
 
     const navigate = useNavigate();
-    
+    const location = useLocation();
+
+    useEffect(() => {
+        toggleLoading(true);
+        const searchData = location.state;
+        const fetchData = async () => {
+            try {
+                const apiURL = `/api/v1/products?name=${searchData.value}`;
+                const axiosResponse = await axios.get(apiURL);
+                toggleLoading(false);
+                setProductsDetails(axiosResponse.data.data);
+            } catch (error) {
+                toggleLoading(false)
+                console.log(error);
+            }
+        }
+        fetchData();
+    }, [location]);
+
+    const displaySingleProduct = (productId, productSkuId) => {
+        navigate("/productdetail", { state: { productId, productSkuId } });
+    }
+
     return (
         <>
             {filterMedium && <div className="container-fluid filter-medium">
@@ -237,20 +261,26 @@ const Product = () => {
                     </div>
                     <div className="col-lg-10 col-12">
                         <div className="row d-flex flex-row justify-content-evenly align-items-start flex-wrap">
-                            <div className="card card_border shadow mb-5 bg-body-tertiary rounded" style={{ "width": "17rem" }}>
-                                <img src={image} className="card-img-top" alt="..." />
-                                <div className="card-body">
-                                    <h5 className="card-title">Redmi Note 13 5G (Stealth Black, 12GB RAM, 256GB Storage) |
-                                        5G Ready
-                                    </h5>
-                                    <p className="card-text" />
-                                    <p></p>
-                                    <h3>&#x20B9; 21,499</h3>
-                                    <p><span><s>&#x20B9;24,799</s></span></p>
-                                    <button className="mt-auto custom-btn">Buy Now</button>
-                                    <button onMouseEnter={() => { setCartIcon(true) }} onMouseLeave={() => { setCartIcon(false) }} className=" mt-2 custom-btn">Add to Cart {cartIcon ? <i className="fa-solid fa-cart-shopping" style={{ "color": "#1b2141" }}></i> : <i className="fa-solid fa-cart-shopping" style={{ "color": "#ffffff" }}></i>}</button>
-                                </div>
-                            </div>
+                            {productsDetails.length > 0 &&
+                                productsDetails.map((product) => {
+                                    const productsToDisplay = product.ProductSKUs.map((productSKU) => {
+                                        return (
+                                            <div className="card card_border shadow mb-5 bg-body-tertiary rounded" style={{ "width": "17rem" }} key={productSKU.id}>
+                                                <img src={productSKU.image} onClick={() => displaySingleProduct(product.id, productSKU.id)} className="card-img-top" alt="..." />
+                                                <div className="card-body" onClick={() => displaySingleProduct(product.id, productSKU.id)}>
+                                                    <h5 className="card-title">{product.name} | {productSKU.variety}</h5>
+                                                    <p className="card-text" />
+                                                    <p></p>
+                                                    <h3>&#x20B9; {productSKU.price}</h3>
+                                                    <p><span><s>&#x20B9; {+productSKU.price + (+productSKU.price * 0.1)}</s></span></p>
+                                                    <button onMouseEnter={() => { setCartIcon(productSKU.id) }} onMouseLeave={() => { setCartIcon(undefined) }} className=" mt-2 custom-btn">Add to Cart {cartIcon === productSKU.id ? <i className="fa-solid fa-cart-shopping" style={{ "color": "#1b2141" }}></i> : <i className="fa-solid fa-cart-shopping" style={{ "color": "#ffffff" }}></i>}</button>
+                                                </div>
+                                            </div>
+                                        )
+                                    })
+                                    return productsToDisplay;
+                                })
+                            }
                         </div>
                     </div>
                 </div>

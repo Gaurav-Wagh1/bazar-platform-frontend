@@ -16,7 +16,6 @@ import Check from "./components/Check.jsx";
 import ExtraOrderDetails from "./components/order/ExtraOrderDetails.jsx";
 import SingleProduct from "./components/product/SingleProduct.jsx";
 import Products from "./pages/Products.jsx";
-import Filter from "./components/filter/Filter.jsx";
 
 const App = () => {
 
@@ -61,11 +60,10 @@ const App = () => {
             <Route path='user' element={<User user={user} updateUserInfo={updateUserInfo} toggleLoading={toggleLoading} />} />
             <Route path="extraorderdetails" element={<ExtraOrderDetails user={user} toggleLoading={toggleLoading} />} />
             <Route path='products' element={<ProductForm user={user} setUser={setUser} />} />
-            <Route path='search-for-products' element={< Products />} />
+            <Route path='search-for-products' element={< Products toggleLoading={toggleLoading} />} />
             <Route path='productdetail' element={<SingleProduct toggleLoading={toggleLoading} />} />
             <Route path='loader' element={<Loader />} />
             <Route path='check' element={<Check />} />
-            <Route path='filter' element={<Filter />} />
           </Route>
         </Routes>
       </BrowserRouter>

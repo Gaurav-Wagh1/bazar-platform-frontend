@@ -9,6 +9,7 @@ const SingleProduct = ({ toggleLoading }) => {
     const [productSKU, setProductSKU] = useState({});
     const [isCartItem, setIsCartItem] = useState(false);
     const [success, setSuccess] = useState({ status: false, message: "" });
+    const [cartIcon, setCartIcon] = useState(false);
 
     const location = useLocation();
     const navigate = useNavigate();
@@ -45,7 +46,15 @@ const SingleProduct = ({ toggleLoading }) => {
             const apiURL = `/api/v1/products/${prodId ? prodId : data.productId}`;
             const response = await axios.get(apiURL);
             setProduct(response.data.data);
-            setProductSKU(response.data.data.ProductSKUs[0]);
+            if(data.productSkuId){
+                const choosenProductSKU = response.data.data.ProductSKUs.filter((sku)=>{
+                    return sku.id === data.productSkuId;
+                });
+                setProductSKU(choosenProductSKU[0]);
+            }
+            else{
+                setProductSKU(response.data.data.ProductSKUs[0]);
+            }
             toggleLoading(false);
         } catch (error) {
             console.log(error);
@@ -149,8 +158,9 @@ const SingleProduct = ({ toggleLoading }) => {
                                 </div>
                                 <div className="cart mb-3 mt-3 d-flex flex-row justify-content-around">
                                     {isCartItem ?
-                                        <button type="button" style={{ "backgroundColor": "#1B2141", "color": "#E9E2DA", "padding": "15px 80px" }} id="addToCart" onClick={toggleCart}> Added to Cart </button> :
-                                        <button type="button" id="addToCart" onClick={toggleCart}> Add to Cart </button>}
+                                        <button type="button" style={{ "backgroundColor": "#1B2141", "color": "#E9E2DA", "padding": "15px 80px" }} id="addToCart" onClick={toggleCart}> Added to Cart <i className="fa-solid fa-cart-shopping" style={{ "color": "#ffffff" }}></i> </button>
+                                         :
+                                        <button type="button" id="addToCart" onClick={toggleCart} onMouseEnter={() => { setCartIcon(true) }} onMouseLeave={() => { setCartIcon(false) }}> Add to Cart  {cartIcon ? <i className="fa-solid fa-cart-shopping" style={{ "color": "#ffffff" }}></i> : <i className="fa-solid fa-cart-shopping" style={{ "color": "#1b2141" }}></i>} </button>}
                                 </div>
                                 <div className="description">
                                     <h3>Description</h3>

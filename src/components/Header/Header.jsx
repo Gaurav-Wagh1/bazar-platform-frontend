@@ -10,11 +10,12 @@ import brandLogo from "../../assets/images/bazaar-high-resolution-logo-transpare
 
 const Header = (prop) => {
     const [isLoggedOut, setIsLoggedOut] = useState({ status: false, info: "" });
+    const [searchField, setSearchField] = useState("");
 
     const navigate = useNavigate();
 
     const handleCart = async () => {
-        if(!(prop.user.email && prop.user.id)){
+        if (!(prop.user.email && prop.user.id)) {
             navigate("/signin");
             return;
         }
@@ -39,12 +40,22 @@ const Header = (prop) => {
         prop.updateUserInfo({});
     }
 
-    const handleUser = async() => {
-        if(!(prop.user.email && prop.user.id)){
+    const handleUser = async () => {
+        if (!(prop.user.email && prop.user.id)) {
             navigate("/signin")
             return;
         }
         navigate("/user");
+    }
+
+    const handleSearch = async (e) => {
+        e.preventDefault();
+        if (!searchField) {
+            return;
+        }
+        const data = { name: "name", value: searchField.trim() };
+        setSearchField("");
+        navigate("/search-for-products", { state: data });
     }
 
     return (
@@ -113,8 +124,8 @@ const Header = (prop) => {
                             </ul>
 
                             <form className="d-flex">
-                                <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search" />
-                                <button className="btn btn-outline-success" type="submit" id="search-btn">Search</button>
+                                <input className="form-control me-2" type="search" placeholder="Search" value={searchField} onChange={(e) => setSearchField(e.target.value)} aria-label="Search" id="search" />
+                                <button className="btn btn-outline-success" type="submit" id="search-btn" onClick={handleSearch}>Search</button>
                             </form>
                         </div>
                     </div>
