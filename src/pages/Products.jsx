@@ -15,13 +15,21 @@ const Product = ({ toggleLoading }) => {
 
     useEffect(() => {
         toggleLoading(true);
-        const searchData = location.state;
+        let apiURL = `/api/v1/products`;
+        const filterForSearch = location.state;
+
+        if (filterForSearch.name) {
+            apiURL += `?name=${filterForSearch.name}`
+        }
+        if (filterForSearch.subcategory) {
+            apiURL += apiURL.includes("?") ? `&subcategory=${filterForSearch.subcategory}` : `?subcategory=${filterForSearch.subcategory}`;
+
+        }
         const fetchData = async () => {
             try {
-                const apiURL = `/api/v1/products?name=${searchData.value}`;
                 const axiosResponse = await axios.get(apiURL);
-                toggleLoading(false);
                 setProductsDetails(axiosResponse.data.data);
+                toggleLoading(false);
             } catch (error) {
                 toggleLoading(false)
                 console.log(error);

@@ -32,7 +32,6 @@ const Header = (prop) => {
             setTimeout(() => {
                 setIsLoggedOut({ status: false, info: "" });
             }, 3000);
-            navigate("/");
         } catch (error) {
             prop.toggleLoading(false);
             console.log(error);
@@ -48,14 +47,48 @@ const Header = (prop) => {
         navigate("/user");
     }
 
+    function makeFilter(str) {
+
+        function createName(category, attributes) {
+            if (attributes.length > 1) {
+                const indexOfSub = attributes.indexOf(category);
+                const name = attributes.filter((element, index) => index !== indexOfSub).toString().replace(/,/g, ' ');
+                return name.trim();
+            }
+            return "";
+        }
+
+        str = str.trim().replace(/\s+/g, ' ').toLowerCase();     // to remove extra white spaces between words
+        const filter = {};
+        const attributes = str.split(" ");
+        const category = ["mobile", "phones", "mobiles", "phone", "laptop", "laptops", "tv", "television", "televisions"].filter((item) => attributes.includes(item))[0];
+
+        if (category === "mobile" || category === "phones" || category === "mobiles" || category === "phone") {
+            filter.subcategory = "mobiles";
+            filter.name = createName(category, attributes);
+        }
+        else if (category === "laptop" || category === "laptops") {
+            filter.subcategory = "laptops";
+            filter.name = createName(category, attributes);
+        }
+        else if (category === "tv" || category === "television" || category === "televisions") {
+            filter.subcategory = "televisions";
+            filter.name = createName(category, attributes);
+        }
+        else {
+            filter.name = str;
+        }
+        return filter;
+    }
+
     const handleSearch = async (e) => {
         e.preventDefault();
         if (!searchField) {
             return;
         }
-        const data = { name: "name", value: searchField.trim() };
+        const filter = makeFilter(searchField);
         setSearchField("");
-        navigate("/search-for-products", { state: data });
+        navigate("/search-for-products", { state: filter });
     }
 
     return (
@@ -97,7 +130,7 @@ const Header = (prop) => {
                 {/* <!-- SECTION 2      nav-lower --> */}
                 <nav className="navbar navbar-expand-lg" id="navbar">
                     <div className="container-fluid">
-                        <a className="navbar-brand logo" href="#"><img src={brandLogo} alt="" width="180px" /></a>
+                        <Link className="navbar-brand logo" to={"/"}><img src={brandLogo} alt="" width="180px" /></Link>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
