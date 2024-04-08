@@ -118,12 +118,12 @@ const SingleProduct = ({ toggleLoading }) => {
             }
             {product.name &&
                 <>
-                    <div className=" single container-fluid mt-3 mb-5 mx-3 ml-9">
+                    <div className=" single container-fluid mt-3 mb-5 mx-3 ml-9 bg-white">
                         <div className="row pt-3 px-3 pb-3">
                             <div className="card-wrapper col-lg-4 col-md-6 col-sm-12 ">
                                 <div className="big-img">
                                     <img src={productSKU.image} className="img-fluid" id="bigImg"
-                                        style={{ "border": "1px solid #1B2141" }} alt="iPhone Image" />
+                                        /*style={{ "border": "1px solid #1B2141" }}*/ alt="iPhone Image" />
                                     <div className="row small-img mx-0.5 mt-2 mb-2"> {/*<!-- Added mt-3 className for top margin -->*/}
                                     </div>
                                 </div>
