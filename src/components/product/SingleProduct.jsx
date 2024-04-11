@@ -46,13 +46,13 @@ const SingleProduct = ({ toggleLoading }) => {
             const apiURL = `/api/v1/products/${prodId ? prodId : data.productId}`;
             const response = await axios.get(apiURL);
             setProduct(response.data.data);
-            if(data.productSkuId){
-                const choosenProductSKU = response.data.data.ProductSKUs.filter((sku)=>{
+            if (data.productSkuId) {
+                const choosenProductSKU = response.data.data.ProductSKUs.filter((sku) => {
                     return sku.id === data.productSkuId;
                 });
                 setProductSKU(choosenProductSKU[0]);
             }
-            else{
+            else {
                 setProductSKU(response.data.data.ProductSKUs[0]);
             }
             toggleLoading(false);
@@ -118,18 +118,19 @@ const SingleProduct = ({ toggleLoading }) => {
             }
             {product.name &&
                 <>
-                    <div className=" single container-fluid mt-3 mb-5 mx-3 ml-9 bg-white">
+                    <div className=" single container-fluid bg-white mt-3">
                         <div className="row pt-3 px-3 pb-3">
-                            <div className="card-wrapper col-lg-4 col-md-6 col-sm-12 ">
-                                <div className="big-img">
+                            <div className="card-wrapper col-lg-4 col-sm-12 ">
+                                <div className="big-img sticky-md">
                                     <img src={productSKU.image} className="img-fluid" id="bigImg"
                                         /*style={{ "border": "1px solid #1B2141" }}*/ alt="iPhone Image" />
                                     <div className="row small-img mx-0.5 mt-2 mb-2"> {/*<!-- Added mt-3 className for top margin -->*/}
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-lg-7 col-md-6 col-sm-12 mx-4 ">
-                                <h2 className="mt-3 mt-md-0 mb-4 text">{product.name}</h2>
+                            <div className="col-lg-7 ">
+                                <h2 className="mt-3 mt-md-0 text">{product.name}</h2>
+                                <h5 className="mb-4">{productSKU.variety}</h5>
                                 <h3 className="card-text"> &#x20B9; {productSKU.price} /- <br /> <span><del>&#x20B9; {+productSKU.price + (+productSKU.price * 0.1)}</del></span></h3>
                                 <div className="product-details mt-3">
                                     <h3>Product Highlights</h3>
@@ -144,23 +145,24 @@ const SingleProduct = ({ toggleLoading }) => {
                                 <div className="details row mt-4">
                                     <div className="storage col-12">
                                         <h3>Varieties</h3>
-                                        <div className="productsku d-flex flex-row justify-content-start">
+                                        <div className="productsku d-flex flex-column flex-md-row justify-content-start">
                                             {product.ProductSKUs.map((item, index) => {
-                                                return <button onClick={toggleVariety} style={{ "backgroundColor": item === productSKU ? "#1B2141" : "transparent", "color": item === productSKU ? "white" : "#1B2141" }} className="sku-storage fs-6 text-center mx-2 font-weight-bold" key={index}>{item.variety}</button>
+                                                return <button onClick={toggleVariety} style={{ "backgroundColor": item === productSKU ? "#1B2141" : "transparent", "color": item === productSKU ? "white" : "#1B2141" }} className="w-100 sku-storage fs-6 text-center mx-2 my-2 my-md-0 font-weight-bold" key={index}>{item.variety}</button>
                                             })
                                             }
                                         </div>
                                     </div>
                                 </div>
-
-                                <div className="cart mb-3 mt-3 d-flex flex-row justify-content-around">
-                                    <button type="button" id="buyNow"> Buy Now </button>
-                                </div>
-                                <div className="cart mb-3 mt-3 d-flex flex-row justify-content-around">
-                                    {isCartItem ?
-                                        <button type="button" style={{ "backgroundColor": "#1B2141", "color": "#E9E2DA", "padding": "15px 80px" }} id="addToCart" onClick={toggleCart}> Added to Cart <i className="fa-solid fa-cart-shopping" style={{ "color": "#ffffff" }}></i> </button>
-                                         :
-                                        <button type="button" id="addToCart" onClick={toggleCart} onMouseEnter={() => { setCartIcon(true) }} onMouseLeave={() => { setCartIcon(false) }}> Add to Cart  {cartIcon ? <i className="fa-solid fa-cart-shopping" style={{ "color": "#ffffff" }}></i> : <i className="fa-solid fa-cart-shopping" style={{ "color": "#1b2141" }}></i>} </button>}
+                                <div className="d-flex flex-column flex-md-row justify-content-around">
+                                    <div className="cart mt-3 d-flex flex-row justify-content-around">
+                                        <button type="button" id="buyNow"> Buy Now </button>
+                                    </div>
+                                    <div className="cart mb-3 mt-3 d-flex flex-row justify-content-around">
+                                        {isCartItem ?
+                                            <button type="button" style={{ "backgroundColor": "#1B2141", "color": "#E9E2DA", "padding": "15px 80px" }} id="addToCart" onClick={toggleCart}> Added to Cart <i className="fa-solid fa-cart-shopping" style={{ "color": "#ffffff" }}></i> </button>
+                                            :
+                                            <button type="button" id="addToCart" onClick={toggleCart} onMouseEnter={() => { setCartIcon(true) }} onMouseLeave={() => { setCartIcon(false) }}> Add to Cart  {cartIcon ? <i className="fa-solid fa-cart-shopping" style={{ "color": "#ffffff" }}></i> : <i className="fa-solid fa-cart-shopping" style={{ "color": "#1b2141" }}></i>} </button>}
+                                    </div>
                                 </div>
                                 <div className="description">
                                     <h3>Description</h3>
@@ -170,7 +172,7 @@ const SingleProduct = ({ toggleLoading }) => {
                         </div>
                     </div>
 
-                    <div className="similar Featured container-fliud">
+                    {/* <div className="similar Featured container-fliud">
                         <div className="heading">
                             <h1>Similar Products</h1>
                         </div>
@@ -309,7 +311,7 @@ const SingleProduct = ({ toggleLoading }) => {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </>
             }
         </>

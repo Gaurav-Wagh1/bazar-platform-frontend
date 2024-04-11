@@ -142,17 +142,48 @@ const Header = (prop) => {
                                     {/* <a className="nav-link active" aria-current="page" href="">Home</a> */}
                                     <NavLink to="/" className="nav-link">Home</NavLink>
                                 </li>
-                                <li className="nav-item">
+                                {/* <li className="nav-item">
                                     <a className="nav-link" href="">Women</a>
                                 </li>
                                 <li className="nav-item">
                                     <a className="nav-link" href="">Men</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="">Kids</a>
+                                <a className="nav-link" href="">Kids</a>
+                            </li> */}
+
+                                <li className="nav-item dropdown d-flex flex-column justify-content-center">
+                                    <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Electronics
+                                    </a>
+                                    <ul className="dropdown-menu bg-white">
+                                        <li><a className="dropdown-item header-dropdown" style={{ "color": "#1B2141" }} href="#">Mobiles</a></li>
+                                        <li><a className="dropdown-item header-dropdown" style={{ "color": "#1B2141" }} href="#">Laptops & Computers</a></li>
+                                        <li><a className="dropdown-item header-dropdown" style={{ "color": "#1B2141" }} href="#">Tablets</a></li>
+                                        <li><a className="dropdown-item header-dropdown" style={{ "color": "#1B2141" }} href="#">Mobile Accessories</a></li>
+                                    </ul>
                                 </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" href="">Electronics</a>
+                                <li className="nav-item dropdown d-flex flex-column justify-content-center">
+                                    <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Home Appliances
+                                    </a>
+                                    <ul className="dropdown-menu bg-white">
+                                        <li><a className="dropdown-item header-dropdown" style={{ "color": "#1B2141" }} href="#">Televisions</a></li>
+                                        <li><a className="dropdown-item header-dropdown" style={{ "color": "#1B2141" }} href="#">Air Conditioning</a></li>
+                                        <li><a className="dropdown-item header-dropdown" style={{ "color": "#1B2141" }} href="#">Washing Machines</a></li>
+                                        <li><a className="dropdown-item header-dropdown" style={{ "color": "#1B2141" }} href="#">Refrigerators</a></li>
+                                    </ul>
+                                </li>
+                                <li className="nav-item dropdown d-flex flex-column justify-content-center">
+                                    <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Clothing
+                                    </a>
+                                    <ul className="dropdown-menu bg-white">
+                                        <li><a className="dropdown-item header-dropdown" style={{ "color": "#1B2141" }} href="#">Men's</a></li>
+                                        <li><a className="dropdown-item header-dropdown" style={{ "color": "#1B2141" }} href="#">Women's</a></li>
+                                        <li><a className="dropdown-item header-dropdown" style={{ "color": "#1B2141" }} href="#">Kids</a></li>
+                                        <li><a className="dropdown-item header-dropdown" style={{ "color": "#1B2141" }} href="#">Others</a></li>
+                                    </ul>
                                 </li>
                             </ul>
 

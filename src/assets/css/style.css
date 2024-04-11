@@ -185,6 +185,16 @@ h5{
         font-size: 10px;
     }
 }
+.header-dropdown:hover{
+    background-color: #E9E2DA;
+}
+.dropdown:hover{
+    cursor: pointer;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+    cursor: pointer;
+  }
 
 /* logo */
 .logo img{
@@ -739,3 +749,9 @@ label.storage-radio input:checked+span {
 .fixed-height-card{
     height: auto;
 }
+
+/* .active{
+    background-color: #2a325b;
+    border-radius: 50px;
+} */
+  

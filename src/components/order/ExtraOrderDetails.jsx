@@ -103,14 +103,13 @@ const ExtraOrderDetails = ({ user, toggleLoading }) => {
                                 <div className="hover col-md-5 d-flex flex-column justify-content-center align-items-center">
                                     <h5 className="justify-content-start mt-4 mt-lg-0">{orderData.orderDetailData.name}</h5>
                                     <h5 className="justify-content-center">{orderData.orderDetailData.variety}</h5><br />
-                                    <h5 className="fs-6 justify-content-center">{orderData.extraData.productDescription}</h5><br />
-                                    <h5 className="fs-6 justify-content-end">Quantity - <strong>{orderData.extraData.quantity}</strong></h5>
+                                    <h5 className="fs-6 justify-content-md-end">Quantity - <strong>{orderData.extraData.quantity}</strong></h5>
                                     <h5 className="fs-6 justify-content-end"><strong>Status - {orderData.orderDetailData.status}</strong></h5>
                                 </div>
                                 <div className="hover col-md-4 d-flex flex-column align-items-center">
                                     <h5 className="fs-6 mt-2">Price - <strong>{orderData.extraData.price}</strong>/-</h5>
-                                    <h5 className="fs-6 my-4">Order Placed -<br /> {new Date(orderData.extraData.orderedDate).toUTCString()} </h5>
-                                    <h5 className="fs-6 ">Delivery Date -<br /> {new Date(orderData.orderDetailData.deliveryTime).toUTCString()} </h5>
+                                    <h5 className="fs-6 my-4"><b>Order Placed</b> -<br /> {new Date(orderData.extraData.orderedDate).toUTCString()} </h5>
+                                    <h5 className="fs-6 "><b>Delivery Date</b> -<br /> {new Date(orderData.orderDetailData.deliveryTime).toUTCString()} </h5>
                                 </div>
                             </div>
                         </div>

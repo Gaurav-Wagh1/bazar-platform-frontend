@@ -8,22 +8,14 @@ const Product = ({ toggleLoading }) => {
     const [filterMedium, setFilterMedium] = useState(false);
     const [cartIcon, setCartIcon] = useState(undefined);
     const [productsDetails, setProductsDetails] = useState([]);
-    const [brandCheckBoxes, setBrandCheckBoxes] = useState({
-        vivo: false,
-        realme: false,
-        apple: false,
-        iqoo: false,
-        samsung: false,
-        redmi: false,
-        oppo: false,
-        oneplus: false
-    });
+    const [brandCheckBoxes, setBrandCheckBoxes] = useState({});
     const [priceCheckBoxes, setPriceCheckBoxes] = useState({
         "0-1000": false,
-        "1000-5000": false,
-        "5000-10000": false,
+        "1000-10000": false,
         "10000-20000": false,
-        "20000-": false
+        "20000-30000": false,
+        "30000-50000": false,
+        "50000-": false
     });
 
     const [filterURL, setFilterURL] = useState("");
@@ -50,7 +42,16 @@ const Product = ({ toggleLoading }) => {
     const fetchData = async (apiURL) => {
         try {
             const axiosResponse = await axios.get(apiURL);
-            setProductsDetails(axiosResponse.data.data);
+            const { products, brandsForFilter, activeFilter } = axiosResponse.data.data;
+            setProductsDetails(products);
+            const brandCheckBox = {};
+            brandsForFilter.forEach((brand) => {
+                brandCheckBox[brand] = false;
+            });
+            activeFilter.forEach((brand) => {
+                brandCheckBox[brand] = true;
+            })
+            setBrandCheckBoxes(brandCheckBox);
             toggleLoading(false);
         } catch (error) {
             toggleLoading(false)
@@ -80,7 +81,7 @@ const Product = ({ toggleLoading }) => {
     }
 
     const handleBrandSubmit = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         const chosenBrands = {};
         for (const key in brandCheckBoxes) {
             if (brandCheckBoxes[key]) {
@@ -98,8 +99,8 @@ const Product = ({ toggleLoading }) => {
             if (filterForSearch.subcategory) {
                 apiURL += apiURL.includes("?") ? `&subcategory=${filterForSearch.subcategory}` : `?subcategory=${filterForSearch.subcategory}`;
             }
-            if(filterURL.length){
-                apiURL += apiURL.includes("?") ? `&${priceFilter.slice(priceFilter.indexOf("price"))}` : `?${priceFilter.slice(priceFilter.indexOf("price"))}` ;
+            if (filterURL.length) {
+                apiURL += apiURL.includes("?") ? `&${filterURL.slice(filterURL.indexOf("price"))}` : `?${filterURL.slice(filterURL.indexOf("price"))}`;
             }
             setFilterURL(apiURL);
             fetchData(apiURL);
@@ -114,10 +115,10 @@ const Product = ({ toggleLoading }) => {
         chosenBrandsArr.forEach((brand, index) => {
             index === 0 ? apiURL += `${brand}` : apiURL += `,${brand}`;;
         });
-        if(filterURL.length){
+        if (filterURL.length) {
             const priceIndex = filterURL.indexOf("price");
-            if(priceIndex !== -1){
-                apiURL += apiURL.includes("?") ? `&${filterURL.slice(priceIndex)}` : `?${filterURL.slice(priceIndex)}` ;
+            if (priceIndex !== -1) {
+                apiURL += apiURL.includes("?") ? `&${filterURL.slice(priceIndex)}` : `?${filterURL.slice(priceIndex)}`;
             }
         }
         setFilterURL(apiURL);
@@ -125,7 +126,7 @@ const Product = ({ toggleLoading }) => {
     }
 
     const handlePriceSubmit = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         const priceStringArray = Object.keys(priceCheckBoxes).filter((key) => priceCheckBoxes[key]);
         const numberArray = priceStringArray.map(str => str.split("-")).map(element => element.map(Number));
 
@@ -139,13 +140,13 @@ const Product = ({ toggleLoading }) => {
         let apiURL = "";
         if (filterURL.length) {                 // /products?category=mobiles&brand=vivo&price=2000
             const priceIndex = filterURL.indexOf("price");
-            if(priceIndex !== -1){
+            if (priceIndex !== -1) {
                 apiURL = filterURL.substring(0, filterURL.indexOf("price"));
-                apiURL +=  `price=${arrayToSend}`;
+                apiURL += `price=${arrayToSend}`;
             }
-            else{
+            else {
                 apiURL += filterURL;
-                apiURL +=  filterURL.includes("?") ? `&price=${arrayToSend}` : `?price=${arrayToSend}`;
+                apiURL += filterURL.includes("?") ? `&price=${arrayToSend}` : `?price=${arrayToSend}`;
             }
         }
         else {
@@ -161,13 +162,8 @@ const Product = ({ toggleLoading }) => {
             apiURL += apiURL.includes("?") ? `&price=${arrayToSend}` : `?price=${arrayToSend}`;
         }
         setFilterURL(apiURL);
-        // fetchData(apiURL);
+        fetchData(apiURL);
         return;
-    }
-
-    const commonSubmit = (e) => {
-        setFilterMedium(false)
-        e.preventDefault();
     }
 
     return (
@@ -181,164 +177,107 @@ const Product = ({ toggleLoading }) => {
                     <div className="col-9 bg-white rounded-bottom py-3">
                         {active === "brand"
                             &&
-                            <form>
+                            <>
                                 <ul className="pl-2 m-0">
+                                    {Object.keys(brandCheckBoxes).map((brand, index) => {
+                                        return (
+                                            <li key={index}>
+                                                <input
+                                                    type="checkbox"
+                                                    name={brand}
+                                                    id={brand}
+                                                    checked={brandCheckBoxes[brand]}
+                                                    onChange={handleBrandCheckboxes} />
+                                                <label htmlFor={brand} className="ml-2">
+                                                    <span className="filter-list">{brand.charAt(0).toUpperCase() + brand.slice(1)}</span>
+                                                </label>
+                                            </li>
+                                        )
+                                    })}
+                                </ul>
+                                <button className="w-100 my-2 btn btn-outline-success" onClick={() => { handleBrandSubmit(); setFilterMedium(false); }}>Confirm</button>
+
+                            </>
+                        }
+                        {active === "price" &&
+                            <>
+                                <ul className="pl-2 m-0">
+                                    <li >
+                                        <input
+                                            type="checkbox"
+                                            name="0-1000"
+                                            id="1k"
+                                            checked={priceCheckBoxes["0-1000"]}
+                                            onChange={handlePriceCheckboxes}
+                                        />
+                                        <label htmlFor="1k" className="ml-2">
+                                            <span className="filter-list">Under &#x20B9; 1000</span>
+                                        </label>
+                                    </li>
                                     <li>
                                         <input
                                             type="checkbox"
-                                            name="vivo"
-                                            id="Vivo"
-                                            checked={brandCheckBoxes.vivo}
-                                            onChange={handleBrandCheckboxes} />
-                                        <label htmlFor="Vivo" className="ml-2">
-                                            <span className="filter-list">Vivo</span>
+                                            name="1000-10000"
+                                            id="1-10k"
+                                            checked={priceCheckBoxes["1000-10000"]}
+                                            onChange={handlePriceCheckboxes}
+                                        />
+                                        <label htmlFor="1-10k" className="ml-2">
+                                            <span className="filter-list">&#x20B9; 1000 - &#x20B9; 10000</span>
                                         </label>
                                     </li>
                                     <li>
-                                        <input type="checkbox"
-                                            name="apple"
-                                            checked={brandCheckBoxes.apple}
-                                            onChange={handleBrandCheckboxes}
-                                            id="Apple" />
-                                        <label htmlFor="Apple" className="ml-2">
-                                            <span className="checked"></span>
-                                            <span className="filter-list">Apple</span>
+                                        <input
+                                            type="checkbox"
+                                            name="10000-20000"
+                                            id="10-20k"
+                                            checked={priceCheckBoxes["10000-20000"]}
+                                            onChange={handlePriceCheckboxes}
+                                        />
+                                        <label htmlFor="10-20k" className="ml-2">
+                                            <span className="filter-list">&#x20B9; 10,000 - &#x20B9; 20,000</span>
                                         </label>
                                     </li>
                                     <li>
-                                        <input type="checkbox"
-                                            name="redmi"
-                                            checked={brandCheckBoxes.redmi}
-                                            onChange={handleBrandCheckboxes}
-                                            id="Redmi" />
-                                        <label htmlFor="Redmi" className="ml-2">
-                                            <span className="checked"></span>
-                                            <span className="filter-list">Redmi</span>
+                                        <input
+                                            type="checkbox"
+                                            name="20000-30000"
+                                            id="20k-30k"
+                                            checked={priceCheckBoxes["20000-30000"]}
+                                            onChange={handlePriceCheckboxes}
+                                        />
+                                        <label htmlFor="20k-30k" className="ml-2">
+                                            <span className="filter-list">&#x20B9; 20,000 - &#x20B9; 30,000</span>
                                         </label>
                                     </li>
                                     <li>
-                                        <input type="checkbox"
-                                            name="realme"
-                                            checked={brandCheckBoxes.realme}
-                                            onChange={handleBrandCheckboxes}
-                                            id="Realme" />
-                                        <label htmlFor="Realme" className="ml-2">
-                                            <span className="checked"></span>
-                                            <span className="filter-list">Realme</span>
+                                        <input
+                                            type="checkbox"
+                                            name="30000-50000"
+                                            id="30k-50k"
+                                            checked={priceCheckBoxes["30000-50000"]}
+                                            onChange={handlePriceCheckboxes}
+                                        />
+                                        <label htmlFor="30k-50k" className="ml-2">
+                                            <span className="filter-list">&#x20B9; 30,000 - &#x20B9; 50,000</span>
                                         </label>
                                     </li>
                                     <li>
-                                        <input type="checkbox"
-                                            name="oppo"
-                                            checked={brandCheckBoxes.oppo}
-                                            onChange={handleBrandCheckboxes}
-                                            id="Oppo" />
-                                        <label htmlFor="Oppo" className="ml-2">
-                                            <span className="checked"></span>
-                                            <span className="filter-list">Oppo</span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox"
-                                            name="oneplus"
-                                            checked={brandCheckBoxes.oneplus}
-                                            onChange={handleBrandCheckboxes}
-                                            id="OnePlus" />
-                                        <label htmlFor="OnePlus" className="ml-2">
-                                            <span className="checked"></span>
-                                            <span className="filter-list">OnePlus</span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox"
-                                            name="samsung"
-                                            checked={brandCheckBoxes.samsung}
-                                            onChange={handleBrandCheckboxes}
-                                            id="Samsung" />
-                                        <label htmlFor="Samsung" className="ml-2">
-                                            <span className="checked"></span>
-                                            <span className="filter-list">Samsung</span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox"
-                                            name="iqoo"
-                                            checked={brandCheckBoxes.iqoo}
-                                            onChange={handleBrandCheckboxes}
-                                            id="iQOO" />
-                                        <label htmlFor="iQOO" className="ml-2">
-                                            <span className="checked"></span>
-                                            <span className="filter-list">iQOO</span>
+                                        <input
+                                            type="checkbox"
+                                            name="50000-"
+                                            id="50k-"
+                                            checked={priceCheckBoxes["50000-"]}
+                                            onChange={handlePriceCheckboxes}
+                                        />
+                                        <label htmlFor="50k-" className="ml-2">
+                                            <span className="filter-list">Over &#x20B9; 50,000 </span>
                                         </label>
                                     </li>
                                 </ul>
-                            </form>
+                                <button className="w-100 my-2 btn btn-outline-success" onClick={() => { handlePriceSubmit(); setFilterMedium(false) }}>Confirm</button>
+                            </>
                         }
-                        {active === "price" &&
-                            <ul className="pl-2 m-0">
-                                <li >
-                                    <input
-                                        type="checkbox"
-                                        name="0-1000"
-                                        id="1k"
-                                        checked={priceCheckBoxes["0-1000"]}
-                                        onChange={handlePriceCheckboxes}
-                                    />
-                                    <label htmlFor="1k" className="ml-2">
-                                        <span className="filter-list">Under &#x20B9; 1000</span>
-                                    </label>
-                                </li>
-                                <li>
-                                    <input
-                                        type="checkbox"
-                                        name="1000-5000"
-                                        id="1-5k"
-                                        checked={priceCheckBoxes["1000-5000"]}
-                                        onChange={handlePriceCheckboxes}
-                                    />
-                                    <label htmlFor="1-5k" className="ml-2">
-                                        <span className="filter-list">&#x20B9; 1000 - &#x20B9; 5000</span>
-                                    </label>
-                                </li>
-                                <li>
-                                    <input
-                                        type="checkbox"
-                                        name="5000-10000"
-                                        id="5-10k"
-                                        checked={priceCheckBoxes["5000-10000"]}
-                                        onChange={handlePriceCheckboxes}
-                                    />
-                                    <label htmlFor="5-10k" className="ml-2">
-                                        <span className="filter-list">&#x20B9; 5000 - &#x20B9; 10,000</span>
-                                    </label>
-                                </li>
-                                <li>
-                                    <input
-                                        type="checkbox"
-                                        name="10000-20000"
-                                        id="10-20k"
-                                        checked={priceCheckBoxes["10000-20000"]}
-                                        onChange={handlePriceCheckboxes}
-                                    />
-                                    <label htmlFor="10-20k" className="ml-2">
-                                        <span className="filter-list">&#x20B9; 10,000 - &#x20B9; 20,000</span>
-                                    </label>
-                                </li>
-                                <li>
-                                    <input
-                                        type="checkbox"
-                                        name="20000+"
-                                        id="20k+"
-                                        checked={priceCheckBoxes["20000-"]}
-                                        onChange={handlePriceCheckboxes}
-                                    />
-                                    <label htmlFor="20k+" className="ml-2">
-                                        <span className="filter-list">Over &#x20B9; 20,000</span>
-                                    </label>
-                                </li>
-                            </ul>
-                        }
-                        <button className="w-100 my-2 btn btn-outline-success" onClick={commonSubmit}>Confirm</button>
                     </div>
                 </div>
             </div>}
@@ -353,94 +292,21 @@ const Product = ({ toggleLoading }) => {
                             <div className="brand heading">
                                 <h4>Brands</h4>
                                 <ul className="pl-2 m-0">
-                                    <li>
-                                        <input
-                                            type="checkbox"
-                                            name="vivo"
-                                            id="Vivo"
-                                            checked={brandCheckBoxes.vivo}
-                                            onChange={handleBrandCheckboxes} />
-                                        <label htmlFor="Vivo" className="ml-2">
-                                            <span className="filter-list">Vivo</span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox"
-                                            name="apple"
-                                            checked={brandCheckBoxes.apple}
-                                            onChange={handleBrandCheckboxes}
-                                            id="Apple" />
-                                        <label htmlFor="Apple" className="ml-2">
-                                            <span className="checked"></span>
-                                            <span className="filter-list">Apple</span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox"
-                                            name="redmi"
-                                            checked={brandCheckBoxes.redmi}
-                                            onChange={handleBrandCheckboxes}
-                                            id="Redmi" />
-                                        <label htmlFor="Redmi" className="ml-2">
-                                            <span className="checked"></span>
-                                            <span className="filter-list">Redmi</span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox"
-                                            name="realme"
-                                            checked={brandCheckBoxes.realme}
-                                            onChange={handleBrandCheckboxes}
-                                            id="Realme" />
-                                        <label htmlFor="Realme" className="ml-2">
-                                            <span className="checked"></span>
-                                            <span className="filter-list">Realme</span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox"
-                                            name="oppo"
-                                            checked={brandCheckBoxes.oppo}
-                                            onChange={handleBrandCheckboxes}
-                                            id="Oppo" />
-                                        <label htmlFor="Oppo" className="ml-2">
-                                            <span className="checked"></span>
-                                            <span className="filter-list">Oppo</span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox"
-                                            name="oneplus"
-                                            checked={brandCheckBoxes.oneplus}
-                                            onChange={handleBrandCheckboxes}
-                                            id="OnePlus" />
-                                        <label htmlFor="OnePlus" className="ml-2">
-                                            <span className="checked"></span>
-                                            <span className="filter-list">OnePlus</span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox"
-                                            name="samsung"
-                                            checked={brandCheckBoxes.samsung}
-                                            onChange={handleBrandCheckboxes}
-                                            id="Samsung" />
-                                        <label htmlFor="Samsung" className="ml-2">
-                                            <span className="checked"></span>
-                                            <span className="filter-list">Samsung</span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox"
-                                            name="iqoo"
-                                            checked={brandCheckBoxes.iqoo}
-                                            onChange={handleBrandCheckboxes}
-                                            id="iQOO" />
-                                        <label htmlFor="iQOO" className="ml-2">
-                                            <span className="checked"></span>
-                                            <span className="filter-list">iQOO</span>
-                                        </label>
-                                    </li>
+                                    {Object.keys(brandCheckBoxes).map((brand, index) => {
+                                        return (
+                                            <li key={index}>
+                                                <input
+                                                    type="checkbox"
+                                                    name={brand}
+                                                    id={brand}
+                                                    checked={brandCheckBoxes[brand]}
+                                                    onChange={handleBrandCheckboxes} />
+                                                <label htmlFor={brand} className="ml-2">
+                                                    <span className="filter-list">{brand.charAt(0).toUpperCase() + brand.slice(1)}</span>
+                                                </label>
+                                            </li>
+                                        )
+                                    })}
                                 </ul>
                                 <button className="w-100 my-2 btn btn-outline-success" onClick={handleBrandSubmit}>Confirm</button>
                             </div>
@@ -462,25 +328,13 @@ const Product = ({ toggleLoading }) => {
                                     <li>
                                         <input
                                             type="checkbox"
-                                            name="1000-5000"
-                                            id="1-5k"
-                                            checked={priceCheckBoxes["1000-5000"]}
+                                            name="1000-10000"
+                                            id="1-10k"
+                                            checked={priceCheckBoxes["1000-10000"]}
                                             onChange={handlePriceCheckboxes}
                                         />
-                                        <label htmlFor="1-5k" className="ml-2">
-                                            <span className="filter-list">&#x20B9; 1000 - &#x20B9; 5000</span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <input
-                                            type="checkbox"
-                                            name="5000-10000"
-                                            id="5-10k"
-                                            checked={priceCheckBoxes["5000-10000"]}
-                                            onChange={handlePriceCheckboxes}
-                                        />
-                                        <label htmlFor="5-10k" className="ml-2">
-                                            <span className="filter-list">&#x20B9; 5000 - &#x20B9; 10,000</span>
+                                        <label htmlFor="1-10k" className="ml-2">
+                                            <span className="filter-list">&#x20B9; 1000 - &#x20B9; 10000</span>
                                         </label>
                                     </li>
                                     <li>
@@ -498,13 +352,37 @@ const Product = ({ toggleLoading }) => {
                                     <li>
                                         <input
                                             type="checkbox"
-                                            name="20000-"
-                                            id="20k+"
-                                            checked={priceCheckBoxes["20000-"]}
+                                            name="20000-30000"
+                                            id="20k-30k"
+                                            checked={priceCheckBoxes["20000-30000"]}
                                             onChange={handlePriceCheckboxes}
                                         />
-                                        <label htmlFor="20k+" className="ml-2">
-                                            <span className="filter-list">Over &#x20B9; 20,000</span>
+                                        <label htmlFor="20k-30k" className="ml-2">
+                                            <span className="filter-list">&#x20B9; 20,000 - &#x20B9; 30,000</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <input
+                                            type="checkbox"
+                                            name="30000-50000"
+                                            id="30k-50k"
+                                            checked={priceCheckBoxes["30000-50000"]}
+                                            onChange={handlePriceCheckboxes}
+                                        />
+                                        <label htmlFor="30k-50k" className="ml-2">
+                                            <span className="filter-list">&#x20B9; 30,000 - &#x20B9; 50,000</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <input
+                                            type="checkbox"
+                                            name="50000-"
+                                            id="50k-"
+                                            checked={priceCheckBoxes["50000-"]}
+                                            onChange={handlePriceCheckboxes}
+                                        />
+                                        <label htmlFor="50k-" className="ml-2">
+                                            <span className="filter-list">Over &#x20B9; 50,000 </span>
                                         </label>
                                     </li>
                                 </ul>
@@ -514,7 +392,7 @@ const Product = ({ toggleLoading }) => {
                     </div>
                     <div className="col-lg-10 col-12">
                         <div className="row d-flex flex-row justify-content-evenly align-items-start flex-wrap">
-                            {productsDetails.length > 0 &&
+                            {productsDetails.length > 0 ?
                                 productsDetails.map((product) => {
                                     const productsToDisplay = product.ProductSKUs.map((productSKU) => {
                                         return (
@@ -533,6 +411,10 @@ const Product = ({ toggleLoading }) => {
                                     })
                                     return productsToDisplay;
                                 })
+                                :
+                                <div className="container text-center">
+                                    <h2>No items found in this category and range</h2>
+                                </div>
                             }
                         </div>
                     </div>

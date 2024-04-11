@@ -39,8 +39,11 @@ const User = ({ user, updateUserInfo, toggleLoading }) => {
         <>
             {update.status && <Update user={user} setUpdate={setUpdate} updateUserInfo={updateUserInfo} toggleLoading={toggleLoading} />}
             {!update.status &&
-                <div className="container p-5">
-                    <div className="bg-white  user-div rounded">
+                <div className="container-fluid pt-5 px-0">
+                    <div className="row">
+                        <div className="col-1"></div>
+                        <div className="col-12 col-md-10">
+                        <div className="bg-white  user-div rounded">
                         <div className="user-name px-5 py-4">
                             <strong>{user.fullName}</strong>
                             <Link title="Update user information" className="float-right" id="t-1">
@@ -159,6 +162,9 @@ const User = ({ user, updateUserInfo, toggleLoading }) => {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                        </div>
+                        <div className="col-1"></div>
                     </div>
                 </div>
             }
