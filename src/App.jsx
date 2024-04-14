@@ -61,7 +61,7 @@ const App = () => {
             <Route path="extraorderdetails" element={<ExtraOrderDetails user={user} toggleLoading={toggleLoading} />} />
             <Route path='products' element={<ProductForm user={user} setUser={setUser} />} />
             <Route path='search-for-products' element={< Products toggleLoading={toggleLoading} />} />
-            <Route path='productdetail' element={<SingleProduct toggleLoading={toggleLoading} />} />
+            <Route path='productdetail' element={<SingleProduct user={user} updateUserInfo={updateUserInfo} toggleLoading={toggleLoading} />} />
             <Route path='loader' element={<Loader />} />
             <Route path='check' element={<Check />} />
           </Route>

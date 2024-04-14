@@ -81,7 +81,7 @@ const Cart = ({ toggleLoading, updateUserInfo, user }) => {
                                 {cartItems.length
                                     ?
                                     cartItems.map((apiCartItem) => {
-                                        return <CartItem quantity={apiCartItem.quantity} price={apiCartItem.ProductSKU.price} imageURL={apiCartItem.ProductSKU.image} variety={apiCartItem.ProductSKU.variety} name={apiCartItem.ProductSKU.Product.name} key={apiCartItem.id} removeCartItem={removeCartItem} cartItemId={apiCartItem.id} productId={apiCartItem.ProductSKU.Product.id} />
+                                        return <CartItem quantity={apiCartItem.quantity} price={apiCartItem.ProductSKU.price} imageURL={apiCartItem.ProductSKU.image} variety={apiCartItem.ProductSKU.variety} name={apiCartItem.ProductSKU.Product.name} key={apiCartItem.id} removeCartItem={removeCartItem} cartItemId={apiCartItem.id} productId={apiCartItem.ProductSKU.Product.id} productSKUId={apiCartItem.ProductSKU.id} />
                                     })
                                     :
                                     <>
@@ -90,7 +90,7 @@ const Cart = ({ toggleLoading, updateUserInfo, user }) => {
                                     </>
                                 }
                                 <Final total={finalData.total} quantity={finalData.quantity} />
-                                {cartItems.length &&
+                                {cartItems.length !== 0 &&
                                     <PlaceOrder total={finalData.total} toggleLoading={toggleLoading} setUpdate={setUpdate} />
                                 }
                             </div>

@@ -537,6 +537,16 @@ footer p{
     padding:15px 80px;
 }
 
+#buyNow, #addToCart{
+    width: 75%;
+}
+
+@media (max-width: 768px) {
+    #buyNow, #addToCart {
+      width: 100%; /* make the container full width */
+    }
+  }
+
 span {
     font-size: 18px;
 }

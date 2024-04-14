@@ -25,11 +25,17 @@ const Update = (prop) => {
             setInfoError({ flag: false, name: "Success" });
             setTimeout(() => {
                 setInfoError({ name: "", flag: false });
+                if(prop.from == "single-product"){
+                    navigate("/productdetail");
+                    return;
+                }
                 if (prop.message) {
-                    navigate("/cart")
+                    navigate("/cart");
+                    return;
                 }
                 else {
                     navigate("/user");
+                    return;
                 }
             }, 1000);
             prop.setUpdate({ status: false, message: "" });

@@ -3,13 +3,16 @@ import "../../assets/css/style.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const SingleProduct = ({ toggleLoading }) => {
+import Update from "../authentication/update";
+
+const SingleProduct = ({ toggleLoading, user, updateUserInfo }) => {
 
     const [product, setProduct] = useState({});
     const [productSKU, setProductSKU] = useState({});
     const [isCartItem, setIsCartItem] = useState(false);
     const [success, setSuccess] = useState({ status: false, message: "" });
     const [cartIcon, setCartIcon] = useState(false);
+    const [update, setUpdate] = useState({ status: false, message: "" });
 
     const location = useLocation();
     const navigate = useNavigate();
@@ -101,8 +104,33 @@ const SingleProduct = ({ toggleLoading }) => {
             toggleLoading(false);
         }
     }
+
     const displayProduct = (prodId) => {
         loadData(prodId);
+    }
+    const purchaseProduct = async (e) => {
+        e.preventDefault();
+        try {
+            const apiURL = "/api/v1/bookings";
+            const axiosResponse = await axios.post(apiURL, {
+                id: productSKU.id,
+                quantity: 1
+            });
+            const orderId = axiosResponse.data.data.orderDetail.id;
+            navigate("/check", { state: orderId });
+        } catch (error) {
+            if (error.response.data.error === "Unauthenticated user!") {
+                console.log("SignIn / SignUp required!");
+                navigate("/signin");
+                return;
+            }
+            if (error.response.data.error === "Invalid contact field") {
+                console.log(error.response.data.message);
+                setUpdate({ status: true, message: "Each contact information need to be filled" });
+                return;
+            }
+            console.log(error);
+        }
     }
     return (
         <>
@@ -116,7 +144,10 @@ const SingleProduct = ({ toggleLoading }) => {
                     </div>
                 )
             }
-            {product.name &&
+
+            {update.status && <Update user={user} from={"single-product"} setUpdate={setUpdate} updateUserInfo={updateUserInfo} toggleLoading={toggleLoading} message={update.message} />}
+
+            {(product.name && !update.status) &&
                 <>
                     <div className=" single container-fluid bg-white mt-3">
                         <div className="row pt-3 px-3 pb-3">
@@ -153,13 +184,13 @@ const SingleProduct = ({ toggleLoading }) => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="d-flex flex-column flex-md-row justify-content-around">
-                                    <div className="cart mt-3 d-flex flex-row justify-content-around">
-                                        <button type="button" id="buyNow"> Buy Now </button>
+                                <div className="text-center py-5">
+                                    <div className="cart w-100">
+                                        <button type="button" id="buyNow" onClick={purchaseProduct}> Buy Now </button>
                                     </div>
-                                    <div className="cart mb-3 mt-3 d-flex flex-row justify-content-around">
+                                    <div className="cart w-100">
                                         {isCartItem ?
-                                            <button type="button" style={{ "backgroundColor": "#1B2141", "color": "#E9E2DA", "padding": "15px 80px" }} id="addToCart" onClick={toggleCart}> Added to Cart <i className="fa-solid fa-cart-shopping" style={{ "color": "#ffffff" }}></i> </button>
+                                            <button type="button" style={{ "backgroundColor": "#1B2141", "color": "#E9E2DA" }} id="addToCart" onClick={toggleCart}> Added to Cart <i className="fa-solid fa-cart-shopping" style={{ "color": "#ffffff" }}></i> </button>
                                             :
                                             <button type="button" id="addToCart" onClick={toggleCart} onMouseEnter={() => { setCartIcon(true) }} onMouseLeave={() => { setCartIcon(false) }}> Add to Cart  {cartIcon ? <i className="fa-solid fa-cart-shopping" style={{ "color": "#ffffff" }}></i> : <i className="fa-solid fa-cart-shopping" style={{ "color": "#1b2141" }}></i>} </button>}
                                     </div>
