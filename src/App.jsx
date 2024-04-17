@@ -16,6 +16,7 @@ import Check from "./components/Check.jsx";
 import ExtraOrderDetails from "./components/order/ExtraOrderDetails.jsx";
 import SingleProduct from "./components/product/SingleProduct.jsx";
 import Products from "./pages/Products.jsx";
+import Electronics from "./pages/Electronics.jsx";
 
 const App = () => {
 
@@ -52,6 +53,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Layout user={user} isLoading={isLoading} toggleLoading={toggleLoading} updateUserInfo={updateUserInfo} />}>
             <Route index element={<Home />} />
+            <Route path='electronics' element={<Electronics />} />
             <Route path='signup' element={<Signup user={user} setUser={setUser} toggleLoading={toggleLoading} />} />
             <Route path='info' element={<Information user={user} setUser={setUser} toggleLoading={toggleLoading} title={"Tell something more about you"} description={""} />} />
             <Route path='signin' element={<Signin user={user} updateUserInfo={updateUserInfo} toggleLoading={toggleLoading} />} />

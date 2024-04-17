@@ -30,7 +30,7 @@ const Product = ({ toggleLoading }) => {
         let apiURL = `/api/v1/products`;
         const filterForSearch = location.state;
 
-        if (filterForSearch.name) {
+        if (filterForSearch?.name) {
             apiURL += `?name=${filterForSearch.name}`
         }
         if (filterForSearch.subcategory) {

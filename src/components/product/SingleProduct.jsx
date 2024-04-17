@@ -65,13 +65,11 @@ const SingleProduct = ({ toggleLoading, user, updateUserInfo }) => {
     };
 
     const toggleVariety = (e) => {
-        toggleLoading(true);
         const currentVarietyText = e.target.innerHTML;
         const nextVariety = product.ProductSKUs.filter((item) => {
             return item.variety === currentVarietyText;
         });
         setProductSKU(nextVariety[0]);
-        toggleLoading(false)
     }
 
     const toggleCart = async () => {
