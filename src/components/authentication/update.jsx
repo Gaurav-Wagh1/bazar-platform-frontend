@@ -4,6 +4,8 @@ import axios from 'axios';
 import "./signup.css";
 import { useState } from 'react';
 
+import informationSVG from "../../assets/images/svgs/info2m.svg";
+
 // -----------------  UPDATING DATABASE WITH USER INFO;
 
 const Update = (prop) => {
@@ -81,10 +83,12 @@ const Update = (prop) => {
                 )
             }
 
-            <div className="container-md">
+            <div className="container-fluid bg-white pb-3 pb-md-0 py-md-5">
                 <div className="row">
-                    <div className="col-md-3"></div>
-                    <div className="main-container col-md-6 p-0">
+                <div className="col-12 col-md-6">
+                        <img src={informationSVG} alt="" />
+                    </div>
+                    <div className="main-container col-12 col-md-6 p-md-5 mt-3 mt-md-0">
                         <div className="upper p-4">
                             <h1 className=".display-4">Update information</h1>
                             <h6 className='text-danger'>{prop.message ? prop.message : "Update those details only which you want to update"}</h6>
@@ -102,7 +106,6 @@ const Update = (prop) => {
                         <button className="btn btn-outline-secondary p-3 font-weight-bolder w-50 text-left" id="sign-in" onClick={() => { prop.setUpdate(false) }}>Cancel</button>
                         <button className="btn btn-outline-secondary p-3 font-weight-bolder w-50 text-right float-right" id="confirm" onClick={handleSubmit}>Confirm</button>
                     </div>
-                    <div className="col-md-3"></div>
                 </div>
             </div>
         </>

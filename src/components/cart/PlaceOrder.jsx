@@ -21,8 +21,8 @@ const PlaceOrder = ({ total, toggleLoading, setUpdate }) => {
             toggleLoading(false);
             if (error.response.data.error === "Invalid contact field") {
                 console.log(error.response.data.message);
+                setUpdate({status:true, message:"All contact fields are required!"})
             }
-            console.log(error);
         }
     }
     console.log(total)

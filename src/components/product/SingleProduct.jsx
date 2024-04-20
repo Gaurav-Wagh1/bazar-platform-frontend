@@ -149,7 +149,7 @@ const SingleProduct = ({ toggleLoading, user, updateUserInfo }) => {
                 <>
                     <div className=" single container-fluid bg-white mt-3">
                         <div className="row pt-3 px-3 pb-3">
-                            <div className="card-wrapper col-lg-4 col-sm-12 ">
+                            <div className="card-wrapper col-12 col-md-4">
                                 <div className="big-img sticky-md">
                                     <img src={productSKU.image} className="img-fluid" id="bigImg"
                                         /*style={{ "border": "1px solid #1B2141" }}*/ alt="iPhone Image" />
@@ -157,7 +157,8 @@ const SingleProduct = ({ toggleLoading, user, updateUserInfo }) => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-lg-7 ">
+                            <div className="col-0 col-md-1"></div>
+                            <div className="col-12 col-md-7">
                                 <h2 className="mt-3 mt-md-0 text">{product.name}</h2>
                                 <h5 className="mb-4">{productSKU.variety}</h5>
                                 <h3 className="card-text"> &#x20B9; {productSKU.price} /- <br /> <span><del>&#x20B9; {+productSKU.price + (+productSKU.price * 0.1)}</del></span></h3>
@@ -200,147 +201,6 @@ const SingleProduct = ({ toggleLoading, user, updateUserInfo }) => {
                             </div>
                         </div>
                     </div>
-
-                    {/* <div className="similar Featured container-fliud">
-                        <div className="heading">
-                            <h1>Similar Products</h1>
-                        </div>
-                        <div id="carouselExampleControls" className="carousel slide" >
-                            <div className="carousel-inner">
-                                <div className="carousel-item active">
-                                    <div className="card-wrapper">
-                                        <div onClick={() => { displayProduct(29) }} className="hover card mx-1 card_border shadow mb-5 bg-body-tertiary rounded"
-                                            style={{ "width": "15rem" }}>
-                                            <img src={"src/assets/images/iphone15.jpg"} className="card-img-top" alt="..." />
-                                            <div className="card-body">
-                                                <h5 className="card-title">Apple iPhone 13 (128GB) - Pink</h5>
-                                                <p className="card-text" /> &#x20B9; <span>52,090</span>
-                                            </div>
-                                        </div>
-                                        <div onClick={() => { displayProduct(30) }} className="hover card mx-1 card_border shadow mb-5 bg-body-tertiary rounded"
-                                            style={{ "width": "15rem" }}>
-                                            <img src={"src/assets/images/fire-bolt-smartwatch.jpg"} className="card-img-top" alt="..." />
-                                            <div className="card-body">
-                                                <h5 className="card-title">boAt Xtend Smart Watch </h5>
-                                                <p className="card-text" /> &#x20B9; <span>999</span>
-                                            </div>
-                                        </div>
-                                        <div onClick={() => { displayProduct(31) }} className="card mx-1  card_border shadow mb-5 bg-body-tertiary rounded"
-                                            style={{ "width": "15rem" }}>
-                                            <img src={"src/assets/images/boult-audio-earbuds.jpg"} className="card-img-top" alt="..." />
-                                            <div className="card-body">
-                                                <h5 className="card-title">Boult Audio UFO </h5>
-                                                <p className="card-text" /> &#x20B9; <span>1,199</span>
-                                            </div>
-                                        </div>
-                                        <div onClick={() => { displayProduct(32) }} className="card mx-1  card_border shadow mb-5 bg-body-tertiary rounded"
-                                            style={{ "width": "15rem" }}>
-                                            <img src={"src/assets/images/headphone.jpg"} className="card-img-top" alt="..." />
-                                            <div className="card-body">
-                                                <h5 className="card-title">Oneplus Bullets Z2 Bluetooth </h5>
-                                                <p className="card-text" /> &#x20B9; <span>1,799</span>
-                                            </div>
-                                        </div>
-                                        <div onClick={() => { displayProduct(26) }} className="card mx-1 card_border shadow mb-5 bg-body-tertiary rounded"
-                                            style={{ "width": "15rem" }}>
-                                            <img src={"src/assets/images/oneplus12r.jpg"} className="card-img-top" alt="..." />
-                                            <div className="card-body">
-                                                <h5 className="card-title">OnePlus 12</h5>
-                                                <p className="card-text mt-5"> &#x20B9; <span>64,099</span></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="carousel-item">
-                                    <div className="card-wrapper ">
-                                        <div className="card mx-1 card_border shadow mb-5 bg-body-tertiary rounded"
-                                            style={{ "width": " 15rem" }}>
-                                            <img src="pics/iphone15.jpg" className="card-img-top" alt="..." />
-                                            <div className="card-body">
-                                                <h5 className="card-title">Apple iPhone 13 (128GB) - Pink</h5>
-                                                <p className="card-text" /> &#x20B9; <span>52,090</span>
-                                            </div>
-                                        </div>
-                                        <div className="card mx-1  card_border shadow mb-5 bg-body-tertiary rounded"
-                                            style={{ "width": " 15rem" }}>
-                                            <img src="pics/fire-bolt-smartwatch.jpg" className="card-img-top" alt="..." />
-                                            <div className="card-body">
-                                                <h5 className="card-title">boAt Xtend Smart Watch </h5>
-                                                <p className="card-text" /> &#x20B9; <span>999</span>
-                                            </div>
-                                        </div>
-                                        <div className="card mx-1  card_border shadow mb-5 bg-body-tertiary rounded"
-                                            style={{ "width": " 15rem" }}>
-                                            <img src="pics/boult-audio-earbuds.jpg" className="card-img-top" alt="..." />
-                                            <div className="card-body">
-                                                <h5 className="card-title">Boult Audio UFO </h5>
-                                                <p className="card-text" /> &#x20B9; <span>1,199</span>
-                                            </div>
-                                        </div>
-                                        <div className="card mx-1  card_border shadow mb-5 bg-body-tertiary rounded"
-                                            style={{ "width": " 15rem" }}>
-                                            <img src="pics/headphone.jpg" className="card-img-top" alt="..." />
-                                            <div className="card-body">
-                                                <h5 className="card-title">Oneplus Bullets Z2 Bluetooth </h5>
-                                                <p className="card-text" /> &#x20B9; <span>1,799</span>
-                                            </div>
-                                        </div>
-                                        <div className="card mx-1 card_border shadow mb-5 bg-body-tertiary rounded"
-                                            style={{ "width": " 15rem" }}>
-                                            <img src="pics/oneplus12r.jpg" className="card-img-top" alt="..." />
-                                            <div className="card-body" />
-                                            <h5 className="card-title">OnePlus 12R </h5>
-                                            <p className="card-text"> &#x20B9; <span>42,999</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="carousel-item">
-                                <div className="card-wrapper ">
-                                    <div className="card mx-1 card_border shadow mb-5 bg-body-tertiary rounded"
-                                        style={{ "width": " 15rem" }}>
-                                        <img src="pics/iphone15.jpg" className="card-img-top" alt="..." />
-                                        <div className="card-body">
-                                            <h5 className="card-title">Apple iPhone 13 (128GB) - Pink</h5>
-                                            <p className="card-text" /> &#x20B9; <span>52,090</span>
-                                        </div>
-                                    </div>
-                                    <div className="card mx-1  card_border shadow mb-5 bg-body-tertiary rounded"
-                                        style={{ "width": " 15rem" }}>
-                                        <img src="pics/fire-bolt-smartwatch.jpg" className="card-img-top" alt="..." />
-                                        <div className="card-body">
-                                            <h5 className="card-title">boAt Xtend Smart Watch </h5>
-                                            <p className="card-text" /> &#x20B9; <span>999</span>
-                                        </div>
-                                    </div>
-                                    <div className="card mx-1  card_border shadow mb-5 bg-body-tertiary rounded"
-                                        style={{ "width": " 15rem" }}>
-                                        <img src="pics/boult-audio-earbuds.jpg" className="card-img-top" alt="..." />
-                                        <div className="card-body">
-                                            <h5 className="card-title">Boult Audio UFO </h5>
-                                            <p className="card-text" /> &#x20B9; <span>1,199</span>
-                                        </div>
-                                    </div>
-                                    <div className="card mx-1  card_border shadow mb-5 bg-body-tertiary rounded"
-                                        style={{ "width": " 15rem" }}>
-                                        <img src="pics/headphone.jpg" className="card-img-top" alt="..." />
-                                        <div className="card-body">
-                                            <h5 className="card-title">Oneplus Bullets Z2 Bluetooth </h5>
-                                            <p className="card-text" /> &#x20B9; <span>1,799</span>
-                                        </div>
-                                    </div>
-                                    <div className="card mx-1 card_border shadow mb-5 bg-body-tertiary rounded"
-                                        style={{ "width": " 15rem" }}>
-                                        <img src="pics/oneplus12r.jpg" className="card-img-top" alt="..." />
-                                        <div className="card-body">
-                                            <h5 className="card-title">OnePlus 12R </h5>
-                                            <p className="card-text"> &#x20B9; <span>42,999</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> */}
                 </>
             }
         </>

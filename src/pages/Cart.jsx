@@ -72,7 +72,7 @@ const Cart = ({ toggleLoading, updateUserInfo, user }) => {
 
             {
                 !update.status &&
-                <div className="container-fluid">
+                <div className="container-fluid my-3">
                     <div className="row">
                         <div className="col-lg-2 col-md-2 col-2"></div>
                         <div className="col-lg-8 col-md-8 col-12">

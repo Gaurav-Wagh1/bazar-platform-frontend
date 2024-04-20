@@ -17,6 +17,7 @@ import ExtraOrderDetails from "./components/order/ExtraOrderDetails.jsx";
 import SingleProduct from "./components/product/SingleProduct.jsx";
 import Products from "./pages/Products.jsx";
 import Electronics from "./pages/Electronics.jsx";
+import ErrorPage from "./pages/Error-Page.jsx";
 
 const App = () => {
 
@@ -66,6 +67,7 @@ const App = () => {
             <Route path='productdetail' element={<SingleProduct user={user} updateUserInfo={updateUserInfo} toggleLoading={toggleLoading} />} />
             <Route path='loader' element={<Loader />} />
             <Route path='check' element={<Check />} />
+            <Route path='*' element={<ErrorPage />} />
           </Route>
         </Routes>
       </BrowserRouter>

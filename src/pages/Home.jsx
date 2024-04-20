@@ -325,13 +325,13 @@ const Home = () => {
             <div className="banner container-fliud">
                 <div className="row mx-2">
                     <div className="col-6 ">
-                        <div className="card">
-                            <img src={"src/assets/images/homebanner3.png"} alt="" />
+                        <div className="w-100">
+                            <img src={"src/assets/images/homebanner3.png"} className="w-100" alt="" />
                         </div>
                     </div>
                     <div className="col-6">
-                        <div className="card">
-                            <img src={"src/assets/images/homebanner4.png"} alt="" />
+                        <div className="w-100">
+                            <img src={"src/assets/images/homebanner4.png"} className="w-100" alt="" />
                         </div>
                     </div>
                 </div>

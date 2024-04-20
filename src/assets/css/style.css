@@ -347,7 +347,6 @@ h5 {
     line-height: 24px;
     color: #E9E2DA;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-    margin-top: 30px;
 }
 
 footer p {
@@ -878,33 +877,35 @@ label.storage-radio input:checked+span {
     grid-gap: 4rem;
     overflow-x: auto;
     overscroll-behavior-inline: contain;
-    padding-bottom: 20px; 
-    
+    padding-bottom: 20px;
+
 }
 
-.category{
+.category {
     width: 12rem;
     text-align: center;
     padding: 1rem;
     transition: transform 0.5s;
 }
 
-.category:hover{
+.category:hover {
     transform: scale(1.1);
     cursor: pointer;
 }
 
-.category img{
+.category img {
     width: 15rem;
     margin-bottom: 1rem;
-    
+
     box-shadow: #1436fa 0px 4px 16px, rgba(27, 242, 228, 0.1) 0px 8px 24px, rgba(61, 61, 192, 0.1) 0px 16px 56px;
 }
+
 .top-category::-webkit-scrollbar {
-    display: none; /* Webkit */
+    display: none;
+    /* Webkit */
 }
 
-.top-category h5{
+.top-category h5 {
     font-family: 'Signika Negative';
     font-weight: 900;
     color: #1B2141;
@@ -912,7 +913,8 @@ label.storage-radio input:checked+span {
 }
 
 .category h5.title {
-    text-decoration: none !important; /* Remove underline */
+    text-decoration: none !important;
+    /* Remove underline */
 }
 
 @media (max-width: 768px) {
@@ -944,7 +946,7 @@ label.storage-radio input:checked+span {
     /* Remove underline */
 }
 
-@media only screen and (max-width:  768px) {
+@media only screen and (max-width: 768px) {
     .top-category {
         grid-auto-columns: auto;
         grid-gap: 0rem;
@@ -959,4 +961,40 @@ label.storage-radio input:checked+span {
     /* .img-fluid {
         max-width: 74%;
     } */
+}
+
+.card {
+    height: 470px;
+}
+
+.card-body {
+    /* Set a fixed height for the card body */
+    max-height: 4em;
+    /*Approximately two lines */
+    /* overflow: hidden; */
+}
+
+.card-img-top {
+    height: 250px;
+    /* width: 95%; */
+}
+
+.card-title {
+    /* Control line height to ensure two lines */
+    line-height: 1.4em;
+    /* Adjust based on your font size */
+    height: 2.8em;
+    /* 2 lines * line-height */
+    /* Hide overflowing text */
+    overflow: hidden;
+    /* Add ellipsis (...) to indicate text overflow */
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* Number of lines to display */
+    -webkit-box-orient: vertical;
+}
+
+.show-hide-pass:hover{
+    cursor: pointer;
 }

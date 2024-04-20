@@ -4,6 +4,8 @@ import axios from 'axios';
 import "./signup.css";
 import { useState } from 'react';
 
+import informationSVG from "../../assets/images/svgs/info2m.svg";
+
 // -----------------  UPDATING DATABASE WITH USER INFO;
 
 const Information = (prop) => {
@@ -70,16 +72,17 @@ const Information = (prop) => {
                     </div>
                 )
             }
-
-            <div className="container-md">
+            <div className="container-fluid bg-white pb-3 pb-md-0 py-md-5">
                 <div className="row">
-                    <div className="col-md-3"></div>
-                    <div className="main-container col-md-6 p-0">
+                    <div className="col-12 col-md-6">
+                        <img src={informationSVG} alt="" />
+                    </div>
+                    <div className="main-container col-12 col-md-6 p-md-5 mt-3 mt-md-0">
                         <div className="upper p-4">
-                            <h1 className=".display-4">Let's know you more</h1>
+                            <h1 className="display-4" style={{ color: "#1B2141"}}>Let's know you more</h1>
                             <form className="mt-4  text-center">
                                 <input type="text" className="p-2 d-block w-100 mt-2" name='fullName' value={userData.fullName} onChange={handleChange} placeholder="Full Name (First-name Last-Name format)" autoComplete='on' />
-                                <input type="email" className="p-2 d-block w-100 mt-2" id='em' placeholder="Email" defaultValue={prop.user.email} readOnly />
+                                <input type="email" className="p-2 d-block w-100 mt-2" id='em' placeholder="Email" defaultValue={prop.user.email} readOnly disabled />
                                 <input type="text" className="p-2 d-block w-100 mt-2" name='phoneNumber' value={userData.phoneNumber} onChange={handleChange} placeholder="Number" maxLength={10} autoComplete='on' />
                                 <textarea className="p-2 d-block w-100 mt-4" cols="30" name='address' value={userData.address} onChange={handleChange} rows="4" placeholder="Address" autoComplete='on'></textarea>
                                 <input type="text" className="p-2 d-block w-100 mt-2" name='city' value={userData.city} onChange={handleChange} placeholder="City" autoComplete='on' />
@@ -88,9 +91,8 @@ const Information = (prop) => {
                                 <input type="text" className="p-2 d-block w-100 mt-2" name='postalCode' value={userData.postalCode} onChange={handleChange} placeholder="Postal Code" autoComplete='on' />
                             </form>
                         </div>
-                        <button className="btn btn-outline-secondary p-3 font-weight-bolder text-center w-100 text-right float-right" id="confirm" onClick={handleSubmit}>Confirm</button>
+                        <button className="btn rounded btn-outline-secondary p-3 font-weight-bolder text-center w-100 text-right float-right" id="confirm" onClick={handleSubmit}>Confirm</button>
                     </div>
-                    <div className="col-md-3"></div>
                 </div>
             </div>
         </>

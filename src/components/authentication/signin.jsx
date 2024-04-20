@@ -3,6 +3,8 @@ import axios from 'axios';
 import "./signup.css"
 import { useNavigate, Link } from 'react-router-dom';
 
+import SigninSVG from '../../assets/images/svgs/Login-bro.svg';
+
 const Signin = (prop) => {
 
     const [userData, setUserData] = useState({ email: "", password: "" });
@@ -92,23 +94,26 @@ const Signin = (prop) => {
                 )
             }
 
-            <div className="container-md">
+            <div className="container-fluid bg-white pb-3 pb-md-0 py-md-2">
                 <div className="row">
-                    <div className="col-md-3"></div>
-                    <div className="main-container col-md-6 p-0">
-                        <div className="upper p-4">
-                            <h1 className=".display-4">Sign In</h1>
-                            <form className="mt-4  text-center">
+                    <div className="col-12 col-md-6">
+                        <img src={SigninSVG} alt="" />
+                    </div>
+                    <div className="main-container col-12 col-md-6 p-md-5 mt-3 mt-md-0 d-flex flex-column justify-content-center">
+                        <div className="upper">
+                            <h1 className="display-4" style={{color:"#1B2141"}}>Sign In</h1>
+                            <form className="mt-4 mb-4 text-center">
                                 <input type="text" className="p-2 d-block w-100 mt-2" placeholder="Email" name="email" value={userData.email} onChange={handleChange} autoComplete="true" />
                                 <input type="password" className="p-2 d-block w-100 mt-3 mb-4" placeholder="Password" name="password" value={userData.password} onChange={handleChange} />
 
                                 <Link to={"/forgot"} id="forgot" className="mb-3">FORGOT YOUR PASSWORD</Link>
                             </form>
                         </div>
+                        <div>
                         <button className="btn btn-outline-secondary p-3 font-weight-bolder w-50 text-left" id="sign-in" onClick={handleCreate}>Create Account</button>
                         <button className="btn btn-outline-secondary p-3 font-weight-bolder w-50 text-right float-right" id="confirm" onClick={handleSubmit}>Confirm</button>
+                        </div>
                     </div>
-                    <div className="col-md-3"></div>
                 </div>
             </div>
         </>

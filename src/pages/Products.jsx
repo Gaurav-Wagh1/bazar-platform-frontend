@@ -400,8 +400,7 @@ const Product = ({ toggleLoading }) => {
                                                 <img src={productSKU.image} onClick={() => displaySingleProduct(product.id, productSKU.id)} className="card-img-top" alt="..." />
                                                 <div className="card-body" onClick={() => displaySingleProduct(product.id, productSKU.id)}>
                                                     <h5 className="card-title">{product.name} | {productSKU.variety}</h5>
-                                                    <p className="card-text" />
-                                                    <p></p>
+                                                    {/* <p className="card-text" /> */}
                                                     <h3>&#x20B9; {productSKU.price}</h3>
                                                     <p><span><s>&#x20B9; {+productSKU.price + (+productSKU.price * 0.1)}</s></span></p>
                                                     <button onMouseEnter={() => { setCartIcon(productSKU.id) }} onMouseLeave={() => { setCartIcon(undefined) }} className=" mt-2 custom-btn">Add to Cart {cartIcon === productSKU.id ? <i className="fa-solid fa-cart-shopping" style={{ "color": "#1b2141" }}></i> : <i className="fa-solid fa-cart-shopping" style={{ "color": "#ffffff" }}></i>}</button>

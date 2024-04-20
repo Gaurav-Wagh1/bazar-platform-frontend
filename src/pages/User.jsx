@@ -39,7 +39,7 @@ const User = ({ user, updateUserInfo, toggleLoading }) => {
         <>
             {update.status && <Update user={user} setUpdate={setUpdate} updateUserInfo={updateUserInfo} toggleLoading={toggleLoading} />}
             {!update.status &&
-                <div className="container-fluid pt-5 px-0">
+                <div className="container-fluid pt-5 px-0 mb-3">
                     <div className="row">
                         <div className="col-1"></div>
                         <div className="col-12 col-md-10">

@@ -3,6 +3,8 @@ import "./signup.css"
 import { useNavigate } from 'react-router-dom';
 import { useState } from "react";
 
+import forgotPasswordSVG from "../../assets/images/svgs/forgot-password.svg"
+
 const ForgotPassword = (prop) => {
     const [userData, setUserData] = useState({ email: "", password: "", confirmPassword: "", verificationCode: "", otpSent: false });
     const [forgetError, setForgetError] = useState({ flag: false, name: "", description: "" });
@@ -102,13 +104,15 @@ const ForgotPassword = (prop) => {
                 )
             }
 
-            <div className="container-md">
+            <div className="container-fluid bg-white pb-3 pb-md-0 py-md-5">
                 <div className="row">
-                    <div className="col-md-3"></div>
-                    <div className="main-container col-md-6 p-0">
-                        <div className="upper p-4">
-                            <h1 className=".display-4">Forgot Password</h1>
-                            <form className="mt-4  text-center">
+                    <div className="col-12 col-md-6">
+                        <img src={forgotPasswordSVG} className='w-100' alt="" />
+                    </div>
+                    <div className="main-container col-12 col-md-6 p-md-5 mt-3 mt-md-0">
+                        <div className="upper">
+                            <h1 className="display-4">Forgot Password</h1>
+                            <form className="mt-4 mb-4 text-center">
                                 <input type="text" className="p-2 d-block w-100 my-2" placeholder="Enter Your Email" name="email" value={userData.email} onChange={handleChange} readOnly={userData.otpSent ? true : false} autoComplete="true" />
                                 {userData.otpSent ?
                                     <>
@@ -122,7 +126,6 @@ const ForgotPassword = (prop) => {
                         <button className="btn btn-outline-secondary p-3 font-weight-bolder w-50 text-left" id="sign-in" onClick={handleCreate}>Create Account</button>
                         <button className="btn btn-outline-secondary p-3 font-weight-bolder w-50 text-right float-right" id="confirm" onClick={handleSubmit}>Confirm</button>
                     </div>
-                    <div className="col-md-3"></div>
                 </div>
             </div>
         </>

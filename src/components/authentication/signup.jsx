@@ -3,11 +3,16 @@ import axios from 'axios';
 import "./signup.css"
 import { useState } from 'react';
 
+import SignUpSVG from '../../assets/images/svgs/Sign up.svg';
+import PasswordAuthenticationFields from './Password-authentication';
+
 // --------------- VALIDATE PASSWORD IS PENDING;
 
 const Signup = (prop) => {
     const [userData, setUserData] = useState({ email: "", password: "", confirmPassword: "" });
     const [signupError, setSignupError] = useState({ flag: false, name: "" });
+    const [showToast, setShowToast] = useState({ status: false, invalidFields: [] });
+    const [showPass, setShowPass] = useState(false);
 
     const navigate = useNavigate();
 
@@ -17,33 +22,34 @@ const Signup = (prop) => {
     }
 
     function isValidPassword(password) {
+        const invalidFields = [];
         // Check if the password is at least 8 characters long
         if (password.length < 8) {
-            return false;
+            invalidFields.push("length")
         }
 
         // Check if the password contains at least one uppercase letter
         if (!/[A-Z]/.test(password)) {
-            return false;
+            invalidFields.push("uppercase");
         }
 
         // Check if the password contains at least one lowercase letter
         if (!/[a-z]/.test(password)) {
-            return false;
+            invalidFields.push("lowercase");
         }
 
         // Check if the password contains at least one digit
         if (!/\d/.test(password)) {
-            return false;
+            invalidFields.push("digit");
         }
 
         // Check if the password contains at least one special character
         if (!/[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/.test(password)) {
-            return false;
+            invalidFields.push("special");
         }
 
         // If all criteria are met, the password is valid
-        return true;
+        return invalidFields.length ? { status: false, invalidFields } : { status: true, invalidFields };
     }
 
     const handleSignIn = async () => {
@@ -70,6 +76,13 @@ const Signup = (prop) => {
                 return;
             }
 
+            const { status, invalidFields } = isValidPassword(userData.password);
+            if (!status) {
+                setShowToast({ status: true, invalidFields });
+                return;
+            }
+            setShowToast({ status: false, invalidFields: [] });
+
             const apiUrl = `/api/v1/users/signup`;
             prop.toggleLoading(true);
             try {
@@ -77,7 +90,6 @@ const Signup = (prop) => {
                     email: userData.email,
                     password: userData.password
                 });
-                // console.log(response);
                 prop.setUser({ ...prop.user, email: userData.email, id: response.data.data });
                 prop.toggleLoading(false);
                 setSignupError({ flag: false, name: "Success" });
@@ -135,23 +147,31 @@ const Signup = (prop) => {
                 )
             }
 
+            {showToast.status && <PasswordAuthenticationFields showToast={showToast} setShowToast={setShowToast} />}
+
             {/* signup from  */}
-            <div className="container-md">
-                <div className="row">
-                    <div className="col-md-3"></div>
-                    <div className="main-container col-md-6 p-0">
-                        <div className="upper p-4">
-                            <h1 className=".display-4">Register Yourself</h1>
-                            <form className="mt-4 mb-4" >
+            <div className="container-fluid bg-white pb-3 pb-md-0 py-md-5">
+                <div className="row" >
+                    <div className="col-12 col-md-6">
+                        <img src={SignUpSVG} alt="" className='w-100' />
+                    </div>
+                    <div className="main-container col-12 col-md-6 p-md-5 mt-3 mt-md-0">
+                        <div className="upper">
+                            <h1 className="display-4" style={{ color: "#1B2141" }}>Register Yourself</h1>
+                            <form className="mt-4 mb-4 text-center">
                                 <input type="text" name='email' className="p-2 d-block w-100 mt-2" value={userData.email} onChange={handleChange} placeholder="Email" autoComplete='on' />
-                                <input type="password" name='password' className="p-2 d-block w-100 mt-2" value={userData.password} onChange={handleChange} placeholder="Password" autoComplete='on' />
-                                <input type="password" name='confirmPassword' className="p-2 d-block w-100 mt-2" value={userData.confirmPassword} onChange={handleChange} placeholder="Confirm Password" autoComplete='on' />
+
+                                <div style={{ "display": "flex", "position": "relative", "alignItems": "center" }}>
+                                    <input type={showPass ? "text" : "password"} name='password' className="p-2 d-block w-100 mt-2" value={userData.password} onChange={handleChange} placeholder="Password" autoComplete='on' />
+                                    <i className='' ><img src={`/src/assets/images/${showPass ? "hide-pass.png" : "show-pass.png"}`} onClick={() => setShowPass(!showPass)} title='show/hide password' className='show-hide-pass' style={{ "width": "80%" }} /></i>
+                                </div>
+
+                                <input type={showPass ? "text" : "password"} name='confirmPassword' className="p-2 d-block w-100 mt-2" value={userData.confirmPassword} onChange={handleChange} placeholder="Confirm Password" autoComplete='on' />
                             </form>
                         </div>
                         <button type="submit" className="btn btn-outline-secondary mt-2 p-3 font-weight-bolder w-50 text-left" id="sign-in" onClick={handleSignIn}>Sign In</button>
                         <button type="submit" className="btn btn-outline-secondary mt-2 p-3 font-weight-bolder w-50 text-right float-right" id="confirm" onClick={handleSubmit}>Confirm</button>
                     </div>
-                    <div className="col-md-3"></div>
                 </div>
             </div>
         </>
