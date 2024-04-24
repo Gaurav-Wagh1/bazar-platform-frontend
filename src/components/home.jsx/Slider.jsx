@@ -73,10 +73,10 @@ const Slider = (prop) => {
                 <div className="slider" ref={scrollContainerRef} id="slider">
                     {products.map(product => {
                         return <div className="slide" key={product.id} onClick={() => displaySingleProduct(product.Product.id, product.id)}>
-                            <div className="card card_border shadow bg-body-tertiary rounded" style={{ maxWidth: "15rem", height:"400px" }}>
-                                <img src={product.image} className="card-img-top mt-2" style={{width:"80%", margin:"0 auto"}} alt="..." />
+                            <div className="card card_border shadow bg-body-tertiary rounded" style={{ maxWidth: "15rem", height: "400px" }}>
+                                <img src={product.image} className="card-img-top mt-2" style={{ width: "80%", margin: "0 auto" }} alt="..." />
                                 <div className="card-body">
-                                    <h5 className="card-title">{product.Product.name}{product.variety}</h5>
+                                    <h5 className="card-title">{product.Product.name} | {product.variety}</h5>
                                     {/* <p className="card-text"> */}
                                     <h3>&#8377; {product.price}</h3>
                                     <p> <span><del>&#x20B9; {+product.price + (+product.price * 0.1)}</del></span></p>

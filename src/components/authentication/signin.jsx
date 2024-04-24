@@ -9,6 +9,7 @@ const Signin = (prop) => {
 
     const [userData, setUserData] = useState({ email: "", password: "" });
     const [signinError, setSigninError] = useState({ flag: false, name: "" });
+    const [showPass, setShowPass] = useState(false);
 
     const navigate = useNavigate();
 
@@ -101,17 +102,20 @@ const Signin = (prop) => {
                     </div>
                     <div className="main-container col-12 col-md-6 p-md-5 mt-3 mt-md-0 d-flex flex-column justify-content-center">
                         <div className="upper">
-                            <h1 className="display-4" style={{color:"#1B2141"}}>Sign In</h1>
+                            <h1 className="display-4" style={{ color: "#1B2141" }}>Sign In</h1>
                             <form className="mt-4 mb-4 text-center">
                                 <input type="text" className="p-2 d-block w-100 mt-2" placeholder="Email" name="email" value={userData.email} onChange={handleChange} autoComplete="true" />
-                                <input type="password" className="p-2 d-block w-100 mt-3 mb-4" placeholder="Password" name="password" value={userData.password} onChange={handleChange} />
+                                <div style={{ "display": "flex", "position": "relative", "alignItems": "center" }}>
+                                    <input type={showPass ? "text" : "password"} name='password' className="p-2 d-block w-100 mt-2" value={userData.password} onChange={handleChange} placeholder="Password" autoComplete='on' />
+                                    <i className='' ><img src={`/src/assets/images/${showPass ? "hide-pass.png" : "show-pass.png"}`} onClick={() => setShowPass(!showPass)} title='show/hide password' className='show-hide-pass' style={{ "width": "80%" }} /></i>
+                                </div>
 
                                 <Link to={"/forgot"} id="forgot" className="mb-3">FORGOT YOUR PASSWORD</Link>
                             </form>
                         </div>
                         <div>
-                        <button className="btn btn-outline-secondary p-3 font-weight-bolder w-50 text-left" id="sign-in" onClick={handleCreate}>Create Account</button>
-                        <button className="btn btn-outline-secondary p-3 font-weight-bolder w-50 text-right float-right" id="confirm" onClick={handleSubmit}>Confirm</button>
+                            <button className="btn btn-outline-secondary p-3 font-weight-bolder w-50 text-left" id="sign-in" onClick={handleCreate}>Create Account</button>
+                            <button className="btn btn-outline-secondary p-3 font-weight-bolder w-50 text-right float-right" id="confirm" onClick={handleSubmit}>Confirm</button>
                         </div>
                     </div>
                 </div>

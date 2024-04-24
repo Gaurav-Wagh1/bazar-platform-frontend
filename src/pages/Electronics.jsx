@@ -93,7 +93,7 @@ const Electronics = () => {
 
             {/* <!-- ADVERTISE --> */}
             <div className="banner-2 container-fluid mb-4" onClick={() => showCategoryProducts("mobiles")}>
-                <div className="card" style={{ "borderRadius": "0", "border": "0px solid transparent" }}>
+                <div className="" style={{ "borderRadius": "0", "border": "0px solid transparent" }}>
                     <img src={"src/assets/images/banner-2.png"} className="card-img" alt="..." />
                 </div>
             </div>

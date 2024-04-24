@@ -3,21 +3,22 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import Home from "./pages/Home.jsx";
+import Cart from "./pages/Cart.jsx";
+import User from "./pages/User.jsx";
+import Layout from './pages/Layout.jsx';
+import Check from "./components/Check.jsx";
+import Clothing from "./pages/Clothing.jsx";
+import Products from "./pages/Products.jsx";
+import ErrorPage from "./pages/Error-Page.jsx";
+import Electronics from "./pages/Electronics.jsx";
+import Loader from "./components/loader/loader.jsx";
 import Signup from "./components/authentication/signup"
 import Signin from "./components/authentication/signin"
-import Information from "./components/authentication/Information"
-import ForgotPassword from "./components/authentication/forgot-password.jsx";
-import Layout from './pages/Layout.jsx';
-import Cart from "./pages/Cart.jsx";
 import ProductForm from "./components/product/Product-form.jsx";
-import Loader from "./components/loader/loader.jsx";
-import User from "./pages/User.jsx";
-import Check from "./components/Check.jsx";
-import ExtraOrderDetails from "./components/order/ExtraOrderDetails.jsx";
+import Information from "./components/authentication/Information"
 import SingleProduct from "./components/product/SingleProduct.jsx";
-import Products from "./pages/Products.jsx";
-import Electronics from "./pages/Electronics.jsx";
-import ErrorPage from "./pages/Error-Page.jsx";
+import ExtraOrderDetails from "./components/order/ExtraOrderDetails.jsx";
+import ForgotPassword from "./components/authentication/forgot-password.jsx";
 
 const App = () => {
 
@@ -55,6 +56,7 @@ const App = () => {
           <Route path="/" element={<Layout user={user} isLoading={isLoading} toggleLoading={toggleLoading} updateUserInfo={updateUserInfo} />}>
             <Route index element={<Home />} />
             <Route path='electronics' element={<Electronics />} />
+            <Route path='clothings' element={<Clothing />} />
             <Route path='signup' element={<Signup user={user} setUser={setUser} toggleLoading={toggleLoading} />} />
             <Route path='info' element={<Information user={user} setUser={setUser} toggleLoading={toggleLoading} title={"Tell something more about you"} description={""} />} />
             <Route path='signin' element={<Signin user={user} updateUserInfo={updateUserInfo} toggleLoading={toggleLoading} />} />

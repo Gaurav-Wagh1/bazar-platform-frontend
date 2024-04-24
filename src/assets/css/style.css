@@ -998,3 +998,41 @@ label.storage-radio input:checked+span {
 .show-hide-pass:hover{
     cursor: pointer;
 }
+
+
+/* Category */
+
+.cloth-category .catlog {
+    transition: transform 0.5s ease;
+}
+
+.cloth-category .catlog:hover {
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+.button {
+    padding: 10px 15px;
+    background-color: #1B2141;
+    color: #E9E2DA;
+    border: none;
+    border-radius: 5px;
+    margin-top: auto;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    align-items: center;
+    width: 17rem;
+}
+
+.carousel-control-prev-icon:hover{
+    transform: scale(1.2);
+}
+.carousel-control-next-icon:hover{
+    transform: scale(1.2);
+}
+
+.catlog{
+    /* height: 20vh; */
+}

@@ -15,7 +15,8 @@ input:focus {
 }
 
 body {
-    background-color: rgb(211, 211, 211);
+    /* background-color: rgb(211, 211, 211); */
+    background-color: white;
 }
 
 .main-container {

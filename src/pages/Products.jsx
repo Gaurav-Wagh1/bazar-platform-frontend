@@ -17,6 +17,7 @@ const Product = ({ toggleLoading }) => {
         "30000-50000": false,
         "50000-": false
     });
+    const [productsCategory, setProductsCategory] = useState("");                   // for changing the filters for clothes kind of categories;
 
     const [filterURL, setFilterURL] = useState("");
 
@@ -26,24 +27,42 @@ const Product = ({ toggleLoading }) => {
     useEffect(() => {
         toggleLoading(true);
         resetCheckboxes();
-
+        let mode = ""
         let apiURL = `/api/v1/products`;
         const filterForSearch = location.state;
-
+        if (filterForSearch.category) {
+            apiURL += `?category=${filterForSearch.category}`;
+            setProductsCategory("clothes");
+            mode = "clothes";
+        }
         if (filterForSearch?.name) {
             apiURL += `?name=${filterForSearch.name}`
         }
         if (filterForSearch.subcategory) {
             apiURL += apiURL.includes("?") ? `&subcategory=${filterForSearch.subcategory}` : `?subcategory=${filterForSearch.subcategory}`;
         }
-        fetchData(apiURL);
+        fetchData(apiURL, mode);
     }, [location]);
 
-    const fetchData = async (apiURL) => {
+    const fetchData = async (apiURL, mode) => {
         try {
             const axiosResponse = await axios.get(apiURL);
+            if (mode === "clothes") {
+                const { products, categoriesForFilter, activeFilter } = axiosResponse.data.data;
+                setProductsDetails(products.sort(() => Math.random() - .5));
+                const categoryCheckBox = {};
+                categoriesForFilter.forEach((category) => {
+                    categoryCheckBox[category] = false;
+                });
+                activeFilter.forEach((brand) => {
+                    categoryCheckBox[brand] = true;
+                })
+                setBrandCheckBoxes(categoryCheckBox);
+                toggleLoading(false);
+                return;
+            }
             const { products, brandsForFilter, activeFilter } = axiosResponse.data.data;
-            setProductsDetails(products);
+            setProductsDetails(products.sort(() => Math.random() - .5));
             const brandCheckBox = {};
             brandsForFilter.forEach((brand) => {
                 brandCheckBox[brand] = false;
@@ -89,6 +108,7 @@ const Product = ({ toggleLoading }) => {
             }
         }
         const chosenBrandsArr = Object.keys(chosenBrands);
+
         if (!chosenBrandsArr.length) {
             let apiURL = `/api/v1/products`;
             const filterForSearch = location.state;
@@ -99,30 +119,59 @@ const Product = ({ toggleLoading }) => {
             if (filterForSearch.subcategory) {
                 apiURL += apiURL.includes("?") ? `&subcategory=${filterForSearch.subcategory}` : `?subcategory=${filterForSearch.subcategory}`;
             }
+            if (filterForSearch.category) {
+                apiURL += apiURL.includes("?") ? `&category=${filterForSearch.category}` : `?category=${filterForSearch.category}`;
+            }
             if (filterURL.length) {
                 apiURL += apiURL.includes("?") ? `&${filterURL.slice(filterURL.indexOf("price"))}` : `?${filterURL.slice(filterURL.indexOf("price"))}`;
             }
             setFilterURL(apiURL);
-            fetchData(apiURL);
+            if (productsCategory === "clothes") {
+                fetchData(apiURL, "clothes");
+            }
+            else {
+                fetchData(apiURL);
+            }
             return;
         }
+
         let apiURL = "/api/v1/products";
         const filterForSearch = location.state;
-        if (filterForSearch.subcategory) {
-            apiURL += `?subcategory=${filterForSearch.subcategory}`;
+        if (productsCategory === "clothes") {
+            apiURL += `?category=${filterForSearch.category}`;
+            apiURL += '&subcategory=';
+            chosenBrandsArr.forEach((category, index) => {
+                index === 0 ? apiURL += `${category}` : apiURL += `,${category}`;
+            });
+            if (filterURL.length) {
+                const priceIndex = filterURL.indexOf("price");
+                if (priceIndex !== -1) {
+                    apiURL += apiURL.includes("?") ? `&${filterURL.slice(priceIndex)}` : `?${filterURL.slice(priceIndex)}`;
+                }
+            }
         }
-        apiURL += apiURL.includes("?") ? `&name=` : `?name=`;
-        chosenBrandsArr.forEach((brand, index) => {
-            index === 0 ? apiURL += `${brand}` : apiURL += `,${brand}`;;
-        });
-        if (filterURL.length) {
-            const priceIndex = filterURL.indexOf("price");
-            if (priceIndex !== -1) {
-                apiURL += apiURL.includes("?") ? `&${filterURL.slice(priceIndex)}` : `?${filterURL.slice(priceIndex)}`;
+        else {
+            if (filterForSearch.subcategory) {
+                apiURL += `?subcategory=${filterForSearch.subcategory}`;
+            }
+            apiURL += apiURL.includes("?") ? `&name=` : `?name=`;
+            chosenBrandsArr.forEach((brand, index) => {
+                index === 0 ? apiURL += `${brand}` : apiURL += `,${brand}`;;
+            });
+            if (filterURL.length) {
+                const priceIndex = filterURL.indexOf("price");
+                if (priceIndex !== -1) {
+                    apiURL += apiURL.includes("?") ? `&${filterURL.slice(priceIndex)}` : `?${filterURL.slice(priceIndex)}`;
+                }
             }
         }
         setFilterURL(apiURL);
-        fetchData(apiURL);
+        if (productsCategory === "clothes") {
+            fetchData(apiURL, "clothes");
+        }
+        else {
+            fetchData(apiURL);
+        }
     }
 
     const handlePriceSubmit = (e) => {
@@ -162,7 +211,12 @@ const Product = ({ toggleLoading }) => {
             apiURL += apiURL.includes("?") ? `&price=${arrayToSend}` : `?price=${arrayToSend}`;
         }
         setFilterURL(apiURL);
-        fetchData(apiURL);
+        if (productsCategory === "clothes") {
+            fetchData(apiURL, "clothes");
+        }
+        else {
+            fetchData(apiURL);
+        }
         return;
     }
 
@@ -171,7 +225,7 @@ const Product = ({ toggleLoading }) => {
             {filterMedium && <div className="container-fluid filter-medium">
                 <div className="row py-3">
                     <div className="col-3 text-center p-0">
-                        <h6 className="fw-medium py-2 m-0 filter-heading" style={active === "brand" ? { "backgroundColor": "white", "color": "#1b2141" } : { "backgroundColor": "#d3d3d3" }} onClick={() => setActive("brand")}>Brand</h6>
+                        <h6 className="fw-medium py-2 m-0 filter-heading" style={active === "brand" ? { "backgroundColor": "white", "color": "#1b2141" } : { "backgroundColor": "#d3d3d3" }} onClick={() => setActive("brand")}>{productsCategory === "clothes" ? "Categories" : "Brand"}</h6>
                         <h6 className="fw-medium py-2 m-0 filter-heading" style={active === "price" ? { "backgroundColor": "white" } : { "backgroundColor": "#d3d3d3" }} onClick={() => setActive("price")}>Price</h6>
                     </div>
                     <div className="col-9 bg-white rounded-bottom py-3">
@@ -290,7 +344,7 @@ const Product = ({ toggleLoading }) => {
                     <div className="col-2 border fil sticky-container d-none d-lg-block">
                         <div className="filter">
                             <div className="brand heading">
-                                <h4>Brands</h4>
+                                <h4>{productsCategory === "clothes" ? "Categories" : "Brands"}</h4>
                                 <ul className="pl-2 m-0">
                                     {Object.keys(brandCheckBoxes).map((brand, index) => {
                                         return (

@@ -149,7 +149,7 @@ const Header = (prop) => {
                                     <NavLink to="/home-appliances" className="nav-link">Home Appliances</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/clothing" className="nav-link">Clothing</NavLink>
+                                    <NavLink to="/clothings" className="nav-link">Clothing</NavLink>
                                 </li>
                             </ul>
 
