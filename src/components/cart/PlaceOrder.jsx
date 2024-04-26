@@ -25,12 +25,11 @@ const PlaceOrder = ({ total, toggleLoading, setUpdate }) => {
             }
         }
     }
-    console.log(total)
     return (
         total &&
-        <div className="container-fluid cart-item" id="sticky">
+        <div className="container-fluid border-top" id="sticky">
             <div className="total-price p-3 d-flex flex-row justify-content-around">
-                <h5>{total}/-</h5>
+                <h5>Total Amount - {total}/-</h5>
                 <button className="btn btn-warning" onClick={handlePlaceOrder} id="placeOrder">Place order</button>
             </div>
         </div>

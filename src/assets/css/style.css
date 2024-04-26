@@ -269,7 +269,9 @@ h5 {
     background-color: #1B2141;
 }
 
-
+.user-div{
+    background-color: #E9E2DA;
+}
 
 /* section 4- Service-info */
 .service-col {
@@ -894,7 +896,7 @@ label.storage-radio input:checked+span {
 }
 
 .category img {
-    width: 15rem;
+    /* width: 15rem; */
     margin-bottom: 1rem;
 
     box-shadow: #1436fa 0px 4px 16px, rgba(27, 242, 228, 0.1) 0px 8px 24px, rgba(61, 61, 192, 0.1) 0px 16px 56px;
@@ -1035,4 +1037,42 @@ label.storage-radio input:checked+span {
 
 .catlog{
     /* height: 20vh; */
+}
+
+
+.cat-btn button {
+    font-family: 'Signika Negative';
+    font-weight: 900;
+    color: #E9E2DA;
+    background-color: #1B2141;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid #1B2141; 
+    border-radius: 3rem;
+    position: absolute;
+    margin-top: 0.5rem;
+}
+
+.cat-btn button:hover {
+    background-color: #E9E2DA;
+    color: #1B2141;
+}
+
+.left {
+    left: 1rem; 
+}
+
+.right {
+    right: 1rem;
+}
+
+.cat{
+    transition: transform 0.5s ease;
+}
+
+.cat:hover{
+    transform: scale(1.1);
+    z-index: 1;
 }

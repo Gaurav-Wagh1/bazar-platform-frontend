@@ -78,10 +78,16 @@ const Cart = ({ toggleLoading, updateUserInfo, user }) => {
                         <div className="col-lg-8 col-md-8 col-12">
                             <div className="main-container">
                                 <h3 className='p-2 mx-3'>Shopping Cart </h3>
+                                <hr />
                                 {cartItems.length
                                     ?
                                     cartItems.map((apiCartItem) => {
-                                        return <CartItem quantity={apiCartItem.quantity} price={apiCartItem.ProductSKU.price} imageURL={apiCartItem.ProductSKU.image} variety={apiCartItem.ProductSKU.variety} name={apiCartItem.ProductSKU.Product.name} key={apiCartItem.id} removeCartItem={removeCartItem} cartItemId={apiCartItem.id} productId={apiCartItem.ProductSKU.Product.id} productSKUId={apiCartItem.ProductSKU.id} />
+                                        return (
+                                            <>
+                                                <CartItem quantity={apiCartItem.quantity} price={apiCartItem.ProductSKU.price} imageURL={apiCartItem.ProductSKU.image} variety={apiCartItem.ProductSKU.variety} name={apiCartItem.ProductSKU.Product.name} key={apiCartItem.id} removeCartItem={removeCartItem} cartItemId={apiCartItem.id} productId={apiCartItem.ProductSKU.Product.id} productSKUId={apiCartItem.ProductSKU.id} />
+                                                <hr />
+                                            </>
+                                        )
                                     })
                                     :
                                     <>

@@ -155,7 +155,7 @@ const Signup = (prop) => {
                     <div className="col-12 col-md-6">
                         <img src={SignUpSVG} alt="" className='w-100' />
                     </div>
-                    <div className="main-container col-12 col-md-6 p-md-5 mt-3 mt-md-0">
+                    <div className="main-container col-12 col-md-6 p-md-5 mt-3 mt-md-0 border-0">
                         <div className="upper">
                             <h1 className="display-4" style={{ color: "#1B2141" }}>Register Yourself</h1>
                             <form className="mt-4 mb-4 text-center">

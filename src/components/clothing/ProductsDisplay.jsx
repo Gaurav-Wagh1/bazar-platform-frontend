@@ -26,10 +26,10 @@ const ProductsDisplay = (prop) => {
 
     return (
         <div className="product-list" id="product-list">
-            <div className="row mx-4 align-items-center">
+            <div className="row mx-0 mx-lg-4 align-items-center">
                 {products.map(product => {
-                    return <div className="col-12 col-sm-6 col-md-4 col-lg-3 product d-flex justify-content-center" key={product.id} onClick={() => displaySingleProduct(product.Product.id, product.id)}>
-                        <div className="card card_border shadow mb-5 bg-body-tertiary rounded" style={{ "width": "17rem", "height": "400px" }}>
+                    return <div className="col-6 col-lg-3 product d-flex justify-content-center" key={product.id} onClick={() => displaySingleProduct(product.Product.id, product.id)}>
+                        <div className="card card_border shadow mb-2 mb-lg-5 bg-body-tertiary rounded" style={{ "width": "17rem", "height": "400px" }}>
                             <img src={product.image} className="card-img-top" alt="..." />
                             <div className="card-body">
                                 <h5 className="card-title">

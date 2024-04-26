@@ -6,13 +6,18 @@
 }
 
 .main-container {
-    background-color: white;
+    /* background-color: #E9E2DA; */
+    border: 2px solid #E9E2DA;
     border-radius: 5px;
     /* box-shadow: -5px 5px 30px 2px #888888 */
 }
 
+.cart-heading{
+    background-color: #E9E2DA;
+}
+
 .cart-item {
-    border: 2px solid rgb(228, 228, 228);
+    border: 2px solid white;
     border-left: 2px solid transparent;
     border-right: 2px solid transparent;
 }

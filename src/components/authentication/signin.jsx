@@ -100,7 +100,7 @@ const Signin = (prop) => {
                     <div className="col-12 col-md-6">
                         <img src={SigninSVG} alt="" />
                     </div>
-                    <div className="main-container col-12 col-md-6 p-md-5 mt-3 mt-md-0 d-flex flex-column justify-content-center">
+                    <div className="main-container border-0 col-12 col-md-6 p-md-5 mt-3 mt-md-0 d-flex flex-column justify-content-center">
                         <div className="upper">
                             <h1 className="display-4" style={{ color: "#1B2141" }}>Sign In</h1>
                             <form className="mt-4 mb-4 text-center">

@@ -43,9 +43,9 @@ const User = ({ user, updateUserInfo, toggleLoading }) => {
                     <div className="row">
                         <div className="col-1"></div>
                         <div className="col-12 col-md-10">
-                            <div className="bg-white  user-div rounded">
+                            <div className="user-div rounded">
                                 <div className="user-name px-5 py-4">
-                                    <strong>{user.fullName}</strong>
+                                    <strong className="display-6">{user.fullName}</strong>
                                     <Link title="Update user information" className="float-right" id="t-1">
                                         <i className="fa-solid fa-pen-to-square fa-xl mt-2 float-right" onClick={handleUpdate} id="edit" style={{ "color": "#1b2141" }}></i>
                                     </Link>

@@ -5,7 +5,9 @@ import { useEffect, useState } from "react";
 import Home from "./pages/Home.jsx";
 import Cart from "./pages/Cart.jsx";
 import User from "./pages/User.jsx";
+import Mens from "./pages/Mens.jsx";
 import Layout from './pages/Layout.jsx';
+import Womens from "./pages/Womens.jsx";
 import Check from "./components/Check.jsx";
 import Clothing from "./pages/Clothing.jsx";
 import Products from "./pages/Products.jsx";
@@ -19,6 +21,7 @@ import Information from "./components/authentication/Information"
 import SingleProduct from "./components/product/SingleProduct.jsx";
 import ExtraOrderDetails from "./components/order/ExtraOrderDetails.jsx";
 import ForgotPassword from "./components/authentication/forgot-password.jsx";
+import HomeAppliances from "./pages/Home-Appliances.jsx";
 
 const App = () => {
 
@@ -57,6 +60,9 @@ const App = () => {
             <Route index element={<Home />} />
             <Route path='electronics' element={<Electronics />} />
             <Route path='clothings' element={<Clothing />} />
+            <Route path='women' element={<Womens />} />
+            <Route path='men' element={<Mens />} />
+            <Route path='home-appliances' element={<HomeAppliances />} />
             <Route path='signup' element={<Signup user={user} setUser={setUser} toggleLoading={toggleLoading} />} />
             <Route path='info' element={<Information user={user} setUser={setUser} toggleLoading={toggleLoading} title={"Tell something more about you"} description={""} />} />
             <Route path='signin' element={<Signin user={user} updateUserInfo={updateUserInfo} toggleLoading={toggleLoading} />} />
