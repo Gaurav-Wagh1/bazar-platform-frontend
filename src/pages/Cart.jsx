@@ -19,6 +19,11 @@ const Cart = ({ toggleLoading, updateUserInfo, user }) => {
                 toggleLoading(true);
                 const apiURL = "/api/v1/carts";
                 const response = await axios.get(apiURL);
+                if(response.data.data === null){
+                    setCartItems([]);
+                    toggleLoading(false);
+                    return;
+                }
                 const apiCartItems = response.data.data.CartItems;
                 setCartItems(apiCartItems);
                 let quantity = 0;

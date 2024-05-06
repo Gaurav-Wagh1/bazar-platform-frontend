@@ -1,10 +1,16 @@
 import { useNavigate } from "react-router-dom";
+import ProductsDisplay from "../components/clothing/ProductsDisplay";
 
 const Womens = () => {
     const navigate = useNavigate();
 
     const displaySubCategoryProducts = (subcategory) => {
         const filter = { category: "Women's Clothing", subcategory };
+        navigate("/search-for-products", { state: filter });
+    }
+
+    const showCategoryProducts = () => {
+        const filter = { category: "Women's Clothing" };
         navigate("/search-for-products", { state: filter });
     }
 
@@ -99,10 +105,9 @@ const Womens = () => {
                 <div className="heading">
                     <h1>Explore More</h1>
                 </div>
-                <div className="more align-items-center">
-                    <a href="women-clothes.html">
-                        <button className="button " onClick={() => showCategoryProducts("Women's Clothing")}>Explore More</button>
-                    </a>
+                <ProductsDisplay products={[128, 106, 149, 131, 112, 129, 150, 117]} />
+                <div className="more align-items-center text-center">
+                    <button className="button " onClick={showCategoryProducts}>Explore More</button>
                 </div>
             </div>
         </>

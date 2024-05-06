@@ -1,10 +1,16 @@
 import { useNavigate } from "react-router-dom";
+import ProductsDisplay from "../components/clothing/ProductsDisplay";
 
 const Mens = () => {
     const navigate = useNavigate();
 
     const displaySubCategoryProducts = (subcategory) => {
         const filter = { category: "Men's Clothing", subcategory };
+        navigate("/search-for-products", { state: filter });
+    }
+
+    const displayCategoryProducts = () => {
+        const filter = { category: "Men's Clothing" };
         navigate("/search-for-products", { state: filter });
     }
 
@@ -49,7 +55,7 @@ const Mens = () => {
                 <div className="heading">
                     <h1>Top Category</h1>
                 </div>
-                <div className=" top-category "> 
+                <div className=" top-category ">
                     <div className="category text-center" onClick={() => displaySubCategoryProducts("Shirts")}>
                         <img src="/src/assets/images/men/cat1-shirt.webp" className="img-fluid " style={{ "borderRadius": "7rem", "height": "36vh" }} />
                         <h5 className="title">Shirts</h5>
@@ -99,10 +105,9 @@ const Mens = () => {
                 <div className="heading">
                     <h1>Explore More</h1>
                 </div>
-                <div className="more align-items-center">
-                    <a href="women-clothes.html">
-                        <button className="button ">Explore More</button>
-                    </a>
+                <ProductsDisplay products={[118, 90, 125 ,101, 96, 92, 119, 127]} />
+                <div className="more align-items-center text-center">
+                    <button className="button" onClick={displayCategoryProducts}>Explore More</button>
                 </div>
             </div>
         </>

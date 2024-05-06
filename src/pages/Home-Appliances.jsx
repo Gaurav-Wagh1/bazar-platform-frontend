@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import ProductsDisplay from "../components/clothing/ProductsDisplay";
 
 const HomeAppliances = () => {
     const navigate = useNavigate();
@@ -106,7 +107,7 @@ const HomeAppliances = () => {
                 <div className="heading">
                     <h1>Explore More</h1>
                 </div>
-                
+                <ProductsDisplay products={[139, 49,141, 134, 144, 148, 146, 138, 65 ,62, 142, 140]} />
             </div>
         </>
     );

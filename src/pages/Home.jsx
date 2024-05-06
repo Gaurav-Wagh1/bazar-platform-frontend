@@ -97,13 +97,13 @@ const Home = () => {
                 <div className="heading">
                     <h1>Featured Products</h1>
                 </div>
-                <ProductsDisplay products={[45, 46, 47, 48]}/>
+                <ProductsDisplay products={[52, 139, 65, 30]} />
             </div>
 
             {/* <!-- Section 6 Advertise --> */}
             <div className="banner">
                 <div className="container-fluid">
-                    <img src={"src/assets/images/homebanner1.jpg"} style={{"width":"100%"}} alt="" />
+                    <img src={"src/assets/images/homebanner1.jpg"} style={{ "width": "100%" }} alt="" />
                 </div>
             </div>
 
@@ -112,13 +112,13 @@ const Home = () => {
                 <div className="heading">
                     <h1>Best Selling</h1>
                 </div>
-                <Slider products={[103, 99, 104, 116, 109, 98]} />
+                <Slider products={[130, 99, 103, 104, 116, 98]} />
             </div>
 
             {/* <!-- Section 6 Advertise --> */}
             <div className="banner">
-            <div className="container-fluid">
-                    <img src={"src/assets/images/homebanner2.jpg"} style={{"width":"100%"}} alt="" />
+                <div className="container-fluid">
+                    <img src={"src/assets/images/homebanner2.jpg"} style={{ "width": "100%" }} alt="" />
                 </div>
             </div>
 
@@ -127,7 +127,7 @@ const Home = () => {
                 <div className="heading">
                     <h1>New Products</h1>
                 </div>
-                <Slider products={[103, 99, 104, 116, 109, 98]} />
+                <Slider products={[148, 63, 104, 71, 133, 98]} />
             </div>
 
             {/* <!-- banner --> */}

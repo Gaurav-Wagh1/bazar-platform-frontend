@@ -10,7 +10,7 @@ const CartItem = ({ quantity, price, imageURL, variety, name, cartItemId, remove
         navigate("/productdetail", { state: { productId, productSkuId: productSKUId } });
     }
     return (
-        <div className="container-fluid cart-item" >
+        <div className="container-fluid cart-item" key={cartItemId}>
             <div className="row p-4 text-center position-relative">
                 <img src={cross} alt="remove" onClick={() => { removeCartItem(cartItemId) }} className='position-absolute w-md-5 w-3 cross' />
                 <div className="col-lg-3 col-md-3 col-12">

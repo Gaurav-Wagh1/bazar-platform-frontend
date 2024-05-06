@@ -98,8 +98,12 @@ const SingleProduct = ({ toggleLoading, user, updateUserInfo }) => {
                 }, 3000);
             }
         } catch (error) {
-            console.log(error);
             toggleLoading(false);
+            if(error.response.data.error === "Unauthenticated user!"){
+                navigate("/signin");
+                return;
+            }
+            console.log(error);
         }
     }
 

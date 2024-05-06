@@ -2,6 +2,12 @@ import "../../assets/css/style.css"
 import { Link, NavLink } from "react-router-dom";
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+
 import axios from "axios";
 
 // images
@@ -37,6 +43,7 @@ const Header = (prop) => {
             console.log(error);
         }
         prop.updateUserInfo({});
+        navigate("/")
     }
 
     const handleUser = async () => {
@@ -128,7 +135,7 @@ const Header = (prop) => {
                 </div>
 
                 {/* <!-- SECTION 2      nav-lower --> */}
-                <nav className="navbar navbar-expand-lg" id="navbar">
+                {/* <nav className="navbar navbar-expand-lg" id="navbar">
                     <div className="container-fluid">
                         <Link className="navbar-brand logo" to={"/"}><img src={brandLogo} alt="" width="180px" /></Link>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -139,7 +146,6 @@ const Header = (prop) => {
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li className="nav-item">
-                                    {/* <a className="nav-link active" aria-current="page" href="">Home</a> */}
                                     <NavLink to="/" className="nav-link">Home</NavLink>
                                 </li>
                                 <li>
@@ -159,7 +165,36 @@ const Header = (prop) => {
                             </form>
                         </div>
                     </div>
-                </nav>
+                </nav> */}
+                <Navbar expand="lg" className="navbar" id="navbar">
+                    <div className="container-fluid">
+                        <Navbar.Brand ><Link className="navbar-brand logo" to={"/"}><img src={brandLogo} alt="" width="180px" /></Link></Navbar.Brand>
+                        <Navbar.Toggle aria-controls="basic-navbar-nav" style={{ "border": "2px solid white", "backgroundColor": "white" }} />
+                        <Navbar.Collapse id="basic-navbar-nav">
+                            <Nav className=" navbar-collapse" id="navbarSupportedContent">
+                                <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <li className="nav-item">
+                                        <NavLink to="/" className="nav-link">Home</NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink to="/electronics" className="nav-link">Electronics</NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink to="/home-appliances" className="nav-link">Home Appliances</NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink to="/clothings" className="nav-link">Clothing</NavLink>
+                                    </li>
+                                </ul>
+
+                                <form className="d-flex ">
+                                <input className="form-control me-2" type="search" placeholder="Search" value={searchField} onChange={(e) => setSearchField(e.target.value)} aria-label="Search" id="search" />
+                                <button className="btn btn-outline-success" type="submit" id="search-btn" onClick={handleSearch}>Search</button>
+                                </form>
+                            </Nav>
+                        </Navbar.Collapse>
+                    </div>
+                </Navbar>
             </header >
         </>
     );
