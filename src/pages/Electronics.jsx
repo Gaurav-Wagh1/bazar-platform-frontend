@@ -28,16 +28,16 @@ const Electronics = () => {
                     </div>
                     <div className="carousel-inner">
                         <div className="carousel-item active">
-                            <img src={"src/assets/images/electronicsbanner1.jpg"} className="d-block w-100" alt="..." />
+                            <img src={"https://res.cloudinary.com/dlmczlc8h/image/upload/v1716214124/electronicsbanner1_gu0qiw.jpg"} className="d-block w-100" alt="..." />
                         </div>
                         <div className="carousel-item ">
-                            <img src={"src/assets/images/electronicsbanner2.jpg"} className="d-block w-100" alt="..." />
+                            <img src={"https://res.cloudinary.com/dlmczlc8h/image/upload/v1716214123/electronicsbanner2_hezjev.png"} className="d-block w-100" alt="..." />
                         </div>
                         <div className="carousel-item">
-                            <img src={"src/assets/images/electronicsbanner3.jpg"} className="d-block w-100" alt="..." />
+                            <img src={"https://res.cloudinary.com/dlmczlc8h/image/upload/v1716214127/electronicsbanner3_b63ead.jpg"} className="d-block w-100" alt="..." />
                         </div>
                         <div className="carousel-item">
-                            <img src={"src/assets/images/electronicsbanner4.jpg"} className="d-block w-100" alt="..." />
+                            <img src={"https://res.cloudinary.com/dlmczlc8h/image/upload/v1716214127/electronicsbanner4_tzoham.jpg"} className="d-block w-100" alt="..." />
                         </div>
                     </div>
                     <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -61,31 +61,31 @@ const Electronics = () => {
 
                 <div className="top-category">
                     <div className="category text-center" onClick={() => showCategoryProducts("mobiles")}>
-                        <img src={"src/assets/images/mobile.jpg"} className="img-fluid float-end" style={{ "borderRadius": "7rem" }} />
+                        <img src={"https://res.cloudinary.com/dlmczlc8h/image/upload/v1716214249/mobile_zmvsch.jpg"} className="img-fluid float-end" style={{ "borderRadius": "7rem" }} />
                         <h5 className="title">Mobiles</h5>
                     </div>
                     <div className="category text-center" onClick={() => showCategoryProducts("laptops")}>
-                        <img src={"src/assets/images/laptop.jpg"} className="img-fluid" style={{ "borderRadius": "7rem" }} />
+                        <img src={"https://res.cloudinary.com/dlmczlc8h/image/upload/v1716214302/laptop_zryxwl.jpg"} className="img-fluid" style={{ "borderRadius": "7rem" }} />
                         <h5 className="title">Laptops</h5>
                     </div>
                     <div className="category text-center" onClick={() => showCategoryProducts("tablets")}>
-                        <img src={"src/assets/images/tablet.jpg"} className="img-fluid" style={{ "borderRadius": "7rem" }} />
+                        <img src={"https://res.cloudinary.com/dlmczlc8h/image/upload/v1716214346/tablet_puiaet.jpg"} className="img-fluid" style={{ "borderRadius": "7rem" }} />
                         <h5 className="title">Tablets</h5>
                     </div>
                     <div className="category text-center" onClick={() => showCategoryProducts("smartwatches")}>
-                        <img src={"src/assets/images/smartwatch2.jpg"} className="img-fluid" style={{ "borderRadius": "7rem", "width": "25rem" }} />
+                        <img src={"https://res.cloudinary.com/dlmczlc8h/image/upload/v1716214378/smartwatch2_jvqpye.avif"} className="img-fluid" style={{ "borderRadius": "7rem", "width": "25rem" }} />
                         <h5 className="title">Smartwatches</h5>
                     </div>
                     <div className="category text-center" onClick={() => showCategoryProducts("earbuds")}>
-                        <img src={"src/assets/images/headphone.jpg"} className="img-fluid" style={{ "borderRadius": "7rem" }} />
+                        <img src={"https://res.cloudinary.com/dlmczlc8h/image/upload/v1716214432/headphone_nwctuv.jpg"} className="img-fluid" style={{ "borderRadius": "7rem" }} />
                         <h5 className="title">Headphones</h5>
                     </div>
                     <div className="category text-center" onClick={() => showCategoryProducts("speakers")}>
-                        <img src={"src/assets/images/speaker.jpg"} className="img-fluid" style={{ "borderRadius": "7rem" }} />
+                        <img src={"https://res.cloudinary.com/dlmczlc8h/image/upload/v1716214469/speaker_x2hkdw.jpg"} className="img-fluid" style={{ "borderRadius": "7rem" }} />
                         <h5 className="title">Speakers</h5>
                     </div>
                     <div className="category text-center" onClick={() => showCategoryProducts("TechAccessories")}>
-                        <img src={"src/assets/images/computer_accesories.jpg"} className="img-fluid" style={{ "borderRadius": "7rem" }} />
+                        <img src={"https://res.cloudinary.com/dlmczlc8h/image/upload/v1716214507/computer_accesories_g9y5om.jpg"} className="img-fluid" style={{ "borderRadius": "7rem" }} />
                         <h5 className="title">Tech Accessories</h5>
                     </div>
                 </div>
@@ -94,7 +94,7 @@ const Electronics = () => {
             {/* <!-- ADVERTISE --> */}
             <div className="banner-2 container-fluid mb-4" onClick={() => showCategoryProducts("mobiles")}>
                 <div className="" style={{ "borderRadius": "0", "border": "0px solid transparent" }}>
-                    <img src={"src/assets/images/banner-2.png"} className="card-img" alt="..." />
+                    <img src={"https://res.cloudinary.com/dlmczlc8h/image/upload/v1716214564/banner-2_iqibyb.png"} className="card-img" alt="..." />
                 </div>
             </div>
 
@@ -110,10 +110,10 @@ const Electronics = () => {
             < div className="container-fluid" >
                 <div className="row text-center">
                     <div className="col-12 col-md-6 text-center">
-                        <img src={"src/assets/images/electronicsbanner5.png"} className="img-fluid w-100" alt="image on the left" />
+                        <img src={"https://res.cloudinary.com/dlmczlc8h/image/upload/v1716214639/electronicsbanner5_nnnk75.png"} className="img-fluid w-100" alt="image on the left" />
                     </div>
                     <div className="col-12 col-md-6 text-center">
-                        <img src={"src/assets/images/headphone.png"} className="img-fluid w-100" alt="img on the right" />
+                        <img src={"https://res.cloudinary.com/dlmczlc8h/image/upload/v1716214675/headphone_rtde63.png"} className="img-fluid w-100" alt="img on the right" />
                     </div>
                 </div>
             </div >

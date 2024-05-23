@@ -26,19 +26,19 @@ const Home = () => {
                     </div>
                     <div className="carousel-inner">
                         <div className="carousel-item">
-                            <img src={"src/assets/images/img2.png"} className="d-block w-100" alt="..." />
+                            <img src={"https://res.cloudinary.com/dlmczlc8h/image/upload/v1716215404/img2_x2n7xf.png"} className="d-block w-100" alt="..." />
                         </div>
                         <div className="carousel-item active">
-                            <img src={"src/assets/images/www.bazaar.co.uk.png"} className="d-block w-100" alt="..." />
+                            <img src={"https://res.cloudinary.com/dlmczlc8h/image/upload/v1716215406/www.bazaar.co.uk_oo2sh1.png"} className="d-block w-100" alt="..." />
                         </div>
                         <div className="carousel-item">
-                            <img src={"src/assets/images/img3.png"} className="d-block w-100" alt="..." />
+                            <img src={"https://res.cloudinary.com/dlmczlc8h/image/upload/v1716215405/img3_txh58e.png"} className="d-block w-100" alt="..." />
                         </div>
                         <div className="carousel-item">
-                            <img src={"src/assets/images/homebanner1.jpg"} className="d-block w-100" alt="..." />
+                            <img src={"https://res.cloudinary.com/dlmczlc8h/image/upload/v1716215405/homebanner1_awrwha.jpg"} className="d-block w-100" alt="..." />
                         </div>
                         <div className="carousel-item">
-                            <img src={"src/assets/images/homebanner2.jpg"} className="d-block w-100" alt="..." />
+                            <img src={"https://res.cloudinary.com/dlmczlc8h/image/upload/v1716215406/homebanner2_lwue6j.jpg"} className="d-block w-100" alt="..." />
                         </div>
                     </div>
                     <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -103,7 +103,7 @@ const Home = () => {
             {/* <!-- Section 6 Advertise --> */}
             <div className="banner">
                 <div className="container-fluid">
-                    <img src={"src/assets/images/homebanner1.jpg"} style={{ "width": "100%" }} alt="" />
+                    <img src={"https://res.cloudinary.com/dlmczlc8h/image/upload/v1716215405/homebanner1_awrwha.jpg"} style={{ "width": "100%" }} alt="" />
                 </div>
             </div>
 
@@ -118,7 +118,7 @@ const Home = () => {
             {/* <!-- Section 6 Advertise --> */}
             <div className="banner">
                 <div className="container-fluid">
-                    <img src={"src/assets/images/homebanner2.jpg"} style={{ "width": "100%" }} alt="" />
+                    <img src={"https://res.cloudinary.com/dlmczlc8h/image/upload/v1716215406/homebanner2_lwue6j.jpg"} style={{ "width": "100%" }} alt="" />
                 </div>
             </div>
 
@@ -135,12 +135,12 @@ const Home = () => {
                 <div className="row mx-2">
                     <div className="col-6 ">
                         <div className="w-100">
-                            <img src={"src/assets/images/homebanner3.png"} className="w-100" alt="" />
+                            <img src={"https://res.cloudinary.com/dlmczlc8h/image/upload/v1716215620/homebanner3_m2yrit.png"} className="w-100" alt="" />
                         </div>
                     </div>
                     <div className="col-6">
                         <div className="w-100">
-                            <img src={"src/assets/images/homebanner4.png"} className="w-100" alt="" />
+                            <img src={"https://res.cloudinary.com/dlmczlc8h/image/upload/v1716215715/homebanner4_adokek.png"} className="w-100" alt="" />
                         </div>
                     </div>
                 </div>

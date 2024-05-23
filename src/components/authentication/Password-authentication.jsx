@@ -2,7 +2,7 @@ const PasswordAuthenticationFields = ({showToast, setShowToast}) => {
     return (
         <div className="toast show position-fixed start-0 top-5 m-3" style={{ "zIndex": "9999" }} role="alert" aria-live="assertive" aria-atomic="true">
             <div className="toast-header">
-                <img src="/src/assets/images/icon.webp" className="rounded me-2" style={{ "width": "30px" }} alt="..." />
+                <img src="https://res.cloudinary.com/dlmczlc8h/image/upload/v1716216937/favicon_axfvq5.png" className="rounded me-2" style={{ "width": "30px" }} alt="..." />
                 <strong className="me-auto fs-5">Bazar</strong>
                 <button type="button" className="btn-close" onClick={() => setShowToast({ status: false, invalidFields: [] })} data-bs-dismiss="toast" aria-label="Close"></button>
             </div>

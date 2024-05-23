@@ -4,8 +4,6 @@ import axios from 'axios';
 import "./signup.css";
 import { useState } from 'react';
 
-import informationSVG from "../../assets/images/svgs/info2m.svg";
-
 // -----------------  UPDATING DATABASE WITH USER INFO;
 
 const Information = (prop) => {
@@ -75,7 +73,7 @@ const Information = (prop) => {
             <div className="container-fluid bg-white pb-3 pb-md-0 py-md-5">
                 <div className="row">
                     <div className="col-12 col-md-6">
-                        <img src={informationSVG} alt="" />
+                        <img src="https://res.cloudinary.com/dlmczlc8h/image/upload/v1716450035/info2m_hbhivl.svg" alt="" />
                     </div>
                     <div className="main-container col-12 col-md-6 p-md-5 mt-3 mt-md-0">
                         <div className="upper p-4">

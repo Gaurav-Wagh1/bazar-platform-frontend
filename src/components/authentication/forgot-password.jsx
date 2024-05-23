@@ -3,8 +3,6 @@ import "./signup.css"
 import { useNavigate } from 'react-router-dom';
 import { useState } from "react";
 
-import forgotPasswordSVG from "../../assets/images/svgs/forgot-password.svg"
-
 const ForgotPassword = (prop) => {
     const [userData, setUserData] = useState({ email: "", password: "", confirmPassword: "", verificationCode: "", otpSent: false });
     const [forgetError, setForgetError] = useState({ flag: false, name: "", description: "" });
@@ -107,7 +105,7 @@ const ForgotPassword = (prop) => {
             <div className="container-fluid bg-white pb-3 pb-md-0 py-md-5">
                 <div className="row">
                     <div className="col-12 col-md-6">
-                        <img src={forgotPasswordSVG} className='w-100' alt="" />
+                        <img src="https://res.cloudinary.com/dlmczlc8h/image/upload/v1716450035/forgot-password_pbfh9d.svg" className='w-100' alt="" />
                     </div>
                     <div className="main-container col-12 col-md-6 p-md-5 mt-3 mt-md-0">
                         <div className="upper">

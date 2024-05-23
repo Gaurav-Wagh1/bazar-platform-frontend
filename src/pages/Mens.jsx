@@ -28,13 +28,13 @@ const Mens = () => {
                 </div>
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        <img src="/src/assets/images/clothing-banner-1.png" className="d-block w-100" alt="..." />
+                        <img src="https://res.cloudinary.com/dlmczlc8h/image/upload/v1716213515/clothing-banner-1_i3ogc7.png" className="d-block w-100" alt="..." />
                     </div>
                     <div className="carousel-item">
                         <img src="https://assets.ajio.com/cms/AJIO/WEB/D-1.0-MHP-25042024-topbanner-z2-p2-uspa-snitch-min60.jpg" className="d-block w-100" alt="..." />
                     </div>
                     <div className="carousel-item">
-                        <img src="/src/assets/images/clothing-banner-1.png" className="d-block w-100" alt="..." />
+                        <img src="https://res.cloudinary.com/dlmczlc8h/image/upload/v1716213515/clothing-banner-1_i3ogc7.png" className="d-block w-100" alt="..." />
                     </div>
                 </div>
                 <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -57,31 +57,31 @@ const Mens = () => {
                 </div>
                 <div className=" top-category ">
                     <div className="category text-center" onClick={() => displaySubCategoryProducts("Shirts")}>
-                        <img src="/src/assets/images/men/cat1-shirt.webp" className="img-fluid " style={{ "borderRadius": "7rem", "height": "36vh" }} />
+                        <img src="https://res.cloudinary.com/dlmczlc8h/image/upload/v1716216177/cat1-shirt_suuzll.webp" className="img-fluid " style={{ "borderRadius": "7rem", "height": "36vh" }} />
                         <h5 className="title">Shirts</h5>
                     </div>
                     <div className="category text-center" onClick={() => displaySubCategoryProducts("Tshirts")}>
-                        <img src="/src/assets/images/men/cat2-tshirt.webp" className="img-fluid " style={{ "borderRadius": "7rem", "height": "36vh" }} />
+                        <img src="https://res.cloudinary.com/dlmczlc8h/image/upload/v1716216174/cat2-tshirt_lguhhx.webp" className="img-fluid " style={{ "borderRadius": "7rem", "height": "36vh" }} />
                         <h5 className="title">T-Shirts</h5>
                     </div>
                     <div className="category text-center" onClick={() => displaySubCategoryProducts("Jeans")}>
-                        <img src="/src/assets/images/men/cat3-jeans.webp" className="img-fluid " style={{ "borderRadius": "7rem", "height": "36vh" }} />
+                        <img src="https://res.cloudinary.com/dlmczlc8h/image/upload/v1716216168/cat3-jeans_zfw1av.webp" className="img-fluid " style={{ "borderRadius": "7rem", "height": "36vh" }} />
                         <h5 className="title">Jeans</h5>
                     </div>
                     <div className="category text-center" onClick={() => displaySubCategoryProducts("Suits")}>
-                        <img src="/src/assets/images/men/cat5-suits.webp" className="img-fluid " style={{ "borderRadius": "7rem", "height": "36vh" }} />
+                        <img src="https://res.cloudinary.com/dlmczlc8h/image/upload/v1716216169/cat5-suits_oxeq6m.webp" className="img-fluid " style={{ "borderRadius": "7rem", "height": "36vh" }} />
                         <h5 className="title">Suits</h5>
                     </div>
                     <div className="category text-center" onClick={() => displaySubCategoryProducts("Ethnic")}>
-                        <img src="/src/assets/images/men/cat4-ethnic.webp" className="img-fluid " style={{ "borderRadius": "7rem", "height": "36vh" }} />
+                        <img src="https://res.cloudinary.com/dlmczlc8h/image/upload/v1716216168/cat4-ethnic_vcy94x.webp" className="img-fluid " style={{ "borderRadius": "7rem", "height": "36vh" }} />
                         <h5 className="title">Ethnic</h5>
                     </div>
                     <div className="category text-center" onClick={() => displaySubCategoryProducts("Sports Wear")}>
-                        <img src="/src/assets/images/men/sportsImg.webp" className="img-fluid " style={{ "borderRadius": "7rem", "height": "36vh" }} />
+                        <img src="https://res.cloudinary.com/dlmczlc8h/image/upload/v1716216172/sportsImg_zej9ve.webp" className="img-fluid " style={{ "borderRadius": "7rem", "height": "36vh" }} />
                         <h5 className="title">Sports Wear</h5>
                     </div>
                     <div className="category text-center" onClick={() => displaySubCategoryProducts("Hoodies")}>
-                        <img src="/src/assets/images/men/hodies.webp" className="img-fluid " style={{ "borderRadius": "7rem", "height": "36vh" }} />
+                        <img src="https://res.cloudinary.com/dlmczlc8h/image/upload/v1716216169/hodies_gbmt29.webp" className="img-fluid " style={{ "borderRadius": "7rem", "height": "36vh" }} />
                         <h5 className="title">Hoodies</h5>
                     </div>
 
@@ -92,10 +92,10 @@ const Mens = () => {
             < div className="container-fluid" >
                 <div className="row text-center">
                     <div className="col-12 col-md-6 text-center">
-                        <img src={"src/assets/images/women/women-banner-4.png"} className="img-fluid w-100" alt="image on the left" />
+                        <img src={"https://res.cloudinary.com/dlmczlc8h/image/upload/v1716216365/women-banner-4_ntbffe.png"} className="img-fluid w-100" alt="image on the left" />
                     </div>
                     <div className="col-12 col-md-6 text-center">
-                        <img src={"src/assets/images/women/women-banner-4.png"} className="img-fluid w-100" alt="img on the right" />
+                        <img src={"https://res.cloudinary.com/dlmczlc8h/image/upload/v1716216365/women-banner-4_ntbffe.png"} className="img-fluid w-100" alt="img on the right" />
                     </div>
                 </div>
             </div >

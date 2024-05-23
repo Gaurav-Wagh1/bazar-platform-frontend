@@ -1,5 +1,4 @@
 import './cart.css';
-import cross from '../../assets/images/cross.png'
 import { useNavigate } from 'react-router-dom';
 
 
@@ -12,7 +11,7 @@ const CartItem = ({ quantity, price, imageURL, variety, name, cartItemId, remove
     return (
         <div className="container-fluid cart-item" key={cartItemId}>
             <div className="row p-4 text-center position-relative">
-                <img src={cross} alt="remove" onClick={() => { removeCartItem(cartItemId) }} className='position-absolute w-md-5 w-3 cross' />
+                <img src="https://res.cloudinary.com/dlmczlc8h/image/upload/v1716212249/cross_mcp0az.jpg" alt="remove" onClick={() => { removeCartItem(cartItemId) }} className='position-absolute w-md-5 w-3 cross' />
                 <div className="col-lg-3 col-md-3 col-12">
                     <img className="mx-0 product-img" src={imageURL} alt="product image" onClick={displayProduct} />
                 </div>

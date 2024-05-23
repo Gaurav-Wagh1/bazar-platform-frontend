@@ -28,13 +28,13 @@ const Womens = () => {
                 </div>
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        <img src="/src/assets/images/clothing-banner-1.png" className="d-block w-100" alt="..." />
+                        <img src="https://res.cloudinary.com/dlmczlc8h/image/upload/v1716213515/clothing-banner-1_i3ogc7.png" className="d-block w-100" alt="..." />
                     </div>
                     <div className="carousel-item">
-                        <img src="/src/assets/images/clothing-banner-1.png" className="d-block w-100" alt="..." />
+                        <img src="https://res.cloudinary.com/dlmczlc8h/image/upload/v1716213515/clothing-banner-1_i3ogc7.png" className="d-block w-100" alt="..." />
                     </div>
                     <div className="carousel-item">
-                        <img src="/src/assets/images/clothing-banner-1.png" className="d-block w-100" alt="..." />
+                        <img src="https://res.cloudinary.com/dlmczlc8h/image/upload/v1716213515/clothing-banner-1_i3ogc7.png" className="d-block w-100" alt="..." />
                     </div>
                 </div>
                 <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -58,31 +58,31 @@ const Womens = () => {
 
                 <div className="top-category">
                     <div className="category text-center" onClick={() => displaySubCategoryProducts("Lehengas")}>
-                        <img src="/src/assets/images/women/cat7-lehenga.avif" className="img-fluid " style={{ "borderRadius": "7rem", "width": "25rem", "height": "36vh" }} />
+                        <img src="https://res.cloudinary.com/dlmczlc8h/image/upload/v1716216586/cat7-lehenga_tb7w8k.avif" className="img-fluid " style={{ "borderRadius": "7rem", "width": "25rem", "height": "36vh" }} />
                         <h5 className="title">Lehengas</h5>
                     </div>
                     <div className="category text-center" onClick={() => displaySubCategoryProducts("Ethnic Wear")}>
-                        <img src="/src/assets/images/women/cat6-kurta.jpg" className="img-fluid " style={{ "borderRadius": "7rem", "height": "36vh" }} />
+                        <img src="https://res.cloudinary.com/dlmczlc8h/image/upload/v1716216585/cat6-kurta_vyzdoy.jpg" className="img-fluid " style={{ "borderRadius": "7rem", "height": "36vh" }} />
                         <h5 className="title">Ethnic Wear</h5>
                     </div>
                     <div className="category text-center" onClick={() => displaySubCategoryProducts("Casual Wear")}>
-                        <img src="/src/assets/images/women/cat1-top.avif" className="img-fluid " style={{ "borderRadius": "7rem", "height": "36vh" }} />
+                        <img src="https://res.cloudinary.com/dlmczlc8h/image/upload/v1716216589/cat1-top_hcixrt.avif" className="img-fluid " style={{ "borderRadius": "7rem", "height": "36vh" }} />
                         <h5 className="title">Casual's</h5>
                     </div>
                     <div className="category text-center" onClick={() => displaySubCategoryProducts("Western Wear")}>
-                        <img src="/src/assets/images/women/cat2-dress.avif" className="img-fluid " style={{ "borderRadius": "7rem", "height": "36vh" }} />
+                        <img src="https://res.cloudinary.com/dlmczlc8h/image/upload/v1716216590/cat2-dress_f2gfxy.avif" className="img-fluid " style={{ "borderRadius": "7rem", "height": "36vh" }} />
                         <h5 className="title">Western Wear</h5>
                     </div>
                     <div className="category text-center" onClick={() => displaySubCategoryProducts("Sarees")}>
-                        <img src="/src/assets/images/women/cat5-saree.avif" className="img-fluid " style={{ "borderRadius": "7rem", "height": "36vh" }} />
+                        <img src="https://res.cloudinary.com/dlmczlc8h/image/upload/v1716216582/cat5-saree_xmzh2r.avif" className="img-fluid " style={{ "borderRadius": "7rem", "height": "36vh" }} />
                         <h5 className="title">Sarees</h5>
                     </div>
                     <div className="category text-center" onClick={() => displaySubCategoryProducts("Active Wear")}>
-                        <img src="/src/assets/images/women/cat3-jumpsuit.avif" className="img-fluid " style={{ "borderRadius": "7rem", "height": "36vh" }} />
+                        <img src="https://res.cloudinary.com/dlmczlc8h/image/upload/v1716216592/cat3-jumpsuit_fcq0zs.avif" className="img-fluid " style={{ "borderRadius": "7rem", "height": "36vh" }} />
                         <h5 className="title">Active Wear</h5>
                     </div>
                     <div className="category text-center" onClick={() => displaySubCategoryProducts("Leggings")}>
-                        <img src="/src/assets/images/women/leggings.jpg" className="img-fluid " style={{ "borderRadius": "7rem", "height": "36vh" }} />
+                        <img src="https://res.cloudinary.com/dlmczlc8h/image/upload/v1716216593/leggings_r2tke8.jpg" className="img-fluid " style={{ "borderRadius": "7rem", "height": "36vh" }} />
                         <h5 className="title">Leggings</h5>
                     </div>
                 </div>
@@ -92,10 +92,10 @@ const Womens = () => {
             < div className="container-fluid" >
                 <div className="row text-center">
                     <div className="col-12 col-md-6 text-center">
-                        <img src={"src/assets/images/women/women-banner-4.png"} className="img-fluid w-100" alt="image on the left" />
+                        <img src={"https://res.cloudinary.com/dlmczlc8h/image/upload/v1716216365/women-banner-4_ntbffe.png"} className="img-fluid w-100" alt="image on the left" />
                     </div>
                     <div className="col-12 col-md-6 text-center">
-                        <img src={"src/assets/images/women/women-banner-4.png"} className="img-fluid w-100" alt="img on the right" />
+                        <img src={"https://res.cloudinary.com/dlmczlc8h/image/upload/v1716216365/women-banner-4_ntbffe.png"} className="img-fluid w-100" alt="img on the right" />
                     </div>
                 </div>
             </div >

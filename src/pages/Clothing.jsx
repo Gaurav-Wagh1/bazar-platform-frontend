@@ -19,13 +19,13 @@ const Clothing = () => {
                 </div>
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        <img src="/src/assets/images/clothing-banner-1.png" style={{ "height": "50vh" }} className="d-block w-100" alt="..." />
+                        <img src="https://res.cloudinary.com/dlmczlc8h/image/upload/v1716213515/clothing-banner-1_i3ogc7.png" style={{ "height": "50vh" }} className="d-block w-100" alt="..." />
                     </div>
                     <div className="carousel-item">
-                        <img src="/src/assets/images/clothes.webp" style={{ "height": "50vh" }} className="d-block w-100" alt="..." />
+                        <img src="https://res.cloudinary.com/dlmczlc8h/image/upload/v1716213586/clothes_pscz7g.webp" style={{ "height": "50vh" }} className="d-block w-100" alt="..." />
                     </div>
                     <div className="carousel-item">
-                        <img src="/src/assets/images/clothes-2.webp" style={{ "height": "50vh" }} className="d-block w-100" alt="..." />
+                        <img src="https://res.cloudinary.com/dlmczlc8h/image/upload/v1716213614/clothes-2_fgexte.webp" style={{ "height": "50vh" }} className="d-block w-100" alt="..." />
                     </div>
                 </div>
                 <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -48,7 +48,7 @@ const Clothing = () => {
                             <div className="cat-btn">
                                 <button className="border left" style={{ "borderRadius": " 3rem" }}>Women</button>
                             </div>
-                            <img src="/src/assets/images/cloth-b4.jpg" width="100%" height="100%" />
+                            <img src="https://res.cloudinary.com/dlmczlc8h/image/upload/v1716213726/cloth-b4_fnli73.jpg" width="100%" height="100%" />
                         </Link>
                     </div>
                     <div className="col-md-6 col-lg-6 col-sm-12 d-flex justify-content-center cat">
@@ -56,7 +56,7 @@ const Clothing = () => {
                             <div className="cat-btn">
                                 <button className="border right" style={{ "borderRadius": " 3rem" }}>Men</button>
                             </div>
-                            <img src="/src/assets/images/cloth9.jpg" width="100%" height="100%" />
+                            <img src="https://res.cloudinary.com/dlmczlc8h/image/upload/v1716213780/cloth9_bieptv.jpg" width="100%" height="100%" />
                         </Link>
                     </div>
                 </div>
@@ -74,13 +74,13 @@ const Clothing = () => {
                 </div>
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        <img src="/src/assets/images/cloth-bammer2.png" className="d-block w-100" alt="..." />
+                        <img src="https://res.cloudinary.com/dlmczlc8h/image/upload/v1716213862/cloth-bammer2_ru39nz.png" className="d-block w-100" alt="..." />
                     </div>
                     <div className="carousel-item">
-                        <img src="/src/assets/images/cloth-bammer3.png" className="d-block w-100" alt="..." />
+                        <img src="https://res.cloudinary.com/dlmczlc8h/image/upload/v1716213861/cloth-bammer3_wgdcs4.png" className="d-block w-100" alt="..." />
                     </div>
                     <div className="carousel-item">
-                        <img src="/src/assets/images/cloth-bammer4.png" className="d-block w-100" alt="..." />
+                        <img src="https://res.cloudinary.com/dlmczlc8h/image/upload/v1716213861/cloth-bammer4_zumhdn.png" className="d-block w-100" alt="..." />
                     </div>
                 </div>
                 <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators1"
@@ -106,7 +106,7 @@ const Clothing = () => {
             {/* <!-- adv --> */}
             <div className="container-fluid mb-5">
                 <div className="">
-                    <img src="/src/assets/images/clothing-banner-1.png" style={{ width: "100%" }} alt="" />
+                    <img src="https://res.cloudinary.com/dlmczlc8h/image/upload/v1716213515/clothing-banner-1_i3ogc7.png" style={{ width: "100%" }} alt="" />
                 </div>
             </div>
 

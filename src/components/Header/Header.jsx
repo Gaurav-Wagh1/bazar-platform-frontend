@@ -10,10 +10,6 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 import axios from "axios";
 
-// images
-
-import brandLogo from "../../assets/images/bazaar-high-resolution-logo-transparent (2).png"
-
 const Header = (prop) => {
     const [isLoggedOut, setIsLoggedOut] = useState({ status: false, info: "" });
     const [searchField, setSearchField] = useState("");
@@ -168,7 +164,7 @@ const Header = (prop) => {
                 </nav> */}
                 <Navbar expand="lg" className="navbar" id="navbar">
                     <div className="container-fluid">
-                        <Navbar.Brand ><Link className="navbar-brand logo" to={"/"}><img src={brandLogo} alt="" width="180px" /></Link></Navbar.Brand>
+                        <Navbar.Brand ><Link className="navbar-brand logo" to={"/"}><img src="https://res.cloudinary.com/dlmczlc8h/image/upload/v1716212756/bazaar-high-resolution-logo-transparent_2_m6lirg.png" alt="" width="180px" /></Link></Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" style={{ "border": "2px solid white", "backgroundColor": "white" }} />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className=" navbar-collapse" id="navbarSupportedContent">

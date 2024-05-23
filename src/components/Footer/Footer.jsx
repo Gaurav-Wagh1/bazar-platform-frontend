@@ -1,7 +1,5 @@
 import "../../assets/css/style.css"
 
-import logo from "../../assets/images/bazaar-high-resolution-logo-transparent (2).png";
-
 const Footer = () => {
     return (
         <>
@@ -9,7 +7,7 @@ const Footer = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-sm-12 col-md-6">
-                            <img src={logo} className="f-img" alt=""/>
+                            <img src="https://res.cloudinary.com/dlmczlc8h/image/upload/v1716212756/bazaar-high-resolution-logo-transparent_2_m6lirg.png" className="f-img" alt=""/>
                                 <p className="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                                     Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
                                     printer took a galley of type and scrambled it to make a type specimen book.</p>
